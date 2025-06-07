@@ -1,7 +1,7 @@
 # PingGo
 
 ## Current Directory Structure
-```
+
 .
 ├── BusTrackerApp
 │   ├── Assets.xcassets
@@ -87,4 +87,3 @@
     └── Services
 
 40 directories, 43 files
-```
