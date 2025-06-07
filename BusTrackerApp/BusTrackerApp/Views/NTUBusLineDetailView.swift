@@ -1,10 +1,17 @@
+//
+//  NTUBusLineDetailView.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 2/6/25.
+//  Updated for NTU-specific logic
+//
 
 import SwiftUI
 
-struct BusLineDetailView: View {
+struct NTUBusLineDetailView: View {
     let line: BusRouteColor
     
-    @StateObject private var viewModel = BusLineDetailViewModel()
+    @StateObject private var viewModel = NTUBusLineDetailViewModel()
     
     var body: some View {
         VStack {
@@ -45,7 +52,7 @@ struct BusLineDetailView: View {
                                 .padding(.top)
                             
                             List(viewModel.stops) { stop in
-                                NavigationLink(destination: BusStopArrivalView(busStopId: stop.id)) {
+                                NavigationLink(destination: NTUBusStopArrivalView(busStopId: stop.id)) {
                                     Text(stop.name)
                                 }
                             }

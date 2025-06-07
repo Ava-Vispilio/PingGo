@@ -8,11 +8,11 @@
 import SwiftUI
 
 @main
-struct BusTrackerWatchApp_Watch_AppApp: App {
+struct BusTrackerWatchApp_Watch_App: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                WatchLineSelectionView()
+                NTUWatchLineSelectionView()
             }
         }
     }

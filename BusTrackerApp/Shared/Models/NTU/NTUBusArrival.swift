@@ -8,19 +8,19 @@
 import Foundation
 import CoreLocation
 
-struct BusArrival: Identifiable, Codable {
+struct NTUBusArrival: Identifiable, Codable {
     let id: String       // Typically the bus stop ID
     let name: String     // Human-readable stop name
-    let forecasts: [BusArrivalTime]
-    let geometries: [BusVehicleLocation]
+    let forecasts: [NTUBusArrivalTime]
+    let geometries: [NTUBusVehicleLocation]
 }
 
-struct BusArrivalTime: Codable, Identifiable {
+struct NTUBusArrivalTime: Codable, Identifiable {
     let id = UUID()
     let minutes: Int     // ETA in minutes
 }
 
-struct BusVehicleLocation: Codable, Identifiable {
+struct NTUBusVehicleLocation: Codable, Identifiable {
     let id = UUID()
     let latitude: CLLocationDegrees
     let longitude: CLLocationDegrees

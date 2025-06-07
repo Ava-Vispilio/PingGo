@@ -1,16 +1,24 @@
+//
+//  NTUBusLineDetailViewModel.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 2/6/25.
+//  Updated for NTU-specific logic using shared BusRouteColor
+//
+
 import Foundation
 
 @MainActor
-class BusLineDetailViewModel: ObservableObject {
-    @Published var bus: Bus? = nil
-    @Published var stops: [BusStop] = []
+class NTUBusLineDetailViewModel: ObservableObject {
+    @Published var bus: NTUBus? = nil
+    @Published var stops: [NTUBusStop] = []
     @Published var isLoadingBus = false
     @Published var isLoadingStops = false
     @Published var errorMessage: String? = nil
 
-    private let apiClient: BusAPIClient
+    private let apiClient: NTUBusAPIClient
 
-    init(apiClient: BusAPIClient = .shared) {
+    init(apiClient: NTUBusAPIClient = .shared) {
         self.apiClient = apiClient
     }
 

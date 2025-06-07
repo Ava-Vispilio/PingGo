@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct WatchBusStopListView: View {
+struct NTUWatchBusStopListView: View {
     let line: BusRouteColor
-    @StateObject private var viewModel = WatchBusStopListViewModel()
-    @State private var selectedStop: BusStop?
+    @StateObject private var viewModel = NTUWatchBusStopListViewModel()
+    @State private var selectedStop: NTUBusStop?
 
     var body: some View {
         VStack {
@@ -29,7 +29,7 @@ struct WatchBusStopListView: View {
                     set: { if !$0 { selectedStop = nil } }
                 )) {
                     if let stop = selectedStop {
-                        WatchArrivalView(busStop: stop)
+                        NTUWatchArrivalView(busStop: stop)
                     }
                 }
             }

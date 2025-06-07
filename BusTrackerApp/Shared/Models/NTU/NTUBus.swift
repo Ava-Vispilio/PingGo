@@ -8,20 +8,20 @@
 import Foundation
 import CoreLocation
 
-struct Bus: Identifiable, Codable {
+struct NTUBus: Identifiable, Codable {
     let id: Int
     let name: String
     let routeName: String
-    let vehicles: [BusVehicle]
+    let vehicles: [NTUBusVehicle]
 }
 
-extension Bus {
+extension NTUBus {
     var isActive: Bool {
         !vehicles.isEmpty
     }
 }
 
-struct BusVehicle: Codable, Identifiable {
+struct NTUBusVehicle: Codable, Identifiable {
     let id = UUID()
     let latitude: CLLocationDegrees
     let longitude: CLLocationDegrees

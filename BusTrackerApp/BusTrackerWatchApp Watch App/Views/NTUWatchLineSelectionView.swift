@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct WatchLineSelectionView: View {
-    @StateObject private var viewModel = WatchLineSelectionViewModel()
+struct NTUWatchLineSelectionView: View {
+    @StateObject private var viewModel = NTUWatchLineSelectionViewModel()
 
     var body: some View {
         NavigationStack {
@@ -16,7 +16,7 @@ struct WatchLineSelectionView: View {
                         .foregroundColor(.gray)
                 } else {
                     List(viewModel.activeLines, id: \.self) { line in
-                        NavigationLink(destination: WatchBusStopListView(line: line)) {
+                        NavigationLink(destination: NTUWatchBusStopListView(line: line)) {
                             Text(line.rawValue.capitalized)
                         }
                     }

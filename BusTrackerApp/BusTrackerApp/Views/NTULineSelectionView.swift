@@ -1,14 +1,15 @@
 //
-//  LineSelectionView.swift
+//  NTULineSelectionView.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
+//  Updated for NTU-specific logic
 //
 
 import SwiftUI
 
-struct LineSelectionView: View {
-    @StateObject private var viewModel = ActiveBusLinesViewModel()
+struct NTULineSelectionView: View {
+    @StateObject private var viewModel = NTUActiveBusLinesViewModel()
     
     var body: some View {
         NavigationView {
@@ -17,16 +18,17 @@ struct LineSelectionView: View {
                     ProgressView("Loading active lines...")
                 } else if !viewModel.activeLines.isEmpty {
                     List(viewModel.activeLines, id: \.self) { line in
-                        NavigationLink(destination: BusLineDetailView(line: line)) {
+                        NavigationLink(destination: NTUBusLineDetailView(line: line)) {
                             Text(line.rawValue.capitalized)
                                 .foregroundColor(.blue)
                         }
                     }
                 } else {
                     Text("No active lines found")
+                        .foregroundColor(.secondary)
                 }
             }
-            .navigationTitle("Select Bus Line")
+            .navigationTitle("NTU Bus Lines")
         }
         .task {
             await viewModel.fetchActiveLines()

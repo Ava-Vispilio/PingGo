@@ -1,22 +1,22 @@
 //
-//  ActiveBusLinesViewModel.swift
+//  NTUActiveBusLinesViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
+//  Refactored to use generic BusRouteColor with NTU-specific client.
 //
-
 
 import Foundation
 
 @MainActor
-class ActiveBusLinesViewModel: ObservableObject {
+class NTUActiveBusLinesViewModel: ObservableObject {
     @Published var activeLines: [BusRouteColor] = []
     @Published var isLoading = false
     @Published var errorMessage: String? = nil
     
-    private let apiClient: BusAPIClient
+    private let apiClient: NTUBusAPIClient
     
-    init(apiClient: BusAPIClient = .shared) {
+    init(apiClient: NTUBusAPIClient = .shared) {
         self.apiClient = apiClient
     }
     
@@ -31,14 +31,15 @@ class ActiveBusLinesViewModel: ObservableObject {
             for color in allLines {
                 group.addTask {
                     do {
-                        print("Fetching line info for: \(color.rawValue)")
+                        print("Fetching NTU line info for: \(color.rawValue)")
                         let response = try await self.apiClient.fetchBusLineInfo(for: color)
                         
                         let isActive = !response.bus.vehicles.isEmpty
-                        print("Received \(response.bus.name) for \(color.rawValue): \(isActive ? "active" : "inactive")")
+                        print("Received \(response.bus.name) for NTU \(color.rawValue): \(isActive ? "active" : "inactive")")
                         
                         return (color, isActive)
                     } catch {
+                        print("Error fetching NTU line \(color.rawValue): \(error.localizedDescription)")
                         return (color, false)
                     }
                 }
@@ -52,7 +53,7 @@ class ActiveBusLinesViewModel: ObservableObject {
         }
         
         self.activeLines = foundActiveLines.sorted { $0.rawValue < $1.rawValue }
-        print("Final active lines: \(activeLines.map {$0.rawValue })")
+        print("Final active NTU lines: \(activeLines.map { $0.rawValue })")
         isLoading = false
     }
 }

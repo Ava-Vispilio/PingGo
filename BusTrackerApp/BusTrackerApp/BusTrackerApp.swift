@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 @main
-struct BusTrackerAppApp: App {
+struct BusTrackerApp: App {
     // Create a delegate instance for notifications
     class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         // Show notifications as banners even when app is in foreground
@@ -34,7 +34,7 @@ struct BusTrackerAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LineSelectionView()
+            NTULineSelectionView()
         }
     }
 }

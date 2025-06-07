@@ -8,14 +8,14 @@
 import Foundation
 
 @MainActor
-class WatchLineSelectionViewModel: ObservableObject {
+class NTUWatchLineSelectionViewModel: ObservableObject {
     @Published var activeLines: [BusRouteColor] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
 
-    private let apiClient: BusAPIClient
+    private let apiClient: NTUBusAPIClient
 
-    init(apiClient: BusAPIClient = .shared) {
+    init(apiClient: NTUBusAPIClient = .shared) {
         self.apiClient = apiClient
     }
 

@@ -4,14 +4,14 @@
 import Foundation
 
 // For endpoint /prod/[color]-bus
-struct BusLineResponse: Decodable {
-    let bus: Bus
+struct NTUBusLineResponse: Decodable {
+    let bus: NTUBus
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DynamicCodingKeys.self)
         for key in container.allKeys {
             if key.stringValue.hasSuffix("Bus") {
-                bus = try container.decode(Bus.self, forKey: key)
+                bus = try container.decode(NTUBus.self, forKey: key)
                 return
             }
         }
@@ -30,13 +30,13 @@ struct BusLineResponse: Decodable {
 }
 
 // For endpoint /prod/bus-stop-details
-struct BusStopDetailsResponse: Codable {
+struct NTUBusStopDetailsResponse: Codable {
     let message: String
-    let busStopDetails: [String: [BusStop]]  // Keys like "blueBus", "redBus", etc.
+    let busStopDetails: [String: [NTUBusStop]]  // Keys like "blueBus", "redBus", etc.
 }
 
 // For endpoint /prod/bus-arrival
-struct BusArrivalResponse: Codable {
+struct NTUBusArrivalResponse: Codable {
     let message: String
-    let busArrival: BusArrival
+    let busArrival: NTUBusArrival
 }

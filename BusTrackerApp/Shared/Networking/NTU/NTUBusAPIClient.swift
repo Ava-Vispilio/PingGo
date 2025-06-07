@@ -3,8 +3,8 @@
 
 import Foundation
 
-struct BusAPIClient {
-    static let shared = BusAPIClient()
+struct NTUBusAPIClient {
+    static let shared = NTUBusAPIClient()
     private init() {}  // Singleton
     
     private let decoder: JSONDecoder = {
@@ -13,8 +13,8 @@ struct BusAPIClient {
     }()
     
     // Fetch bus line information (e.g. blueBus)
-    func fetchBusLineInfo(for color: String) async throws -> BusLineResponse {
-        let url = Endpoint.lineInfo(color: color).url
+    func fetchBusLineInfo(for color: String) async throws -> NTUBusLineResponse {
+        let url = NTUEndpoint.lineInfo(color: color).url
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -23,23 +23,23 @@ struct BusAPIClient {
         }
         
         do {
-            let result = try decoder.decode(BusLineResponse.self, from: data)
-            print("Raw data for \(color):", String(data: data, encoding: .utf8) ?? "No Data")
+            let result = try decoder.decode(NTUBusLineResponse.self, from: data)
+            print("Raw data for NTU \(color):", String(data: data, encoding: .utf8) ?? "No Data")
             return result
         } catch {
-            print("Decoding failed for \(color):", String(data: data, encoding: .utf8) ?? "No Data")
+            print("Decoding failed for NTU \(color):", String(data: data, encoding: .utf8) ?? "No Data")
             throw NetworkError.decodingFailed(error)
         }
     }
     
     // Convenience overload to support enum
-    func fetchBusLineInfo(for route: BusRouteColor) async throws -> BusLineResponse {
+    func fetchBusLineInfo(for route: BusRouteColor) async throws -> NTUBusLineResponse {
         try await fetchBusLineInfo(for: route.rawValue)
     }
     
-    // Fetch bus stop details.
-    func fetchBusStopDetails() async throws -> BusStopDetailsResponse {
-        let url = Endpoint.busStopDetails.url
+    // Fetch bus stop details
+    func fetchBusStopDetails() async throws -> NTUBusStopDetailsResponse {
+        let url = NTUEndpoint.busStopDetails.url
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -48,17 +48,17 @@ struct BusAPIClient {
         }
         
         do {
-            let result = try decoder.decode(BusStopDetailsResponse.self, from: data)
+            let result = try decoder.decode(NTUBusStopDetailsResponse.self, from: data)
             return result
         } catch {
-            print("Decoding failed for bus stop details:", String(data: data, encoding: .utf8) ?? "No Data")
+            print("Decoding failed for NTU bus stop details:", String(data: data, encoding: .utf8) ?? "No Data")
             throw NetworkError.decodingFailed(error)
         }
     }
     
-    // Fetch bus arrival for a given bus stop.
-    func fetchBusArrival(for busStopId: String) async throws -> BusArrivalResponse {
-        let url = Endpoint.busArrival(busStopId: busStopId).url
+    // Fetch bus arrival for a given bus stop
+    func fetchBusArrival(for busStopId: String) async throws -> NTUBusArrivalResponse {
+        let url = NTUEndpoint.busArrival(busStopId: busStopId).url
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -67,18 +67,18 @@ struct BusAPIClient {
         }
         
         do {
-            let result = try decoder.decode(BusArrivalResponse.self, from: data)
+            let result = try decoder.decode(NTUBusArrivalResponse.self, from: data)
             return result
         } catch {
-            print("Decoding failed for bus arrival (\(busStopId)):", String(data: data, encoding: .utf8) ?? "No Data")
+            print("Decoding failed for NTU bus arrival (\(busStopId)):", String(data: data, encoding: .utf8) ?? "No Data")
             throw NetworkError.decodingFailed(error)
         }
     }
 }
 
-extension BusAPIClient {
+extension NTUBusAPIClient {
     // Fetch stops for a specific bus route color
-    func fetchStops(for line: BusRouteColor) async throws -> [BusStop] {
+    func fetchStops(for line: BusRouteColor) async throws -> [NTUBusStop] {
         let response = try await fetchBusStopDetails()
         
         // Keys are like "blueBus", "redBus", etc.
@@ -87,4 +87,3 @@ extension BusAPIClient {
         return response.busStopDetails[key] ?? []
     }
 }
-

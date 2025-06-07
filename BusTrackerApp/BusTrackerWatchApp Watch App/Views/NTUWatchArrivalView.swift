@@ -1,9 +1,9 @@
 import SwiftUI
 import WatchKit
 
-struct WatchArrivalView: View {
-    let busStop: BusStop
-    @StateObject private var viewModel = WatchArrivalViewModel()
+struct NTUWatchArrivalView: View {
+    let busStop: NTUBusStop
+    @StateObject private var viewModel = NTUWatchArrivalViewModel()
     @State private var selectedReminderOffset = 2
     @State private var showReminderOptions = false
 

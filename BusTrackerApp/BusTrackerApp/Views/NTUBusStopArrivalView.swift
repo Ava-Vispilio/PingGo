@@ -1,9 +1,17 @@
+//
+//  NTUBusStopArrivalView.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 2/6/25.
+//  Updated for NTU-specific arrival view
+//
+
 import SwiftUI
 
-struct BusStopArrivalView: View {
+struct NTUBusStopArrivalView: View {
     let busStopId: String
     
-    @StateObject private var viewModel = BusStopArrivalViewModel()
+    @StateObject private var viewModel = NTUBusStopArrivalViewModel()
     
     private var arrivalMinutes: [Int] {
         viewModel.arrivalTimes.map { $0.minutes }
@@ -47,7 +55,7 @@ struct BusStopArrivalView: View {
             }
         }
         .padding()
-        .navigationTitle("Bus Arrivals")
+        .navigationTitle("NTU Bus Arrivals")
         .task {
             await viewModel.fetchArrivalTimes(for: busStopId)
         }
