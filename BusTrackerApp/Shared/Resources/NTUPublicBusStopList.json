@@ -1,0 +1,219 @@
+
+const Bus179StopList = [
+    {
+        "BusStopCode":"27281",
+        "RoadName":"Lien Ying Chow Dr",
+        "Description":"Hall 1",
+        "Latitude":1.34565500002282,
+        "Longitude":103.68780555602468
+    },
+    {
+        "BusStopCode":"27291",
+        "RoadName":"Lien Ying Chow Dr",
+        "Description":"Opp Hall 6",
+        "Latitude":1.34772267411254,
+        "Longitude":103.68649929145208
+    },
+    {
+        "BusStopCode":"27311",
+        "RoadName":"Lien Ying Chow Dr",
+        "Description":"Hall 2",
+        "Latitude":1.34902211051484,
+        "Longitude":103.68539285058924
+    },
+    {
+        "BusStopCode":"27061",
+        "RoadName":"Nanyang Dr",
+        "Description":"Sch of ADM",
+        "Latitude":1.34984722128218,
+        "Longitude":103.68387082088056
+    },
+    {
+        "BusStopCode":"27211",
+        "RoadName":"Nanyang Dr",
+        "Description":"Lee Wee Nam Lib",
+        "Latitude":1.34793140650697,
+        "Longitude":103.68050066497821
+    },
+    {
+        "BusStopCode":"27221",
+        "RoadName":"Nanyang Dr",
+        "Description":"Sch Of CEE",
+        "Latitude":1.34623151653928,
+        "Longitude":103.67851763727317
+    },
+    {
+        "BusStopCode":"27231",
+        "RoadName":"Nanyang Dr",
+        "Description":"Wee Kim Wee Sch of C&I",
+        "Latitude":1.34207972361937,
+        "Longitude":103.67922271593845
+    },
+    {
+        "BusStopCode":"27241",
+        "RoadName":"Nanyang Dr",
+        "Description":"SPMS",
+        "Latitude":1.33998726585628,
+        "Longitude":103.68089382456998
+    },
+    {
+        "BusStopCode":"27251",
+        "RoadName":"Nanyang Dr",
+        "Description":"Academic Bldg Sth",
+        "Latitude":1.341151,
+        "Longitude":103.683656
+    },
+    {
+        "BusStopCode":"27261",
+        "RoadName":"Nanyang Dr",
+        "Description":"Hall 4",
+        "Latitude":1.34332011366726,
+        "Longitude":103.68632093846232
+    },
+  ];
+
+const Bus179AStopList = [
+    {
+        "BusStopCode":"27281",
+        "RoadName":"Lien Ying Chow Dr",
+        "Description":"Hall 1",
+        "Latitude":1.34565500002282,
+        "Longitude":103.68780555602468
+    },
+    {
+        "BusStopCode":"27291",
+        "RoadName":"Lien Ying Chow Dr",
+        "Description":"Opp Hall 6",
+        "Latitude":1.34772267411254,
+        "Longitude":103.68649929145208
+    },
+    {
+        "BusStopCode":"27311",
+        "RoadName":"Lien Ying Chow Dr",
+        "Description":"Hall 2",
+        "Latitude":1.34902211051484,
+        "Longitude":103.68539285058924
+    },
+    {
+        "BusStopCode":"27061",
+        "RoadName":"Nanyang Dr",
+        "Description":"Sch of ADM",
+        "Latitude":1.34984722128218,
+        "Longitude":103.68387082088056
+    },
+    {
+        "BusStopCode":"27211",
+        "RoadName":"Nanyang Dr",
+        "Description":"Lee Wee Nam Lib",
+        "Latitude":1.34793140650697,
+        "Longitude":103.68050066497821
+    },
+    {
+        "BusStopCode":"27221",
+        "RoadName":"Nanyang Dr",
+        "Description":"Sch Of CEE",
+        "Latitude":1.34623151653928,
+        "Longitude":103.67851763727317
+    },
+    {
+        "BusStopCode":"27231",
+        "RoadName":"Nanyang Dr",
+        "Description":"Wee Kim Wee Sch of C&I",
+        "Latitude":1.34207972361937,
+        "Longitude":103.67922271593845
+    },
+    {
+        "BusStopCode":"27241",
+        "RoadName":"Nanyang Dr",
+        "Description":"SPMS",
+        "Latitude":1.33998726585628,
+        "Longitude":103.68089382456998
+    },
+    {
+        "BusStopCode":"27251",
+        "RoadName":"Nanyang Dr",
+        "Description":"Academic Bldg Sth",
+        "Latitude":1.341151,
+        "Longitude":103.683656
+    },
+    {
+        "BusStopCode":"27261",
+        "RoadName":"Nanyang Dr",
+        "Description":"Hall 4",
+        "Latitude":1.34332011366726,
+        "Longitude":103.68632093846232
+    },
+  ];
+
+const Bus199StopList = [
+    {
+        "BusStopCode":"27011",
+        "RoadName":"Nanyang Cres",
+        "Description":"Hall 11 Blk 55",
+        "Latitude":1.35586334559449,
+        "Longitude":103.68610938870162
+    },
+    {
+        "BusStopCode":"27071",
+        "RoadName":"Nanyang Cres",
+        "Description":"Nanyang Cres Halls",
+        "Latitude":1.35507533539502,
+        "Longitude":103.68452767084537
+    },
+    {
+        "BusStopCode":"27021",
+        "RoadName":"Nanyang Cres",
+        "Description":"Hall 15",
+        "Latitude":1.35324138896679,
+        "Longitude":103.68192916699402
+    },
+    {
+        "BusStopCode":"27031",
+        "RoadName":"Nanyang Cres",
+        "Description":"Hall 12",
+        "Latitude":1.35186815681876,
+        "Longitude":103.68051749839925
+    },
+    {
+        "BusStopCode":"27041",
+        "RoadName":"Nanyang Cres",
+        "Description":"NIE CP 7",
+        "Latitude":1.35071936245692,
+        "Longitude":103.67864247139183
+    },
+    {
+        "BusStopCode":"27051",
+        "RoadName":"Nanyang Cres",
+        "Description":"NIE Lib",
+        "Latitude":1.34845333297072,
+        "Longitude":103.67665805600423
+    },
+    {
+        "BusStopCode":"27219",
+        "RoadName":"Nanyang Dr",
+        "Description":"NIE Blk 2",
+        "Latitude":1.34793269501118,
+        "Longitude":103.68025240016884
+    },
+    {
+        "BusStopCode":"27069",
+        "RoadName":"Nanyang Dr",
+        "Description":"Blk 41",
+        "Latitude":1.35008972199881,
+        "Longitude":103.68418444402793
+    },
+    {
+        "BusStopCode":"27209",
+        "RoadName":"Nanyang Ave",
+        "Description":"Halls 8 & 9",
+        "Latitude":1.35150701703353,
+        "Longitude":103.68569234331088
+    },
+    {
+        "BusStopCode":"27199",
+        "RoadName":"Nanyang Ave",
+        "Description":"Hall 11",
+        "Latitude":1.35434216792763,
+        "Longitude":103.68685754938303
+    },
+];

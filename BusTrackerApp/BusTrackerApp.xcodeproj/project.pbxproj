@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE04A2232DF85B8000C5626E /* ArriveLahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2222DF85B8000C5626E /* ArriveLahService.swift */; };
+		DE04A2242DF85B8000C5626E /* ArriveLahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2222DF85B8000C5626E /* ArriveLahService.swift */; };
+		DE04A2262DF85D7100C5626E /* LTABusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2252DF85D7100C5626E /* LTABusArrival.swift */; };
+		DE04A2272DF85D7100C5626E /* LTABusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2252DF85D7100C5626E /* LTABusArrival.swift */; };
 		DE1259812DEC5411004B6E80 /* BusTrackerWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DE1259612DEC540D004B6E80 /* BusTrackerWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE1259B82DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */; };
 		DE1259B92DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */; };
@@ -22,6 +26,16 @@
 		DE1259C32DECD3B5004B6E80 /* NTUBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A62DECC3C5004B6E80 /* NTUBusStop.swift */; };
 		DE1259C42DECD3BB004B6E80 /* NTUBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUBus.swift */; };
 		DE1259C52DECD3BB004B6E80 /* NTUBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUBus.swift */; };
+		DE48B8122DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
+		DE48B8132DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
+		DE48B8162DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */; };
+		DE48B8172DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */; };
+		DE48B8182DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */; };
+		DE48B8192DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */; };
+		DE48B8222DF8D505005E2542 /* SMUBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8212DF8D505005E2542 /* SMUBusStop.swift */; };
+		DE48B8232DF8D505005E2542 /* SMUBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8212DF8D505005E2542 /* SMUBusStop.swift */; };
+		DE48B8252DF8D513005E2542 /* SMUBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8242DF8D513005E2542 /* SMUBusArrival.swift */; };
+		DE48B8262DF8D513005E2542 /* SMUBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8242DF8D513005E2542 /* SMUBusArrival.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +91,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE04A2222DF85B8000C5626E /* ArriveLahService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArriveLahService.swift; sourceTree = "<group>"; };
+		DE04A2252DF85D7100C5626E /* LTABusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTABusArrival.swift; sourceTree = "<group>"; };
 		DE1259322DEC5099004B6E80 /* BusTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1259402DEC509B004B6E80 /* BusTrackerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTrackerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE12594A2DEC509B004B6E80 /* BusTrackerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTrackerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,14 +106,19 @@
 		DE1259AA2DECC686004B6E80 /* NTUEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUEndpoint.swift; sourceTree = "<group>"; };
 		DE1259AB2DECC68D004B6E80 /* NTUBusAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUBusAPIClient.swift; sourceTree = "<group>"; };
 		DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUAPIResponseWrappers.swift; sourceTree = "<group>"; };
+		DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NTUPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NUSPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SMUPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8212DF8D505005E2542 /* SMUBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMUBusStop.swift; sourceTree = "<group>"; };
+		DE48B8242DF8D513005E2542 /* SMUBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMUBusArrival.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		DE1259CD2DECE20B004B6E80 /* Exceptions for "BusTrackerApp" folder in "BusTrackerWatchApp Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				ViewModels/NTUBusStopArrivalViewModel.swift,
-				Views/NTUBusStopArrivalView.swift,
+				ViewModels/NTU/NTUBusStopArrivalViewModel.swift,
+				Views/NTU/NTUBusStopArrivalView.swift,
 			);
 			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
 		};
@@ -185,6 +206,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE04A2202DF859E700C5626E /* LTA */ = {
+			isa = PBXGroup;
+			children = (
+				DE04A2222DF85B8000C5626E /* ArriveLahService.swift */,
+			);
+			path = LTA;
+			sourceTree = "<group>";
+		};
+		DE04A2212DF859F700C5626E /* LTA */ = {
+			isa = PBXGroup;
+			children = (
+				DE04A2252DF85D7100C5626E /* LTABusArrival.swift */,
+			);
+			path = LTA;
+			sourceTree = "<group>";
+		};
+		DE04A2282DF8CFCE00C5626E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */,
+				DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */,
+				DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DE1259292DEC5099004B6E80 = {
 			isa = PBXGroup;
 			children = (
@@ -215,8 +262,8 @@
 		DE1259A22DECC319004B6E80 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DE04A2282DF8CFCE00C5626E /* Resources */,
 				DE1259A82DECC66D004B6E80 /* Networking */,
-				DE1259A42DECC333004B6E80 /* Services */,
 				DE1259A32DECC326004B6E80 /* Models */,
 			);
 			path = Shared;
@@ -225,29 +272,32 @@
 		DE1259A32DECC326004B6E80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DEE4B5352DF4E0DB007F917B /* SMU */,
+				DE48B8202DF8D4DE005E2542 /* SMU */,
+				DE04A2212DF859F700C5626E /* LTA */,
 				DEE4B5342DF4E0D6007F917B /* NUS */,
 				DEE4B52E2DF4DC2F007F917B /* NTU */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DE1259A42DECC333004B6E80 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		DE1259A82DECC66D004B6E80 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DE04A2202DF859E700C5626E /* LTA */,
 				DEE4B5362DF4E0F9007F917B /* Common */,
 				DEE4B5332DF4E0B2007F917B /* NUS */,
-				DEE4B5322DF4E0AC007F917B /* SMU */,
 				DEE4B52D2DF4DC1A007F917B /* NTU */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		DE48B8202DF8D4DE005E2542 /* SMU */ = {
+			isa = PBXGroup;
+			children = (
+				DE48B8242DF8D513005E2542 /* SMUBusArrival.swift */,
+				DE48B8212DF8D505005E2542 /* SMUBusStop.swift */,
+			);
+			path = SMU;
 			sourceTree = "<group>";
 		};
 		DEE4B52D2DF4DC1A007F917B /* NTU */ = {
@@ -270,13 +320,6 @@
 			path = NTU;
 			sourceTree = "<group>";
 		};
-		DEE4B5322DF4E0AC007F917B /* SMU */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SMU;
-			sourceTree = "<group>";
-		};
 		DEE4B5332DF4E0B2007F917B /* NUS */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,13 +332,6 @@
 			children = (
 			);
 			path = NUS;
-			sourceTree = "<group>";
-		};
-		DEE4B5352DF4E0DB007F917B /* SMU */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SMU;
 			sourceTree = "<group>";
 		};
 		DEE4B5362DF4E0F9007F917B /* Common */ = {
@@ -510,6 +546,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE48B8122DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */,
+				DE48B8162DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */,
+				DE48B8172DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +570,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE48B8132DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */,
+				DE48B8182DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */,
+				DE48B8192DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,9 +598,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1259C42DECD3BB004B6E80 /* NTUBus.swift in Sources */,
+				DE48B8222DF8D505005E2542 /* SMUBusStop.swift in Sources */,
+				DE48B8252DF8D513005E2542 /* SMUBusArrival.swift in Sources */,
+				DE04A2262DF85D7100C5626E /* LTABusArrival.swift in Sources */,
 				DE1259C22DECD3B5004B6E80 /* NTUBusStop.swift in Sources */,
 				DE1259C02DECD3B0004B6E80 /* NTUBusArrival.swift in Sources */,
 				DE1259BC2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */,
+				DE04A2232DF85B8000C5626E /* ArriveLahService.swift in Sources */,
 				DE1259BE2DECD3AA004B6E80 /* NetworkError.swift in Sources */,
 				DE1259B82DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */,
 				DE1259BA2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
@@ -583,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE48B8262DF8D513005E2542 /* SMUBusArrival.swift in Sources */,
 				DE1259C52DECD3BB004B6E80 /* NTUBus.swift in Sources */,
 				DE1259C32DECD3B5004B6E80 /* NTUBusStop.swift in Sources */,
 				DE1259BB2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
@@ -590,6 +637,9 @@
 				DE1259B92DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */,
 				DE1259BD2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */,
 				DE1259C12DECD3B0004B6E80 /* NTUBusArrival.swift in Sources */,
+				DE04A2272DF85D7100C5626E /* LTABusArrival.swift in Sources */,
+				DE04A2242DF85B8000C5626E /* ArriveLahService.swift in Sources */,
+				DE48B8232DF8D505005E2542 /* SMUBusStop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
