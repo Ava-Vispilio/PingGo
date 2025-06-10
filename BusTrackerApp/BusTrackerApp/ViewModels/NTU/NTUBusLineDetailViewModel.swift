@@ -10,8 +10,8 @@ import Foundation
 
 @MainActor
 class NTUBusLineDetailViewModel: ObservableObject {
-    @Published var bus: NTUBus? = nil
-    @Published var stops: [NTUBusStop] = []
+    @Published var bus: NTUInternalBus? = nil
+    @Published var stops: [NTUInternalBusStop] = []
     @Published var isLoadingBus = false
     @Published var isLoadingStops = false
     @Published var errorMessage: String? = nil

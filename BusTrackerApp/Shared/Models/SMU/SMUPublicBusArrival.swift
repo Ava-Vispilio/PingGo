@@ -5,10 +5,12 @@
 //  Created by Ava Vispilio on 11/6/25.
 //
 
+import Foundation
 
-struct SMUBusArrivalResponse: Codable {
+// Raw decoded response from the ArriveLah API
+struct SMUPublicBusArrivalResponse: Codable {
     let services: [Service]
-    
+
     struct Service: Codable, Identifiable {
         var id: String { "\(no)-\(originCode ?? "")-\(destinationCode ?? "")" }
         let no: String
@@ -18,7 +20,6 @@ struct SMUBusArrivalResponse: Codable {
         let next3: Arrival?
         let subsequent: Arrival?
 
-        // Optional: top-level info if consistent across timings
         var originCode: String? {
             next?.originCode ?? next2?.originCode ?? subsequent?.originCode
         }
@@ -54,5 +55,19 @@ struct SMUBusArrivalResponse: Codable {
             case originCode = "origin_code"
             case destinationCode = "destination_code"
         }
+    }
+}
+
+// UI-ready arrival information for a single bus service
+struct SMUPublicBusArrival: Identifiable {
+    let id = UUID()
+    let serviceNo: String
+    let minutesToArrivals: [Int] // [3, 7, 15]
+
+    init(from service: SMUPublicBusArrivalResponse.Service) {
+        self.serviceNo = service.no
+        self.minutesToArrivals = [service.next, service.next2, service.next3]
+            .compactMap { $0?.durationMs }
+            .map { Int($0 / 60000) } // Convert milliseconds to minutes
     }
 }

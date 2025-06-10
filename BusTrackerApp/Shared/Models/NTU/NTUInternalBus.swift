@@ -1,5 +1,5 @@
 //
-//  BusArrival.swift
+//  Bus.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
@@ -8,19 +8,20 @@
 import Foundation
 import CoreLocation
 
-struct NTUBusArrival: Identifiable, Codable {
-    let id: String       // Typically the bus stop ID
-    let name: String     // Human-readable stop name
-    let forecasts: [NTUBusArrivalTime]
-    let geometries: [NTUBusVehicleLocation]
+struct NTUInternalBus: Identifiable, Codable {
+    let id: Int
+    let name: String
+    let routeName: String
+    let vehicles: [NTUBusVehicle]
 }
 
-struct NTUBusArrivalTime: Codable, Identifiable {
-    let id = UUID()
-    let minutes: Int     // ETA in minutes
+extension NTUInternalBus {
+    var isActive: Bool {
+        !vehicles.isEmpty
+    }
 }
 
-struct NTUBusVehicleLocation: Codable, Identifiable {
+struct NTUBusVehicle: Codable, Identifiable {
     let id = UUID()
     let latitude: CLLocationDegrees
     let longitude: CLLocationDegrees
@@ -47,6 +48,7 @@ struct NTUBusVehicleLocation: Codable, Identifiable {
         self.longitude = lon
     }
 
+    // Still allow encoding normally if needed
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode("\(latitude)", forKey: .latitude)

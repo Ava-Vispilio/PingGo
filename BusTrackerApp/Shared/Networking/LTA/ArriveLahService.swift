@@ -1,48 +1,41 @@
 //
-//  Service.swift
-//  ArriveLah
+//  ArriveLahService.swift
+//  BusTrackerApp
 //
 //  Created by Ava on 8/6/25.
+//  Updated with async/await, debugging, and generic decoding.
 //
-//  Services/ArriveLahService.swift - makes API call to local host server
 
 import Foundation
 
 class ArriveLahService {
-    func fetchBusArrivals(for LTAbusStopCode: String, completion: @escaping (Result < LTABusArrival, Error>) -> Void) {
-        guard let url = URL(string: "http://<IP Address>:3000/?id=\(LTAbusStopCode)") else {
-            print("Invalid URL for LTA API")
-            return
+    func fetchArrivals<T: Decodable>(for stopCode: String, as type: T.Type) async throws -> T {
+        guard let url = URL(string: "\(APIConstants.arriveLahBaseURL)/?id=\(stopCode)") else {
+            print("Invalid URL for ArriveLah API: \(APIConstants.arriveLahBaseURL)/?id=\(stopCode)")
+            throw NetworkError.badURL
         }
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Network error for LTA API: \(error.localizedDescription)")
-                completion(.failure(error))
-                return
-            }
-
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            
             if let httpResponse = response as? HTTPURLResponse {
-                print("HTTP Status Code for LTA API: \(httpResponse.statusCode)")
-            }
-
-            guard let data = data else {
-                print("No data received from LTA API")
-                return
+                print("HTTP Status Code for ArriveLah API: \(httpResponse.statusCode)")
             }
 
             do {
-                let decodedResponse = try JSONDecoder().decode(LTABusArrival.self, from: data)
-                print("Successfully decoded bus arrivals for LTA stop \(LTAbusStopCode)")
-                completion(.success(decodedResponse))
+                let decoded = try JSONDecoder().decode(T.self, from: data)
+                print("Successfully decoded arrivals for stop \(stopCode)")
+                return decoded
             } catch {
-                print("Decoding error for LTA stop \(LTAbusStopCode): \(error.localizedDescription)")
-                if let jsonString = String(data: data, encoding: .utf8) {
-                    print("Raw JSON for LTA stop \(LTAbusStopCode):\n\(jsonString)")
+                print("Decoding error for stop \(stopCode): \(error.localizedDescription)")
+                if let rawJSON = String(data: data, encoding: .utf8) {
+                    print("Raw JSON Response:\n\(rawJSON)")
                 }
-                completion(.failure(error))
+                throw NetworkError.decodingFailed(error)
             }
-        }.resume()
+        } catch {
+            print("Network request failed for stop \(stopCode): \(error.localizedDescription)")
+            throw NetworkError.requestFailed(error)
+        }
     }
 }
 

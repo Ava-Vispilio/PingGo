@@ -1,0 +1,35 @@
+// BusTrackerApp/ViewModels/SMU/SMUBusArrivalViewModel.swift
+
+import Foundation
+import Combine
+
+@MainActor
+class SMUPublicBusArrivalViewModel: ObservableObject {
+    @Published var arrivals: [SMUPublicBusArrival] = []
+    @Published var isLoading = false
+    @Published var errorMessage: String? = nil
+
+    private let service = ArriveLahService()
+
+    func fetchArrivals(for stopCode: String) async {
+        isLoading = true
+        errorMessage = nil
+
+        do {
+            let response: SMUPublicBusArrivalResponse = try await service.fetchArrivals(for: stopCode, as: SMUPublicBusArrivalResponse.self)
+
+            if response.services.isEmpty {
+                errorMessage = "No operating buses at this stop."
+                arrivals = []
+            } else {
+                arrivals = response.services.map { SMUPublicBusArrival(from: $0) }
+            }
+        } catch {
+            errorMessage = "Failed to load bus arrivals: \(error.localizedDescription)"
+            arrivals = []
+        }
+
+        isLoading = false
+    }
+}
+

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NTUBusStop: Identifiable, Codable {
+struct NTUInternalBusStop: Identifiable, Codable {
     let id: String       // `busStopId` from backend
     let name: String
 

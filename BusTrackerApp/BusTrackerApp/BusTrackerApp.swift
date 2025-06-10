@@ -47,7 +47,7 @@ struct BusTrackerApp: App {
                     }
 
                 // SMU Tab - For public buses only
-                SMUBusStopSelectionView()
+                SMUPublicBusStopSelectionView()
                     .tabItem {
                         Label("SMU", systemImage: "building.2.fill")
                     }

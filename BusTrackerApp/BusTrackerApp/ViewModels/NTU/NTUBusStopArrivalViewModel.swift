@@ -11,7 +11,7 @@ import Foundation
 @MainActor
 class NTUBusStopArrivalViewModel: ObservableObject {
     @Published var stopName: String = ""
-    @Published var arrivalTimes: [NTUBusArrivalTime] = []
+    @Published var arrivalTimes: [NTUInternalBusArrivalTime] = []
     @Published var notifyWhenSoon: Bool = false
     @Published var notificationLeadTime: Int = 1 // Default to 1 minute before arrival
     @Published var isLoading = false

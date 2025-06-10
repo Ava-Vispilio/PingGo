@@ -78,7 +78,7 @@ struct NTUBusAPIClient {
 
 extension NTUBusAPIClient {
     // Fetch stops for a specific bus route color
-    func fetchStops(for line: BusRouteColor) async throws -> [NTUBusStop] {
+    func fetchStops(for line: BusRouteColor) async throws -> [NTUInternalBusStop] {
         let response = try await fetchBusStopDetails()
         
         // Keys are like "blueBus", "redBus", etc.
