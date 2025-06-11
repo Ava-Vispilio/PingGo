@@ -1,37 +1,37 @@
-const SMUBusStopList = [
-    {
-        "BusStopCode": "04179",
-        "RoadName": "Bras Basah Road",
-        "Description": "Aft Bras Basah Stn Exit A",
-        "Latitude": 1.2977,
-        "Longitude": 103.8501
-    },
-    {
-        "BusStopCode": "04121",
-        "RoadName": "Stamford Road",
-        "Description": "SMU",
-        "Latitude": 1.2966,
-        "Longitude": 103.8503
-    },
-    {
-        "BusStopCode": "04111",
-        "RoadName": "Stamford Road",
-        "Description": "Opp SMU",
-        "Latitude": 1.2964,
-        "Longitude": 103.8506
-    },
-    {
-        "BusStopCode": "04029",
-        "RoadName": "Bencoolen Street",
-        "Description": "Bencoolen Stn Exit A",
-        "Latitude": 1.2991,
-        "Longitude": 103.8521
-    },
-    {
-        "BusStopCode": "08057",
-        "RoadName": "Orchard Road",
-        "Description": "Dhoby Ghaut Stn Exit B",
-        "Latitude": 1.2993,
-        "Longitude": 103.8452
-    }
-];
+[
+  {
+    "BusStopCode": "04179",
+    "RoadName": "Bras Basah Road",
+    "Description": "Aft Bras Basah Stn Exit A",
+    "Latitude": 1.2977,
+    "Longitude": 103.8501
+  },
+  {
+    "BusStopCode": "04121",
+    "RoadName": "Stamford Road",
+    "Description": "SMU",
+    "Latitude": 1.2966,
+    "Longitude": 103.8503
+  },
+  {
+    "BusStopCode": "04111",
+    "RoadName": "Stamford Road",
+    "Description": "Opp SMU",
+    "Latitude": 1.2964,
+    "Longitude": 103.8506
+  },
+  {
+    "BusStopCode": "04029",
+    "RoadName": "Bencoolen Street",
+    "Description": "Bencoolen Stn Exit A",
+    "Latitude": 1.2991,
+    "Longitude": 103.8521
+  },
+  {
+    "BusStopCode": "08057",
+    "RoadName": "Orchard Road",
+    "Description": "Dhoby Ghaut Stn Exit B",
+    "Latitude": 1.2993,
+    "Longitude": 103.8452
+  }
+]

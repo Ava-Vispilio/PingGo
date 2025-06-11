@@ -8,7 +8,7 @@
 import Foundation
 
 // Raw decoded response from the ArriveLah API
-struct SMUPublicBusArrivalResponse: Codable {
+struct PublicBusArrivalResponse: Codable {
     let services: [Service]
 
     struct Service: Codable, Identifiable {
@@ -59,12 +59,12 @@ struct SMUPublicBusArrivalResponse: Codable {
 }
 
 // UI-ready arrival information for a single bus service
-struct SMUPublicBusArrival: Identifiable {
+struct PublicBusArrival: Identifiable {
     let id = UUID()
     let serviceNo: String
     let minutesToArrivals: [Int] // [3, 7, 15]
 
-    init(from service: SMUPublicBusArrivalResponse.Service) {
+    init(from service: PublicBusArrivalResponse.Service) {
         self.serviceNo = service.no
         self.minutesToArrivals = [service.next, service.next2, service.next3]
             .compactMap { $0?.durationMs }

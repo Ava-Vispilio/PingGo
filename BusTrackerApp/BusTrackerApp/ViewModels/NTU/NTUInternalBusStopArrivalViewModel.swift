@@ -9,7 +9,7 @@
 import Foundation
 
 @MainActor
-class NTUBusStopArrivalViewModel: ObservableObject {
+class NTUInternalBusStopArrivalViewModel: ObservableObject {
     @Published var stopName: String = ""
     @Published var arrivalTimes: [NTUInternalBusArrivalTime] = []
     @Published var notifyWhenSoon: Bool = false

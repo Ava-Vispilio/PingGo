@@ -34,7 +34,7 @@ struct BusTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                // NUS Tab - Placeholder View
+                // NUS Tab - Public buses for now
                 NUSLineSelectionView()
                     .tabItem {
                         Label("NUS", systemImage: "tram.fill")

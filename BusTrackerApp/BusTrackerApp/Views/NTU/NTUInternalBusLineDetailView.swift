@@ -8,10 +8,10 @@
 
 import SwiftUI
 
-struct NTUBusLineDetailView: View {
+struct NTUInternalBusLineDetailView: View {
     let line: BusRouteColor
     
-    @StateObject private var viewModel = NTUBusLineDetailViewModel()
+    @StateObject private var viewModel = NTUInternalBusLineDetailViewModel()
     
     var body: some View {
         VStack {

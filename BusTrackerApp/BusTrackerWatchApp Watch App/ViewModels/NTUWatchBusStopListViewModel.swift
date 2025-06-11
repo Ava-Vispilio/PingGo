@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 class NTUWatchBusStopListViewModel: ObservableObject {
-    @Published var stops: [NTUBusStop] = []
+    @Published var stops: [NTUInternalBusStop] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
 

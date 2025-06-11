@@ -6,6 +6,36 @@
 //  Updated for NTU-specific logic
 //
 
+//import SwiftUI
+//
+//struct NTULineSelectionView: View {
+//    @StateObject private var viewModel = NTUActiveBusLinesViewModel()
+//    
+//    var body: some View {
+//        NavigationView {
+//            Group {
+//                if viewModel.isLoading {
+//                    ProgressView("Loading active lines...")
+//                } else if !viewModel.activeLines.isEmpty {
+//                    List(viewModel.activeLines, id: \.self) { line in
+//                        NavigationLink(destination: NTUBusLineDetailView(line: line)) {
+//                            Text(line.rawValue.capitalized)
+//                                .foregroundColor(.blue)
+//                        }
+//                    }
+//                } else {
+//                    Text("No active lines found")
+//                        .foregroundColor(.secondary)
+//                }
+//            }
+//            .navigationTitle("NTU Bus Lines")
+//        }
+//        .task {
+//            await viewModel.fetchActiveLines()
+//        }
+//    }
+//}
+
 import SwiftUI
 
 struct NTULineSelectionView: View {
@@ -13,25 +43,40 @@ struct NTULineSelectionView: View {
     
     var body: some View {
         NavigationView {
-            Group {
-                if viewModel.isLoading {
-                    ProgressView("Loading active lines...")
-                } else if !viewModel.activeLines.isEmpty {
-                    List(viewModel.activeLines, id: \.self) { line in
-                        NavigationLink(destination: NTUBusLineDetailView(line: line)) {
-                            Text(line.rawValue.capitalized)
-                                .foregroundColor(.blue)
+            List {
+                if !viewModel.internalActiveLines.isEmpty {
+                    Section(header: Text("NTU Internal Shuttle Buses")) {
+                        ForEach(viewModel.internalActiveLines, id: \.self) { line in
+                            NavigationLink(destination: NTUInternalBusLineDetailView(line: line)) {
+                                Text(line.rawValue.capitalized)
+                            }
                         }
                     }
-                } else {
-                    Text("No active lines found")
+                }
+                
+                if !viewModel.publicActiveLines.isEmpty {
+                    Section(header: Text("NTU Public Buses")) {
+                        ForEach(viewModel.publicActiveLines, id: \.self) { line in
+                            Text(line)
+                        }
+                    }
+                }
+                
+                if viewModel.internalActiveLines.isEmpty && viewModel.publicActiveLines.isEmpty && !viewModel.isLoading {
+                    Text("No active lines found.")
                         .foregroundColor(.secondary)
                 }
             }
-            .navigationTitle("NTU Bus Lines")
-        }
-        .task {
-            await viewModel.fetchActiveLines()
+            .navigationTitle("Active NTU Bus Lines")
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView("Loading active lines...")
+                        .progressViewStyle(CircularProgressViewStyle())
+                }
+            }
+            .task {
+                await viewModel.fetchActiveLines()
+            }
         }
     }
 }

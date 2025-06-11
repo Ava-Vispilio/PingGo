@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 class SMUPublicBusStopListViewModel: ObservableObject {
-    @Published var busStops: [SMUPublicBusStop] = []
+    @Published var busStops: [PublicBusStop] = []
 
     init() {
         loadSMUBusStops()
@@ -24,7 +24,7 @@ class SMUPublicBusStopListViewModel: ObservableObject {
 
         do {
             let data = try Data(contentsOf: url)
-            let decoded = try JSONDecoder().decode([SMUPublicBusStop].self, from: data)
+            let decoded = try JSONDecoder().decode([PublicBusStop].self, from: data)
             self.busStops = decoded
         } catch {
             print("Failed to load or decode bus stops: \(error)")

@@ -3,7 +3,7 @@ import SwiftUI
 struct NTUWatchBusStopListView: View {
     let line: BusRouteColor
     @StateObject private var viewModel = NTUWatchBusStopListViewModel()
-    @State private var selectedStop: NTUBusStop?
+    @State private var selectedStop: NTUInternalBusStop?
 
     var body: some View {
         VStack {

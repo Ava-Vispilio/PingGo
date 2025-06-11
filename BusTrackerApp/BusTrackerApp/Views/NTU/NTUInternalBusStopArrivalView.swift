@@ -11,7 +11,7 @@ import SwiftUI
 struct NTUBusStopArrivalView: View {
     let busStopId: String
     
-    @StateObject private var viewModel = NTUBusStopArrivalViewModel()
+    @StateObject private var viewModel = NTUInternalBusStopArrivalViewModel()
     
     private var arrivalMinutes: [Int] {
         viewModel.arrivalTimes.map { $0.minutes }

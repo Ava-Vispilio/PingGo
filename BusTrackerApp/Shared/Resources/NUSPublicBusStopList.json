@@ -1,165 +1,163 @@
-
-const Bus95StopList = [
+{
+  "Bus95": [
     {
-        "BusStopCode":"16009",
-        "RoadName":"Clementi Rd",
-        "Description":"Kent Ridge Ter",
-        "Latitude":1.29425341056334,
-        "Longitude":103.76988323197696
+      "BusStopCode": "16009",
+      "RoadName": "Clementi Rd",
+      "Description": "Kent Ridge Ter",
+      "Latitude": 1.29425341056334,
+      "Longitude": 103.76988323197696
     },
     {
-        "BusStopCode":"16199",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Aft Architecture Dr",
-        "Latitude":1.29639303583424,
-        "Longitude":103.77072917887465
+      "BusStopCode": "16199",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Aft Architecture Dr",
+      "Latitude": 1.29639303583424,
+      "Longitude": 103.77072917887465
     },
     {
-        "BusStopCode":"16189",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Information Technology",
-        "Latitude":1.297228,"Longitude":103.772756
+      "BusStopCode": "16189",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Information Technology",
+      "Latitude": 1.297228,
+      "Longitude": 103.772756
     },
     {
-        "BusStopCode":"16179",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Opp Yusof Ishak Hse",
-        "Latitude":1.29898164227099,
-        "Longitude":103.7741773272528
+      "BusStopCode": "16179",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Opp Yusof Ishak Hse",
+      "Latitude": 1.29898164227099,
+      "Longitude": 103.7741773272528
     },
     {
-        "BusStopCode":"18329",
-        "RoadName":"Lower Kent Ridge Rd",
-        "Description":"University Health Ctr",
-        "Latitude":1.2989244439988,
-        "Longitude":103.77611416701255
+      "BusStopCode": "18329",
+      "RoadName": "Lower Kent Ridge Rd",
+      "Description": "University Health Ctr",
+      "Latitude": 1.2989244439988,
+      "Longitude": 103.77611416701255
     },
     {
-        "BusStopCode":"18319",
-        "RoadName":"Lower Kent Ridge Rd",
-        "Description":"Opp University Hall","Latitude":1.29752638901257,
-        "Longitude":103.77813111102236
+      "BusStopCode": "18319",
+      "RoadName": "Lower Kent Ridge Rd",
+      "Description": "Opp University Hall",
+      "Latitude": 1.29752638901257,
+      "Longitude": 103.77813111102236
     },
     {
-        "BusStopCode":"18309",
-        "RoadName":"Lower Kent Ridge Rd",
-        "Description":"Blk S17",
-        "Latitude":1.29752011664987,
-        "Longitude":103.78134198615086
+      "BusStopCode": "18309",
+      "RoadName": "Lower Kent Ridge Rd",
+      "Description": "Blk S17",
+      "Latitude": 1.29752011664987,
+      "Longitude": 103.78134198615086
     },
     {
-        "BusStopCode":"18239",
-        "RoadName":"Lower Kent Ridge Rd",
-        "Description":"Opp NUH",
-        "Latitude":1.29678943404486,
-        "Longitude":103.78318782626637
+      "BusStopCode": "18239",
+      "RoadName": "Lower Kent Ridge Rd",
+      "Description": "Opp NUH",
+      "Latitude": 1.29678943404486,
+      "Longitude": 103.78318782626637
     },
     {
-        "BusStopCode":"18339",
-        "RoadName":"Lower Kent Ridge Rd",
-        "Description":"Opp Kent Ridge Stn Exit A",
-        "Latitude":1.29506450651125,
-        "Longitude":103.78455508578391
+      "BusStopCode": "18339",
+      "RoadName": "Lower Kent Ridge Rd",
+      "Description": "Opp Kent Ridge Stn Exit A",
+      "Latitude": 1.29506450651125,
+      "Longitude": 103.78455508578391
     }
-  ];
-
-const Bus96StopList = [
+  ],
+  "Bus96": [
     {
-        "BusStopCode":"17099",
-        "RoadName":"Clementi Rd",
-        "Description":"YALE-NUS COLLEGE",
-        "Latitude":1.3078304704809,
-        "Longitude":103.77165274445558
+      "BusStopCode": "17099",
+      "RoadName": "Clementi Rd",
+      "Description": "YALE-NUS COLLEGE",
+      "Latitude": 1.3078304704809,
+      "Longitude": 103.77165274445558
     },
     {
-        "BusStopCode":"16159",
-        "RoadName":"Clementi Rd",
-        "Description":"Coll of Design & Engrg",
-        "Latitude":1.30060333385651,
-        "Longitude":103.77017032679849
+      "BusStopCode": "16159",
+      "RoadName": "Clementi Rd",
+      "Description": "Coll of Design & Engrg",
+      "Latitude": 1.30060333385651,
+      "Longitude": 103.77017032679849
     },
     {
-        "BusStopCode":"16149",
-        "RoadName":"Clementi Rd",
-        "Description":"SDE3",
-        "Latitude":1.29781833402646,
-        "Longitude":103.76994027003138
+      "BusStopCode": "16149",
+      "RoadName": "Clementi Rd",
+      "Description": "SDE3",
+      "Latitude": 1.29781833402646,
+      "Longitude": 103.76994027003138
     },
     {
-        "BusStopCode":"16199",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Aft Architecture Dr",
-        "Latitude":1.29639303583424,
-        "Longitude":103.77072917887465
+      "BusStopCode": "16199",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Aft Architecture Dr",
+      "Latitude": 1.29639303583424,
+      "Longitude": 103.77072917887465
     },
     {
-        "BusStopCode":"16189",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Information Technology",
-        "Latitude":1.297228,
-        "Longitude":103.772756
+      "BusStopCode": "16189",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Information Technology",
+      "Latitude": 1.297228,
+      "Longitude": 103.772756
     },
     {
-        "BusStopCode":"16179",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Opp Yusof Ishak Hse",
-        "Latitude":1.29898164227099,
-        "Longitude":103.7741773272528
+      "BusStopCode": "16179",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Opp Yusof Ishak Hse",
+      "Latitude": 1.29898164227099,
+      "Longitude": 103.7741773272528
     },
     {
-        "BusStopCode":"16169",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"NUS Raffles Hall",
-        "Latitude":1.30098333297992,
-        "Longitude":103.77270416701658
+      "BusStopCode": "16169",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "NUS Raffles Hall",
+      "Latitude": 1.30098333297992,
+      "Longitude": 103.77270416701658
     }
-  ];
-
-const Bus151StopList = [
+  ],
+  "Bus151": [
     {
-        "BusStopCode":"17099",
-        "RoadName":"Clementi Rd",
-        "Description":"YALE-NUS COLLEGE",
-        "Latitude":1.3078304704809,
-        "Longitude":103.77165274445558
+      "BusStopCode": "17099",
+      "RoadName": "Clementi Rd",
+      "Description": "YALE-NUS COLLEGE",
+      "Latitude": 1.3078304704809,
+      "Longitude": 103.77165274445558
     },
     {
-        "BusStopCode":"16161",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Nus Museums",
-        "Latitude":1.30107500001488,
-        "Longitude":103.77369416698464
+      "BusStopCode": "16161",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Nus Museums",
+      "Latitude": 1.30107500001488,
+      "Longitude": 103.77369416698464
     },
     {
-        "BusStopCode":"16171",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Yusof Ishak Hse",
-        "Latitude":1.29890150201437,
-        "Longitude":103.77438231319462
+      "BusStopCode": "16171",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Yusof Ishak Hse",
+      "Latitude": 1.29890150201437,
+      "Longitude": 103.77438231319462
     },
     {
-        "BusStopCode":"16181",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Ctrl Lib",
-        "Latitude":1.29656572408064,
-        "Longitude":103.77254247664239
+      "BusStopCode": "16181",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Ctrl Lib",
+      "Latitude": 1.29656572408064,
+      "Longitude": 103.77254247664239
     },
     {
-        "BusStopCode":"16191",
-        "RoadName":"Kent Ridge Cres",
-        "Description":"Aft Kent Ridge Dr",
-        "Latitude":1.29614307417349,
-        "Longitude":103.7703702141818
+      "BusStopCode": "16191",
+      "RoadName": "Kent Ridge Cres",
+      "Description": "Aft Kent Ridge Dr",
+      "Latitude": 1.29614307417349,
+      "Longitude": 103.7703702141818
     },
     {
-        "BusStopCode":"16009",
-        "RoadName":"Clementi Rd",
-        "Description":"Kent Ridge Ter",
-        "Latitude":1.29425341056334,
-        "Longitude":103.76988323197696
+      "BusStopCode": "16009",
+      "RoadName": "Clementi Rd",
+      "Description": "Kent Ridge Ter",
+      "Latitude": 1.29425341056334,
+      "Longitude": 103.76988323197696
     }
-  ];
-
-const Bus200StopList = [
-    
-  ];
+  ],
+  "Bus200": []
+}

@@ -1,15 +1,14 @@
 //
-//  SMUBusArrivalView.swift
+//  SMUPublicBusArrivalView.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
 
-
 import SwiftUI
 
 struct SMUPublicBusArrivalView: View {
-    let stop: SMUPublicBusStop
+    let stop: PublicBusStop
     @StateObject private var viewModel = SMUPublicBusArrivalViewModel()
 
     @State private var expandedServices: Set<String> = []
@@ -60,7 +59,13 @@ struct SMUPublicBusArrivalView: View {
 
                                 Toggle("Notify me", isOn: Binding(
                                     get: { notifyServices[arrival.serviceNo] ?? false },
-                                    set: { notifyServices[arrival.serviceNo] = $0 }
+                                    set: {
+                                        notifyServices[arrival.serviceNo] = $0
+                                        let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
+                                        if !$0 {
+                                            NotificationManager.shared.cancelNotification(id: id)
+                                        }
+                                    }
                                 ))
                                 .padding(.top, 4)
 
@@ -78,8 +83,9 @@ struct SMUPublicBusArrivalView: View {
                                         if let firstArrival = arrival.minutesToArrivals.first {
                                             let notifyAfter = (firstArrival - newValue) * 60
                                             if notifyAfter > 0 {
+                                                let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
                                                 NotificationManager.shared.scheduleNotification(
-                                                    id: "bus-\(arrival.serviceNo)-\(stop.BusStopCode)",
+                                                    id: id,
                                                     title: "Bus \(arrival.serviceNo) arriving",
                                                     body: "Your bus is arriving in \(newValue) minutes at \(stop.Description).",
                                                     after: notifyAfter

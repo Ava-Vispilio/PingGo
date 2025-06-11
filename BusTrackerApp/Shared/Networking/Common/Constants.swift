@@ -11,6 +11,6 @@ import Foundation
 
 enum APIConstants {
     static let arriveLahBaseURL = "http://192.168.1.72:3000"
-    static let NTUAPIBaseURL = "http://192.168.1.72:3000"
+    static let NTUAPIBaseURL = "http://192.168.1.72:3001"
     
 }
