@@ -17,13 +17,33 @@
 │   ├── Services
 │   │   └── NotificationManager.swift
 │   ├── ViewModels
-│   │   ├── NTUActiveBusLinesViewModel.swift
-│   │   ├── NTUBusLineDetailViewModel.swift
-│   │   └── NTUBusStopArrivalViewModel.swift
+│   │   ├── NTU
+│   │   │   ├── NTUActiveBusLinesViewModel.swift
+│   │   │   ├── NTUInternalBusLineDetailViewModel.swift
+│   │   │   ├── NTUInternalBusStopArrivalViewModel.swift
+│   │   │   ├── NTUPublicBusLineDetailViewModel.swift
+│   │   │   └── NTUPublicBusStopArrivalViewModel.swift
+│   │   ├── NUS
+│   │   │   ├── NUSActiveBusLineListViewModel.swift
+│   │   │   ├── NUSPublicBusArrivalViewModel.swift
+│   │   │   └── NUSPublicBusStopListViewModel.swift
+│   │   └── SMU
+│   │       ├── SMUPublicBusArrivalViewModel.swift
+│   │       └── SMUPublicBusStopListViewModel.swift
 │   └── Views
-│       ├── NTUBusLineDetailView.swift
-│       ├── NTUBusStopArrivalView.swift
-│       └── NTULineSelectionView.swift
+│       ├── NTU
+│       │   ├── NTUInternalBusLineDetailView.swift
+│       │   ├── NTUInternalBusStopArrivalView.swift
+│       │   ├── NTULineSelectionView.swift
+│       │   ├── NTUPublicBusLineDetailView.swift
+│       │   └── NTUPublicBusStopArrivalView.swift
+│       ├── NUS
+│       │   ├── NTUPublicBusStopListView.swift
+│       │   ├── NUSLineSelectionView.swift
+│       │   └── NUSPublicBusArrivalView.swift
+│       └── SMU
+│           ├── SMUPublicBusArrivalView.swift
+│           └── SMUPublicBusStopSelectionView.swift
 ├── BusTrackerApp.xcodeproj
 │   ├── project.pbxproj
 │   ├── project.xcworkspace
@@ -69,23 +89,34 @@
 │   └── BusTrackerWatchApp_Watch_AppUITestsLaunchTests.swift
 └── Shared
     ├── Models
+    │   ├── LTA
+    │   │   ├── LTABusArrival.swift
+    │   │   ├── PublicBusArrival.swift
+    │   │   ├── PublicBusLine.swift
+    │   │   └── PublicBusStop.swift
     │   ├── NTU
-    │   │   ├── NTUBus.swift
-    │   │   ├── NTUBusArrival.swift
-    │   │   └── NTUBusStop.swift
+    │   │   ├── NTUInternalBus.swift
+    │   │   ├── NTUInternalBusArrival.swift
+    │   │   └── NTUInternalBusStop.swift
     │   ├── NUS
     │   └── SMU
+    │       └── SMUBusStop.swift
     ├── Networking
     │   ├── Common
+    │   │   ├── Constants.swift
     │   │   └── NetworkError.swift
+    │   ├── LTA
+    │   │   └── ArriveLahService.swift
     │   ├── NTU
     │   │   ├── APIResponseWrappers.swift
     │   │   ├── NTUAPIResponseWrappers.swift
     │   │   ├── NTUBusAPIClient.swift
     │   │   └── NTUEndpoint.swift
-    │   ├── NUS
-    │   └── SMU
-    └── Services
+    │   └── NUS
+    └── Resources
+        ├── NTUPublicBusStopList.json
+        ├── NUSPublicBusStopList.json
+        └── SMUPublicBusStopList.json
 
-40 directories, 43 files
+47 directories, 67 files
 ```
