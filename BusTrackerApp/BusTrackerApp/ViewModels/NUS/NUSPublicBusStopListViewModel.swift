@@ -1,9 +1,10 @@
 //
-//  NUSBusStopListViewModel.swift
+//  NUSPublicBusStopListViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Manages a list of NUS's public bus stops of a selected bus line
 
 import Foundation
 

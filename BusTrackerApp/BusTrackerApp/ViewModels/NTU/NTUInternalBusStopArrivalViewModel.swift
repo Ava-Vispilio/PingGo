@@ -5,6 +5,7 @@
 //  Created by Ava Vispilio on 2/6/25.
 //  Updated for NTU-specific stop arrival logic
 //
+// Fetches internal bus arrivals and handles notification logic for NTU's internal buses (including when to notify user of bus arrival)
 
 import Foundation
 

@@ -1,9 +1,10 @@
 //
-//  SMUBusStopListViewModel.swift
+//  SMUPublicBusStopListViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Loads a list of SMU's public bus stop
 
 
 import Foundation

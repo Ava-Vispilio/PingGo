@@ -5,6 +5,7 @@
 //  Created by Ava Vispilio on 2/6/25.
 //  Updated for NTU-specific logic using shared BusRouteColor
 //
+// Fetches NTU's internal bus stops at a selected bus line
 
 import Foundation
 

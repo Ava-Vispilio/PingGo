@@ -1,9 +1,10 @@
 //
-//  NUSBusArrivalViewModel.swift
+//  NUSPublicBusArrivalViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Fetches bus arrival timings, handles notification logic for NUS's public buses (including when to notify user of bus arrival)
 
 import Foundation
 

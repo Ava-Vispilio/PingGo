@@ -1,9 +1,10 @@
 //
-//  SMUBusArrivalViewModel.swift
+//  SMUPublicBusArrivalViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Fetches bus arrival timings at selected SMU bus stop
 
 import Foundation
 import Combine

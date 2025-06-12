@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 2/6/25.
 //
+// Manages device's notifications
 
 import Foundation
 import UserNotifications
