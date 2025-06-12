@@ -41,7 +41,7 @@ class NUSActiveBusLineListViewModel: ObservableObject {
 
                     group.addTask {
                         do {
-                            let response: PublicBusArrivalResponse = try await self.service.fetchArrivals(for: firstStopCode, as: PublicBusArrivalResponse.self)
+                            let response: ServicesWrapper = try await self.service.fetchArrivals(for: firstStopCode, as: ServicesWrapper.self)
                             let isActive = !response.services.isEmpty
                             print("NUS public line \(line.lineName) is \(isActive ? "active" : "inactive")")
                             return (line, isActive)

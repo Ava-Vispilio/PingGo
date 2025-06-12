@@ -1,5 +1,5 @@
 {
-  "Bus95": [
+  "95": [
     {
       "BusStopCode": "16009",
       "RoadName": "Clementi Rd",
@@ -64,7 +64,7 @@
       "Longitude": 103.78455508578391
     }
   ],
-  "Bus96": [
+  "96": [
     {
       "BusStopCode": "17099",
       "RoadName": "Clementi Rd",
@@ -115,7 +115,7 @@
       "Longitude": 103.77270416701658
     }
   ],
-  "Bus151": [
+  "151": [
     {
       "BusStopCode": "17099",
       "RoadName": "Clementi Rd",
@@ -159,5 +159,5 @@
       "Longitude": 103.76988323197696
     }
   ],
-  "Bus200": []
+  "200": []
 }

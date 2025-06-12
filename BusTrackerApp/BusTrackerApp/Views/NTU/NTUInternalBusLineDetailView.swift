@@ -1,9 +1,9 @@
 //
-//  NTUBusLineDetailView.swift
+//  NTUInternalBusLineDetailView.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
-//  Updated for NTU-specific logic
+//  Updated for NTU-specific logic and UI cleanup
 //
 
 import SwiftUI
@@ -14,16 +14,20 @@ struct NTUInternalBusLineDetailView: View {
     @StateObject private var viewModel = NTUInternalBusLineDetailViewModel()
     
     var body: some View {
-        VStack {
+        Group {
             if viewModel.isLoadingBus || viewModel.isLoadingStops {
                 ProgressView("Loading data...")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if let errorMessage = viewModel.errorMessage {
                 Text("Error: \(errorMessage)")
                     .foregroundColor(.red)
                     .padding()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
+                // Make the entire page scrollable, with VStack inside
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
+                        // Info card at top
                         if let bus = viewModel.bus {
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("Route: \(bus.routeName)")
@@ -46,17 +50,26 @@ struct NTUInternalBusLineDetailView: View {
                             .cornerRadius(10)
                         }
                         
+                        // Bus stops list below info card
                         if !viewModel.stops.isEmpty {
                             Text("Stops:")
                                 .font(.headline)
                                 .padding(.top)
                             
-                            List(viewModel.stops) { stop in
-                                NavigationLink(destination: NTUBusStopArrivalView(busStopId: stop.id)) {
-                                    Text(stop.name)
+                            // Use LazyVStack for better performance inside ScrollView
+                            LazyVStack(alignment: .leading, spacing: 8) {
+                                ForEach(viewModel.stops) { stop in
+                                    NavigationLink(destination: NTUInternalBusStopArrivalView(busStopId: stop.id)) {
+                                        Text(stop.name)
+                                            .padding(.vertical, 8)
+                                            .padding(.horizontal)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .background(Color(UIColor.secondarySystemBackground))
+                                            .cornerRadius(8)
+                                    }
+                                    .buttonStyle(PlainButtonStyle()) // remove default button style
                                 }
                             }
-                            .frame(height: 300)
                         } else {
                             Text("No stops available.")
                                 .foregroundColor(.secondary)

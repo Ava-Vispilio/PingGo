@@ -45,7 +45,7 @@ struct NTULineSelectionView: View {
         NavigationView {
             List {
                 if !viewModel.internalActiveLines.isEmpty {
-                    Section(header: Text("NTU Internal Shuttle Buses")) {
+                    Section(header: Text("NTU Shuttle Buses")) {
                         ForEach(viewModel.internalActiveLines, id: \.self) { line in
                             NavigationLink(destination: NTUInternalBusLineDetailView(line: line)) {
                                 Text(line.rawValue.capitalized)
@@ -67,7 +67,7 @@ struct NTULineSelectionView: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .navigationTitle("Active NTU Bus Lines")
+            .navigationTitle("NTU Bus Lines")
             .overlay {
                 if viewModel.isLoading {
                     ProgressView("Loading active lines...")

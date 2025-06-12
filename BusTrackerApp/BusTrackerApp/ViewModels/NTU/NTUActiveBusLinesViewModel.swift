@@ -83,8 +83,8 @@ class NTUActiveBusLinesViewModel: ObservableObject {
         self.internalActiveLines = await internalTask
         self.publicActiveLines = await publicTask
 
-        print("✅ Final active NTU internal lines: \(internalActiveLines.map { $0.rawValue })")
-        print("✅ Final active NTU public lines: \(publicActiveLines)")
+        print("Final active NTU internal lines: \(internalActiveLines.map { $0.rawValue })")
+        print("Final active NTU public lines: \(publicActiveLines)")
 
         isLoading = false
     }
@@ -136,8 +136,8 @@ class NTUActiveBusLinesViewModel: ObservableObject {
 
                     group.addTask {
                         do {
-                            let services = try await self.arriveLahService.fetchArrivals(for: firstStop.BusStopCode, as: [String].self)
-                            let isActive = !services.isEmpty
+                            let wrapper = try await self.arriveLahService.fetchArrivals(for: firstStop.BusStopCode, as: ServicesWrapper.self)
+                            let isActive = !wrapper.services.isEmpty
                             print("Public line \(line): \(isActive ? "active" : "inactive")")
                             return (line, isActive)
                         } catch {

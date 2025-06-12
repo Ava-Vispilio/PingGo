@@ -1,5 +1,5 @@
 //
-//  NTUBusStopArrivalViewModel.swift
+//  NTUInternalBusStopArrivalViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.

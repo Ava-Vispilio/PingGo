@@ -1,5 +1,5 @@
 {
-  "Bus179": [
+  "179": [
     {
       "BusStopCode": "27281",
       "RoadName": "Lien Ying Chow Dr",
@@ -71,7 +71,7 @@
       "Longitude": 103.68632093846232
     }
   ],
-  "Bus179A": [
+  "179A": [
     {
       "BusStopCode": "27281",
       "RoadName": "Lien Ying Chow Dr",
@@ -143,7 +143,7 @@
       "Longitude": 103.68632093846232
     }
   ],
-  "Bus199": [
+  "199": [
     {
       "BusStopCode": "27011",
       "RoadName": "Nanyang Cres",
