@@ -33,7 +33,7 @@ After that, sign into Serverless (in another shell using) ```$ serverless login`
 
 * Run API locally
 ```zsh
-$ npx run serverless offline --host 0.0.0.0
+$ npx serverless offline --host 0.0.0.0 --httpPort 3001
 ```
 This makes the local server accessible from the host device's LAN IP (so other devices can reach it)
 
@@ -359,7 +359,7 @@ Sample Response
 ```zsh
 $ ipconfig getifaddr en0
 ```
-2. Replace `baseURL` in `NTUEndpoint.swift` with your IP address
+2. Replace `NTUAPIBaseURL` in `Constants.swift` with your IP address
 ```
 e.g. "http://192.168.1.1:3000/prod"
 ```

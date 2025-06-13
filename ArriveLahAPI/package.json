@@ -1,0 +1,24 @@
+{
+  "name": "arrivelah",
+  "version": "5.0.0",
+  "description": "Bus arrival times in Singapore",
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "bus",
+    "arrival",
+    "singapore"
+  ],
+  "author": "Lim Chee Aun <cheeaun@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "agentkeepalive": "~4.2.1",
+    "got": "~11.8.3",
+    "http2-wrapper": "~2.1.11",
+    "vercel": "^25.1.0"
+  },
+  "scripts": {
+    "start": "vercel dev"
+  }
+}
