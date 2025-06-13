@@ -38,7 +38,7 @@
 │       │   ├── NTUPublicBusLineDetailView.swift
 │       │   └── NTUPublicBusStopArrivalView.swift
 │       ├── NUS
-│       │   ├── NTUPublicBusStopListView.swift
+│       │   ├── NUSPublicBusStopListView.swift
 │       │   ├── NUSLineSelectionView.swift
 │       │   └── NUSPublicBusArrivalView.swift
 │       └── SMU
