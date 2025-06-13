@@ -4,7 +4,7 @@
 //
 //  Created by Ava on 8/6/25.
 //  Updated with async/await, debugging, and generic decoding.
-//
+// Handles API calls to localhost server
 
 import Foundation
 

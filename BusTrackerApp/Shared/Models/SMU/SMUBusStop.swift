@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
-
+// Model for SMU (public) bus stops
 
 struct SMUPublicBusStop: Codable, Identifiable {
     var id: String { BusStopCode }

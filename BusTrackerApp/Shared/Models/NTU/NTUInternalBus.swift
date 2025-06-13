@@ -1,9 +1,10 @@
 //
-//  Bus.swift
+//  NTUInternalBus.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
 //
+// Model for NTU bus lines, including active buses
 
 import Foundation
 import CoreLocation

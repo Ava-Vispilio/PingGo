@@ -1,9 +1,10 @@
 //
-//  BusArrival.swift
+//  NTUInternalBusArrival.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
 //
+// Model for NTU bus arrival times at a specific bus stop, including vehicle location
 
 import Foundation
 import CoreLocation
