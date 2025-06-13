@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Displays a list of NUS's (internal & public) bus routes (users to pick a bus route)
 
 import SwiftUI
 

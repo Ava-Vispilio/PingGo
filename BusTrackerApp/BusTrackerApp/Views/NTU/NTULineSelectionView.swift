@@ -5,6 +5,7 @@
 //  Created by Ava Vispilio on 2/6/25.
 //  Updated for NTU-specific logic
 //
+// Displays a list of NTU's active bus routes (to select a route)
 
 //import SwiftUI
 //

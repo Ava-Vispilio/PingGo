@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 1/6/25.
 //
+// Combines the views according to flow, manages notifications & notification banner
 
 import SwiftUI
 import UserNotifications

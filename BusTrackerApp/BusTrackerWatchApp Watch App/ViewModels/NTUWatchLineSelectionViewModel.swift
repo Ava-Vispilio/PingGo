@@ -1,9 +1,10 @@
 //
-//  WatchLineSelectionViewModel.swift
+//  NTUWatchLineSelectionViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 4/6/25.
 //
+// Loads a list of NTU's active buses
 
 import Foundation
 

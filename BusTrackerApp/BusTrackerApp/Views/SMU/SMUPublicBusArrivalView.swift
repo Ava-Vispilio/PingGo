@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Displays SMU's bus arrival times (selected stop and service) and allows user to set notifications
 
 import SwiftUI
 

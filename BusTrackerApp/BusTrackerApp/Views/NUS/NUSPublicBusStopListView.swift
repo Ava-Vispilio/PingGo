@@ -1,9 +1,9 @@
 //
-//  NUSBusStopListView.swift
+//  NUSPublicBusStopListView.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
-//
+// Displays a list of NUS's public bus stops for a selected bus route
 
 import SwiftUI
 

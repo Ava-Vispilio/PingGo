@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Displays list of bus stops (users to select bus stop)
 
 import SwiftUI
 

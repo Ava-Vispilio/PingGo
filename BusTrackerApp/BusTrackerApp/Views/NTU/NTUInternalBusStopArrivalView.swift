@@ -5,6 +5,7 @@
 //  Created by Ava Vispilio on 2/6/25.
 //  Updated layout to separate top/bottom sections
 //
+// Displays a list of NTU's internal bus arrival times (selected bus route & stop) and allows notifications to be set
 
 import SwiftUI
 

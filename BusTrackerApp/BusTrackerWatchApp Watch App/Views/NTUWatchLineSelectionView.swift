@@ -1,3 +1,11 @@
+//
+//  NTUWatchLineSelectionVew.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on
+//
+// Displays a list of NTU's active bus lines (for user to select)
+
 import SwiftUI
 
 struct NTUWatchLineSelectionView: View {

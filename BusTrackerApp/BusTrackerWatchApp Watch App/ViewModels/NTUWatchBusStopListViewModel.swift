@@ -1,9 +1,10 @@
 //
-//  WatchBusStopListViewModel.swift
+//  NTUWatchBusStopListViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 4/6/25.
 //
+// Loads a list of NTU's bus stops (bus route selected)
 
 import Foundation
 
