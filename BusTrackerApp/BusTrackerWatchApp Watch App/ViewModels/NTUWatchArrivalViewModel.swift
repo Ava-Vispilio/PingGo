@@ -1,9 +1,10 @@
 //
-//  WatchArrivalViewModel.swift
+//  NTUWatchArrivalViewModel.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 4/6/25.
 //
+// Fetches NTU's bus arrival time (selected bus route and stop)
 
 
 import Foundation

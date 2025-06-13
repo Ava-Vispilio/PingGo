@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Displays a list of NTU's public bus arrival times (selected bus route and stop) and allows users to set notifications
 
 
 import SwiftUI

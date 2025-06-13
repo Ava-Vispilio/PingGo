@@ -1,3 +1,11 @@
+//
+//  NTUEndpoint.swift
+//  BusTrackerApp
+//
+//  Created by Ava on 
+// 
+// Handles Omnibus API calls
+
 import Foundation
 
 enum NTUEndpoint {

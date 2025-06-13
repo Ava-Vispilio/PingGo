@@ -1,5 +1,5 @@
 //
-//  NUSInternalBusRoute.swift
+//  NUSInternalBus.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 13/6/25.

@@ -1,9 +1,10 @@
 //
-//  ServicesWrapper.swift
+//  LineActivityWrapper.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 12/6/25.
 //
+// Checks for active LTA bus services
 
 
 // Models/Shared/PublicBus/SimpleBusServiceResponse.swift

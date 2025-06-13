@@ -1,9 +1,10 @@
 //
-//  NUSBusArrivalView.swift
+//  NUSPublicBusArrivalView.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
+// Displays NUS's public bus arrival times (selected bus route and stop) and allows users to set notifications
 
 
 // BusTrackerApp/Views/NUS/NUSBusArrivalView.swift

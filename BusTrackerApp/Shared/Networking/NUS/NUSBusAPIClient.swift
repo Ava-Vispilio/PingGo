@@ -1,9 +1,10 @@
 //
 //  NUSBusAPIClient.swift
-//  NUSBusAPI
+//  BusTrackerApp
 //
 //  Created by Ava on 12/6/25.
 //
+// Handles API authentication and calls
 
 // functions to authenticate and query the API with
 import Foundation

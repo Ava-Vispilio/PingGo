@@ -5,6 +5,7 @@
 //  Created by Ava Vispilio on 2/6/25.
 //  Updated for NTU-specific logic
 //
+// Displays a list of NTU's active bus routes (to select a route)
 
 //import SwiftUI
 //
@@ -56,8 +57,10 @@ struct NTULineSelectionView: View {
                 
                 if !viewModel.publicActiveLines.isEmpty {
                     Section(header: Text("NTU Public Buses")) {
-                        ForEach(viewModel.publicActiveLines, id: \.self) { line in
-                            Text(line)
+                        ForEach(viewModel.publicActiveLines, id: \.self) { lineName in
+                            NavigationLink(destination: NTUPublicBusLineDetailView(line: PublicBusLine(lineName: lineName, stops: []))) {
+                                Text(lineName.capitalized)
+                            }
                         }
                     }
                 }

@@ -1,3 +1,11 @@
+//
+//  NTUWatchBusStopListVew.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on
+//
+// Displays a list of NTU's bus stops (for user to select)
+
 import SwiftUI
 
 struct NTUWatchBusStopListView: View {

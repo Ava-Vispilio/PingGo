@@ -1,4 +1,11 @@
+//
+//  NUSInternalBusArrival.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 13/6/25.
+//
 // model to parse arrival response from API
+
 import Foundation
 
 struct ShuttleServiceResponse: Codable {

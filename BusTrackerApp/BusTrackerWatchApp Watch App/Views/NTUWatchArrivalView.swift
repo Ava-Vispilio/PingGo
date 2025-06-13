@@ -1,3 +1,11 @@
+//
+//  NTUWatchArrivalView.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on
+//
+// Displays NTU's bus arrival time (selected bus route and stop) and allows user to set notification
+
 import SwiftUI
 import WatchKit
 

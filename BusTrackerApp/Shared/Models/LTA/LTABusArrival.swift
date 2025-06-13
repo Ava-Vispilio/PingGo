@@ -1,9 +1,10 @@
 //
-//  Model.swift
-//  ArriveLah
+//  LTABusArrival.swift
+//  BusTrackerApp
 //
 //  Created by Ava on 8/6/25.
 //
+// Model for ArriveLah response
 
 // Models/BusArrivalResponse.swift - structure to match JSON response from the API
 

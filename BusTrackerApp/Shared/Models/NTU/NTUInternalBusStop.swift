@@ -1,9 +1,10 @@
 //
-//  BusStop.swift
+//  NTUInternalBusStop.swift
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
 //
+// Model for NTU OmniBus API response
 
 import Foundation
 
