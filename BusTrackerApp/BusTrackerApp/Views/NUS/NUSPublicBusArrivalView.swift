@@ -56,7 +56,7 @@ struct NUSPublicBusArrivalView: View {
                 .listStyle(.insetGrouped)
             }
         }
-        .navigationTitle("Stop: \(stop.Description)")
+        .navigationTitle("\(stop.Description)")
         .task {
             viewModel.configure(stopCode: stop.BusStopCode, busService: busService)
             await viewModel.fetchArrivals()
