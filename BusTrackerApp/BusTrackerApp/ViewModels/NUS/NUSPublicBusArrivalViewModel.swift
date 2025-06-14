@@ -58,7 +58,7 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
                 scheduleNotification()
             }
         } catch {
-            errorMessage = "Failed to fetch arrivals: \(error.localizedDescription)"
+            errorMessage = "Failed to fetch arrivals: \(error.localizedDescription)"     // to standarize
             arrivals = []
         }
 
@@ -75,7 +75,7 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
         let timeUntilArrivalSeconds = soonest * 60
         let leadTimeSeconds = minutesBefore * 60
         let fireInSeconds = timeUntilArrivalSeconds - leadTimeSeconds
-
+        // to standarize
         guard fireInSeconds > 0 else {
             print("Too late to notify: bus arrives in \(soonest) minutes, which is <= lead time.")
             notifyEnabled = false
@@ -84,8 +84,8 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
 
         NotificationManager.shared.scheduleNotification(
             id: notificationID,
-            title: "Bus \(busService) arriving soon!",
-            body: "Bus will arrive at stop \(stopCode) in \(minutesBefore) minutes.",
+            title: "Bus \(busService) arriving soon!",     // to standarize
+            body: "Bus will arrive at stop \(stopCode) in \(minutesBefore) minutes.",     // to standarize
             after: fireInSeconds
         )
     }

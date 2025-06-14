@@ -10,11 +10,12 @@
 import Foundation
 
 enum APIConstants {
-    static let arriveLahBaseURL = "http://10.203.9.153:3000"
-    static let NTUAPIBaseURL = "http://10.203.9.153:3001"
+    static let arriveLahBaseURL = "http://192.168.1.223:3000"
+    static let NTUAPIBaseURL = "http://192.168.1.223:3001"
     static let NUSAPIBaseURL = "https://nnextbus.nus.edu.sg"
     static let NUSAPIUsername = "NUSnextbus"
     static let NUSAPIPassword = "13dL?zY,3feWR^\"T"
 
     
 }
+

@@ -44,7 +44,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
             let response = try await arriveLahService.fetchArrivals(for: stop.BusStopCode, as: PublicBusArrivalResponse.self)
             arrivals = response.services.map(PublicBusArrival.init)
         } catch {
-            print("Failed to fetch arrivals for stop \(stop.BusStopCode): \(error.localizedDescription)")
+            print("Failed to fetch arrivals for stop \(stop.BusStopCode): \(error.localizedDescription)")     // to standarize
             arrivals = []
         }
         isLoading = false
@@ -60,7 +60,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
         let timeUntilArrivalSeconds = soonest * 60
         let leadTimeSeconds = notificationLeadTime * 60
         let fireInSeconds = timeUntilArrivalSeconds - leadTimeSeconds
-
+        // to standarize
         if fireInSeconds <= 0 {
             print("Too late to notify: arrival is within or before lead time.")
             notificationsEnabled = false
@@ -69,8 +69,8 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
 
         NotificationManager.shared.scheduleNotification(
             id: notificationID,
-            title: "Bus arriving soon",
-            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) minutes.",
+            title: "Bus arriving soon",     // to standarize
+            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) minutes.",     // to standarize
             after: fireInSeconds
         )
     }
