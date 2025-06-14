@@ -7,7 +7,7 @@ A local copy of [ArriveLah](https://github.com/cheeaun/arrivelah), included in t
 1. install Node.js
 2. Obtain API Key from from [LTA's DataMall](http://www.mytransport.sg/content/mytransport/home/dataMall.html)
 3. [Request for API Access](https://datamall.lta.gov.sg/content/datamall/en/request-for-api.html)
-4. Rename `.env.example` to `.env` and fill in the following sections:
+4. Rename `env.txt` to `.env` and fill in the following sections:
    ```
    accountKeys=[Your API Key]
    ```
