@@ -15,19 +15,25 @@ struct NUSPublicBusArrivalView: View {
     let stop: PublicBusStop
     let busService: String
 
-    @StateObject private var viewModel = NUSPublicBusArrivalViewModel()
+    @StateObject private var viewModel: NUSPublicBusArrivalViewModel
+    
+    init(stop: PublicBusStop, busService: String) {
+        self.stop = stop
+        self.busService = busService
+        _viewModel = StateObject(wrappedValue: NUSPublicBusArrivalViewModel(stop: stop, busService: busService))
+    }
 
     var body: some View {
         VStack {
             if viewModel.isLoading {
-                ProgressView("Fetching arrival times...")
-            } else if let error = viewModel.errorMessage {
+                ProgressView("Fetching arrivals...")
+            } else if let error = viewModel.errorMessage {  // should this be standardised with the NTU one
                 Text("Error: \(error)").foregroundColor(.red)
             } else {
                 List {
                     ForEach(viewModel.arrivals) { arrival in
                         VStack(alignment: .leading) {
-                            Text("Service \(arrival.serviceNo)")
+                            Text("Bus \(arrival.serviceNo)")
                                 .font(.headline)
                             HStack {
                                 ForEach(arrival.minutesToArrivals.prefix(3), id: \.self) { min in
@@ -50,6 +56,7 @@ struct NUSPublicBusArrivalView: View {
                                 }
                             }
                             .pickerStyle(.wheel)
+                            .frame(height: 120)
                         }
                     }
                 }
@@ -58,7 +65,7 @@ struct NUSPublicBusArrivalView: View {
         }
         .navigationTitle("\(stop.Description)")
         .task {
-            viewModel.configure(stopCode: stop.BusStopCode, busService: busService)
+//            viewModel.configure(stopCode: stop.BusStopCode, busService: busService)
             await viewModel.fetchArrivals()
         }
         .onDisappear {

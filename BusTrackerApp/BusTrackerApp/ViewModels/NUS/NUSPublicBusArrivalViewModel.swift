@@ -31,24 +31,30 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
     }
 
     private let service = ArriveLahService()
-    private var stopCode: String = ""
-    private var busService: String = ""
+//    private var stopCode: String = ""
+//    private var busService: String = ""
+    let stop: PublicBusStop
+    private let busService: String
 
-    private var notificationID: String {
-        "\(stopCode)_\(busService)"
+    var notificationID: String {
+        "NUS_PUBLIC_\(stop.BusStopCode)_\(busService)"
     }
 
-    func configure(stopCode: String, busService: String) {
-        self.stopCode = stopCode
+    init(stop: PublicBusStop, busService: String) {
+        self.stop = stop
         self.busService = busService
     }
+//    func configure(stopCode: String, busService: String) {
+//        self.stopCode = stopCode
+//        self.busService = busService
+//    }
 
     func fetchArrivals() async {
         isLoading = true
         errorMessage = nil
 
         do {
-            let response: PublicBusArrivalResponse = try await service.fetchArrivals(for: stopCode, as: PublicBusArrivalResponse.self)
+            let response: PublicBusArrivalResponse = try await service.fetchArrivals(for: stop.BusStopCode, as: PublicBusArrivalResponse.self)
             let matchingServices = response.services.filter { $0.no == busService }
             let formattedArrivals = matchingServices.map { PublicBusArrival(from: $0) }
 
@@ -58,7 +64,7 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
                 scheduleNotification()
             }
         } catch {
-            errorMessage = "Failed to fetch arrivals: \(error.localizedDescription)"     // to standarize
+            errorMessage = "Failed to fetch arrivals: \(error.localizedDescription)"     // to standarize error msg displayed
             arrivals = []
         }
 
@@ -84,8 +90,8 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
 
         NotificationManager.shared.scheduleNotification(
             id: notificationID,
-            title: "Bus \(busService) arriving soon!",     // to standarize
-            body: "Bus will arrive at stop \(stopCode) in \(minutesBefore) minutes.",     // to standarize
+            title: "Bus \(busService) arriving soon",    
+            body: "Bus will arrive at stop \(stop.Description) in \(minutesBefore) minutes.",     // to replace stopCode w stop.Description
             after: fireInSeconds
         )
     }

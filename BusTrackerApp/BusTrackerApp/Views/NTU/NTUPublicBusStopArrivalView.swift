@@ -6,7 +6,6 @@
 //
 // Displays a list of NTU's public bus arrival times (selected bus route and stop) and allows users to set notifications
 
-
 import SwiftUI
 
 struct NTUPublicBusStopArrivalView: View {
@@ -17,46 +16,57 @@ struct NTUPublicBusStopArrivalView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Arrivals for \(viewModel.stop.Description)")
-                .font(.title3)
-                .padding(.bottom)
-
+        VStack {
             if viewModel.isLoading {
                 ProgressView("Fetching arrivals...")
+                    .frame(maxWidth: .infinity, alignment: .center)
             } else if viewModel.arrivals.isEmpty {
-                Text("No arrivals available.")
-                    .foregroundColor(.secondary)
+                List {
+                    Text("No arrivals available.")
+                        .foregroundColor(.secondary)
+                }
+                .listStyle(.insetGrouped)
             } else {
-                List(viewModel.arrivals) { arrival in
-                    VStack(alignment: .leading) {
-                        Text("Bus \(arrival.serviceNo)")
-                            .font(.headline)
-                        HStack {
-                            ForEach(arrival.minutesToArrivals.prefix(3), id: \.self) { minutes in
-                                Text("\(minutes) min")
-                                    .padding(4)
-                                    .background(Color.blue.opacity(0.1))
-                                    .cornerRadius(5)
+                List {
+                    ForEach(viewModel.arrivals) { arrival in
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Bus \(arrival.serviceNo)")
+                                .font(.headline)
+                            HStack {
+                                ForEach(arrival.minutesToArrivals.prefix(3), id: \.self) { minutes in
+                                    Text("\(minutes) min")
+                                        .padding(.horizontal, 8)    // why is this initroduced?
+                                        .padding(.vertical, 4)
+                                        .background(Color.blue.opacity(0.2))
+                                        .cornerRadius(6)
+                                }
                             }
+                        }
+                        .padding(.vertical, 4)
+                    }
+
+                    Section {
+                        Toggle("Notify before arrival", isOn: $viewModel.notificationsEnabled)
+                        if viewModel.notificationsEnabled {
+                            Picker("Notify me", selection: $viewModel.notificationLeadTime) {
+                                ForEach(1..<11) { minute in
+                                    Text("\(minute) minute\(minute > 1 ? "s" : "")").tag(minute)
+                                }
+                            }
+                            .pickerStyle(.wheel)
+                            .frame(height: 120)
                         }
                     }
                 }
+                .listStyle(.insetGrouped)
             }
-
-            Section {
-                Toggle("Notify before next bus", isOn: $viewModel.notificationsEnabled)
-                if viewModel.notificationsEnabled {
-                    Stepper("Notify me \(viewModel.notificationLeadTime) min before",
-                            value: $viewModel.notificationLeadTime, in: 1...10)
-                }
-            }
-            .padding()
         }
-        .padding()
-        .navigationTitle("Bus Stop")
+        .navigationTitle(viewModel.stop.Description)
         .task {
             await viewModel.fetchArrivals()
+        }
+        .onDisappear {
+            viewModel.notificationsEnabled = false
         }
     }
 }

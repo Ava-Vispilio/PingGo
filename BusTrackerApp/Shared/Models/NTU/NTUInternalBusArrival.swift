@@ -17,7 +17,7 @@ struct NTUInternalBusArrival: Identifiable, Codable {
 }
 
 struct NTUInternalBusArrivalTime: Codable, Identifiable {
-    let id = UUID()
+    let id = UUID()     // removing identifiable and commenting this line wld make it work with the edited (commented) viewmodel; also removes the warning
     let minutes: Int     // ETA in minutes
 }
 

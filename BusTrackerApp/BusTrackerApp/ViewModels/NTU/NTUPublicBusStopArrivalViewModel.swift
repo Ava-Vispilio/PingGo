@@ -44,7 +44,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
             let response = try await arriveLahService.fetchArrivals(for: stop.BusStopCode, as: PublicBusArrivalResponse.self)
             arrivals = response.services.map(PublicBusArrival.init)
         } catch {
-            print("Failed to fetch arrivals for stop \(stop.BusStopCode): \(error.localizedDescription)")     // to standarize
+            print("Failed to fetch arrivals for stop \(stop.BusStopCode): \(error.localizedDescription)")     // to standarize error msg displayed
             arrivals = []
         }
         isLoading = false
@@ -69,8 +69,8 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
 
         NotificationManager.shared.scheduleNotification(
             id: notificationID,
-            title: "Bus arriving soon",     // to standarize
-            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) minutes.",     // to standarize
+            title: "Bus arriving soon!",
+            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) minutes.",    
             after: fireInSeconds
         )
     }

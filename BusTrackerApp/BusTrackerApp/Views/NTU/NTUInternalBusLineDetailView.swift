@@ -146,10 +146,17 @@ struct NTUInternalBusLineDetailView: View {
             //            }
         }
         .navigationTitle("\(line.rawValue.capitalized) Line")
+//        .task {
+//            async let busFetch = viewModel.fetchBus(for: line)  // Constant 'busFetch' inferred to have type '()', which may be unexpected
+//            async let stopsFetch = viewModel.fetchStops(for: line)  // Constant 'busFetch' inferred to have type '()', which may be unexpected
+//            _ = await (busFetch, stopsFetch)
+//        }
+        // got rid of the warnings
         .task {
-            async let busFetch = viewModel.fetchBus(for: line)
-            async let stopsFetch = viewModel.fetchStops(for: line)
-            _ = await (busFetch, stopsFetch)
+            await withTaskGroup(of: Void.self) { group in
+                group.addTask { await viewModel.fetchBus(for: line) }
+                group.addTask { await viewModel.fetchStops(for: line) }
+            }
         }
     }
 }
