@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 11/6/25.
 //
-// Displays a list of NUS's (internal & public) bus routes (users to pick a bus route)
+//  Displays a list of NUS's (internal & public) bus routes (users to pick a bus route)
 
 import SwiftUI
 
@@ -13,63 +13,57 @@ struct NUSLineSelectionView: View {
 
     var body: some View {
         NavigationView {
-            Group {
-                if viewModel.isLoading {
-                    ProgressView("Loading available lines...")
-                } else if let error = viewModel.errorMessage {
-                    Text("Error: \(error)")
-                        .foregroundColor(.red)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                } else if viewModel.availableBusLines.isEmpty {
-                    Text("No active NUS bus lines found.")
-                        .foregroundColor(.gray)
-                        .padding()
-                } else {
-                    List(viewModel.availableBusLines) { line in
-                        NavigationLink(destination: NUSPublicBusStopListView(line: line)) {
-                            Text(line.lineName)
+            List {
+                // Internal Shuttle Buses Section
+                if !viewModel.internalActiveLines.isEmpty {
+                    Section(header: Text("NUS Shuttle Buses")) {
+                        ForEach(viewModel.internalActiveLines, id: \.self) { line in
+                            NavigationLink(destination: NUSInternalBusLineDetailView(line: line)) {
+                                Text(line.name)
+                            }
                         }
                     }
-                    .listStyle(.insetGrouped)
+                }
+
+                // Public Buses Section
+                if !viewModel.publicActiveLines.isEmpty {
+                    Section(header: Text("NUS Public Buses")) {
+                        ForEach(viewModel.publicActiveLines, id: \.lineName) { line in
+                            NavigationLink(destination: NUSPublicBusStopListView(line: line)) {
+                                Text(line.lineName)
+                            }
+                        }
+                    }
+                }
+
+                // Empty state
+                if viewModel.internalActiveLines.isEmpty &&
+                    viewModel.publicActiveLines.isEmpty &&
+                    !viewModel.isLoading {
+                    Text("No active lines found.")
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
-            // Uncomment once NUS API ready and edit accordingly (can remove Group above)
-//            List {
-//                if !viewModel.internalActiveLines.isEmpty {     // check whether viewmodel has .internalActiveLines
-//                    Section(header: Text("NUS Shuttle Buses")) {
-//                        ForEach(viewModel.internalActiveLines, id: \.self) { line in
-//                            NavigationLink(destination: NUSInternalBusLineDetailView(line: line)) { // rename to wtv the file name is
-//                                Text(line.rawValue.capitalized)
-//                            }
-//                        }
-//                    }
-//                }
-//                
-//                if !viewModel.publicActiveLines.isEmpty {   // check if viewmodel has .publicActiveLines
-//                    Section(header: Text("NUS Public Buses")) {
-//                        ForEach(viewModel.publicActiveLines, id: \.self) { lineName in
-//                            NavigationLink(destination: NUSPublicBusStopListView(line: line)) {
-//                                Text(line.lineName)
-//                            }
-//                        }
-//                    }
-//                }
-//                
-//                if viewModel.internalActiveLines.isEmpty && viewModel.publicActiveLines.isEmpty && !viewModel.isLoading {
-//                    Text("No active lines found.")
-//                        .foregroundColor(.secondary)
-//                }
-//            }
             .navigationTitle("NUS Bus Lines")
-//            .overlay {
-//                if viewModel.isLoading {
-//                    ProgressView("Loading active lines...")
-//                        .progressViewStyle(CircularProgressViewStyle())
-//                }
-//            }
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView("Loading active lines...")
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            }
             .task {
+                print("Loading available NUS lines...")
                 await viewModel.loadAvailableLines()
+                print("Finished loading lines.")
+                print("Internal Active Lines: \(viewModel.internalActiveLines.map { $0.code })")
+
+                if viewModel.publicActiveLines.isEmpty {
+                    print("No active public lines found.")
+                } else {
+                    print("Public Active Lines: \(viewModel.publicActiveLines.map { $0.lineName })")
+                }
             }
         }
     }

@@ -6,7 +6,7 @@
 //
 // Displays a list of NTU's public bus stops (to choose from) for a selected bus route
 
-// white bg, grey list
+// White background, grey list
 import SwiftUI
 
 struct NTUPublicBusLineDetailView: View {
@@ -71,7 +71,7 @@ struct NTUPublicBusLineDetailView: View {
 }
 
 
-// grey bg, white list
+// Grey background, white list
 //import SwiftUI
 //
 //struct NTUPublicBusLineDetailView: View {

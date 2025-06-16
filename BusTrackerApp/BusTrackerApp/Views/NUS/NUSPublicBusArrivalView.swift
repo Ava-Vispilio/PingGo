@@ -7,8 +7,6 @@
 // Displays NUS's public bus arrival times (selected bus route and stop) and allows users to set notifications
 
 
-// BusTrackerApp/Views/NUS/NUSBusArrivalView.swift
-
 import SwiftUI
 
 struct NUSPublicBusArrivalView: View {
