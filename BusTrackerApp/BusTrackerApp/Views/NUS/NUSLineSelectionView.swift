@@ -36,13 +36,15 @@ struct NUSLineSelectionView: View {
                     }
                 }
 
-                // Empty state
+                // Empty state message (if both empty)
                 if viewModel.internalActiveLines.isEmpty &&
                     viewModel.publicActiveLines.isEmpty &&
                     !viewModel.isLoading {
-                    Text("No active lines found.")
-                        .foregroundColor(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                    Section {
+                        Text("No active NUS bus lines found.")
+                            .foregroundColor(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
                 }
             }
             .navigationTitle("NUS Bus Lines")
@@ -56,14 +58,9 @@ struct NUSLineSelectionView: View {
             .task {
                 print("Loading available NUS lines...")
                 await viewModel.loadAvailableLines()
-                print("Finished loading lines.")
+                print("Finished loading all NUS lines.")
                 print("Internal Active Lines: \(viewModel.internalActiveLines.map { $0.code })")
-
-                if viewModel.publicActiveLines.isEmpty {
-                    print("No active public lines found.")
-                } else {
-                    print("Public Active Lines: \(viewModel.publicActiveLines.map { $0.lineName })")
-                }
+                print("Public Active Lines: \(viewModel.publicActiveLines.map { $0.lineName })")
             }
         }
     }
