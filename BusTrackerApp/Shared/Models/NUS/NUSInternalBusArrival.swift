@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct ShuttleServiceResponse: Codable {
-    let ShuttleServiceResult: ShuttleServiceResult
+struct NUSInternalShuttleServiceResponse: Codable {
+    let ShuttleServiceResult: NUSInternalShuttleServiceResult
 }
 
-struct ShuttleServiceResult: Codable {
+struct NUSInternalShuttleServiceResult: Codable {
     let TimeStamp: String
     let name: String
     let caption: String
-    let shuttles: [Shuttle]
+    let shuttles: [NUSInternalBus]
 }
 
-struct Shuttle: Codable, Identifiable {
+struct NUSInternalBus: Codable, Identifiable {
     let name: String
     let nextArrivalTime: String
     let arrivalTime: String

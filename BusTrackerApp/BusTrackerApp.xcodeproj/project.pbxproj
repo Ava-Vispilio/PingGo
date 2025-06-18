@@ -30,14 +30,14 @@
 		DE38260C2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */; };
 		DE38260E2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */; };
 		DE38260F2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */; };
-		DE3826112DFB7777009630A5 /* NUSInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBus.swift */; };
-		DE3826122DFB7777009630A5 /* NUSInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBus.swift */; };
+		DE3826112DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */; };
+		DE3826122DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */; };
 		DE3826142DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */; };
 		DE3826152DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */; };
 		DE3826172DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */; };
 		DE3826182DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */; };
-		DE38261A2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */; };
-		DE38261B2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */; };
+		DE38261A2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */; };
+		DE38261B2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */; };
 		DE48B8122DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
 		DE48B8132DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
 		DE48B8162DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */; };
@@ -126,10 +126,10 @@
 		DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUAPIResponseWrappers.swift; sourceTree = "<group>"; };
 		DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSLineActivityWrapper.swift; sourceTree = "<group>"; };
 		DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusArrival.swift; sourceTree = "<group>"; };
-		DE3826102DFB7777009630A5 /* NUSInternalBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBus.swift; sourceTree = "<group>"; };
+		DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusRoute.swift; sourceTree = "<group>"; };
 		DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusStop.swift; sourceTree = "<group>"; };
 		DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NUSInternalBusStopList.json; sourceTree = "<group>"; };
-		DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSBusAPIClient.swift; sourceTree = "<group>"; };
+		DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSNextBusService.swift; sourceTree = "<group>"; };
 		DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NTUPublicBusStopList.json; sourceTree = "<group>"; };
 		DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NUSPublicBusStopList.json; sourceTree = "<group>"; };
 		DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SMUPublicBusStopList.json; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 		DEE4B5332DF4E0B2007F917B /* NUS */ = {
 			isa = PBXGroup;
 			children = (
-				DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */,
+				DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */,
 			);
 			path = NUS;
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */,
-				DE3826102DFB7777009630A5 /* NUSInternalBus.swift */,
+				DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */,
 				DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */,
 				DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */,
 			);
@@ -628,7 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE48B8312DF8ED3C005E2542 /* Constants.swift in Sources */,
-				DE3826122DFB7777009630A5 /* NUSInternalBus.swift in Sources */,
+				DE3826122DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */,
 				DE38260C2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */,
 				DE3826152DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */,
 				DE38260E2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */,
@@ -642,7 +642,7 @@
 				DE1259BC2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */,
 				DE04A2232DF85B8000C5626E /* ArriveLahService.swift in Sources */,
 				DE1259BE2DECD3AA004B6E80 /* NetworkError.swift in Sources */,
-				DE38261A2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */,
+				DE38261A2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */,
 				DE1259B82DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */,
 				DE1259BA2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
 				DE51FFB52DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */,
@@ -670,11 +670,11 @@
 				DE48B8262DF8D513005E2542 /* PublicBusArrival.swift in Sources */,
 				DE1259C52DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */,
 				DE3826142DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */,
-				DE38261B2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */,
+				DE38261B2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */,
 				DE38260F2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */,
 				DE1259C32DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */,
 				DE1259BB2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
-				DE3826112DFB7777009630A5 /* NUSInternalBus.swift in Sources */,
+				DE3826112DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */,
 				DE38260B2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */,
 				DE48B8302DF8ED3C005E2542 /* Constants.swift in Sources */,
 				DE1259BF2DECD3AA004B6E80 /* NetworkError.swift in Sources */,

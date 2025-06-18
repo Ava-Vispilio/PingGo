@@ -8,26 +8,26 @@
 
 import Foundation
 
-struct ActiveBusResponseWrapper: Decodable {
-    let ActiveBusResult: ActiveBusResponse
+struct NUSInternalActiveBusResponseWrapper: Decodable {
+    let ActiveBusResult: NUSInternalActiveBusResponse
 }
 
-struct ActiveBusResponse: Decodable {
+struct NUSInternalActiveBusResponse: Decodable {
     let TimeStamp: String
     let ActiveBusCount: String
-    let activebus: [ActiveBus]
+    let activebus: [NUSInternalActiveBus]
 }
 
-struct ActiveBus: Codable {
+struct NUSInternalActiveBus: Codable, Hashable {
     let vehplate: String
     let lat: Double?
     let lng: Double?
     let speed: Double?
     let direction: Double?
-    let loadInfo: LoadInfo?
+    let loadInfo: NUSInternalLoadInfo?
 }
 
-struct LoadInfo: Codable {
+struct NUSInternalLoadInfo: Codable, Hashable {
     let occupancy: Double?
     let crowdLevel: String?
     let capacity: Int?

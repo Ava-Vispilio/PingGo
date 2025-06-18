@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct BusStopsResponse: Codable {
-    let BusStopsResult: BusStopsResult
+struct NUSInternalBusStopsResponse: Codable {
+    let BusStopsResult: NUSInternalBusStopsResult
 }
 
-struct BusStopsResult: Codable {
-    let busstops: [BusStop]
+struct NUSInternalBusStopsResult: Codable {
+    let busstops: [NUSInternalBusStop]
 }
 
-struct BusStop: Codable, Identifiable, Hashable {
+struct NUSInternalBusStop: Codable, Identifiable, Hashable {
     let caption: String
     let name: String
     let LongName: String
