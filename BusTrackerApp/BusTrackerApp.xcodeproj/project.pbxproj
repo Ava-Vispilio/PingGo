@@ -1,0 +1,1225 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE04A2232DF85B8000C5626E /* ArriveLahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2222DF85B8000C5626E /* ArriveLahService.swift */; };
+		DE04A2242DF85B8000C5626E /* ArriveLahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2222DF85B8000C5626E /* ArriveLahService.swift */; };
+		DE04A2262DF85D7100C5626E /* LTABusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2252DF85D7100C5626E /* LTABusArrival.swift */; };
+		DE04A2272DF85D7100C5626E /* LTABusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2252DF85D7100C5626E /* LTABusArrival.swift */; };
+		DE1259812DEC5411004B6E80 /* BusTrackerWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DE1259612DEC540D004B6E80 /* BusTrackerWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE1259B82DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */; };
+		DE1259B92DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */; };
+		DE1259BA2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AB2DECC68D004B6E80 /* NTUBusAPIClient.swift */; };
+		DE1259BB2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AB2DECC68D004B6E80 /* NTUBusAPIClient.swift */; };
+		DE1259BC2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AA2DECC686004B6E80 /* NTUEndpoint.swift */; };
+		DE1259BD2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AA2DECC686004B6E80 /* NTUEndpoint.swift */; };
+		DE1259BE2DECD3AA004B6E80 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A92DECC67B004B6E80 /* NetworkError.swift */; };
+		DE1259BF2DECD3AA004B6E80 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A92DECC67B004B6E80 /* NetworkError.swift */; };
+		DE1259C02DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */; };
+		DE1259C12DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */; };
+		DE1259C22DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */; };
+		DE1259C32DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */; };
+		DE1259C42DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */; };
+		DE1259C52DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */; };
+		DE38260B2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */; };
+		DE38260C2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */; };
+		DE38260E2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */; };
+		DE38260F2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */; };
+		DE3826112DFB7777009630A5 /* NUSInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBus.swift */; };
+		DE3826122DFB7777009630A5 /* NUSInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBus.swift */; };
+		DE3826142DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */; };
+		DE3826152DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */; };
+		DE3826172DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */; };
+		DE3826182DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */; };
+		DE38261A2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */; };
+		DE38261B2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */; };
+		DE48B8122DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
+		DE48B8132DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
+		DE48B8162DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */; };
+		DE48B8172DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */; };
+		DE48B8182DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */; };
+		DE48B8192DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */; };
+		DE48B8222DF8D505005E2542 /* PublicBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8212DF8D505005E2542 /* PublicBusStop.swift */; };
+		DE48B8232DF8D505005E2542 /* PublicBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8212DF8D505005E2542 /* PublicBusStop.swift */; };
+		DE48B8252DF8D513005E2542 /* PublicBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */; };
+		DE48B8262DF8D513005E2542 /* PublicBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */; };
+		DE48B8302DF8ED3C005E2542 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B82F2DF8ED34005E2542 /* Constants.swift */; };
+		DE48B8312DF8ED3C005E2542 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B82F2DF8ED34005E2542 /* Constants.swift */; };
+		DE51FFB52DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */; };
+		DE51FFB62DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */; };
+		DE5AFFBD2DF963300002257D /* PublicBusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5AFFBC2DF963300002257D /* PublicBusLine.swift */; };
+		DE5AFFBE2DF963300002257D /* PublicBusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5AFFBC2DF963300002257D /* PublicBusLine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE1259412DEC509B004B6E80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE12592A2DEC5099004B6E80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1259312DEC5099004B6E80;
+			remoteInfo = BusTrackerApp;
+		};
+		DE12594B2DEC509B004B6E80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE12592A2DEC5099004B6E80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1259312DEC5099004B6E80;
+			remoteInfo = BusTrackerApp;
+		};
+		DE12596E2DEC5411004B6E80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE12592A2DEC5099004B6E80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1259602DEC540D004B6E80;
+			remoteInfo = "BusTrackerWatchApp Watch App";
+		};
+		DE1259782DEC5411004B6E80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE12592A2DEC5099004B6E80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1259602DEC540D004B6E80;
+			remoteInfo = "BusTrackerWatchApp Watch App";
+		};
+		DE12597F2DEC5411004B6E80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE12592A2DEC5099004B6E80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1259602DEC540D004B6E80;
+			remoteInfo = "BusTrackerWatchApp Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE1259852DEC5411004B6E80 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DE1259812DEC5411004B6E80 /* BusTrackerWatchApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DE04A2222DF85B8000C5626E /* ArriveLahService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArriveLahService.swift; sourceTree = "<group>"; };
+		DE04A2252DF85D7100C5626E /* LTABusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTABusArrival.swift; sourceTree = "<group>"; };
+		DE1259322DEC5099004B6E80 /* BusTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1259402DEC509B004B6E80 /* BusTrackerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTrackerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE12594A2DEC509B004B6E80 /* BusTrackerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTrackerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1259612DEC540D004B6E80 /* BusTrackerWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusTrackerWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE12596D2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusTrackerWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1259772DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusTrackerWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUInternalBus.swift; sourceTree = "<group>"; };
+		DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUInternalBusStop.swift; sourceTree = "<group>"; };
+		DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUInternalBusArrival.swift; sourceTree = "<group>"; };
+		DE1259A92DECC67B004B6E80 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		DE1259AA2DECC686004B6E80 /* NTUEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUEndpoint.swift; sourceTree = "<group>"; };
+		DE1259AB2DECC68D004B6E80 /* NTUBusAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUBusAPIClient.swift; sourceTree = "<group>"; };
+		DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUAPIResponseWrappers.swift; sourceTree = "<group>"; };
+		DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSLineActivityWrapper.swift; sourceTree = "<group>"; };
+		DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusArrival.swift; sourceTree = "<group>"; };
+		DE3826102DFB7777009630A5 /* NUSInternalBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBus.swift; sourceTree = "<group>"; };
+		DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusStop.swift; sourceTree = "<group>"; };
+		DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NUSInternalBusStopList.json; sourceTree = "<group>"; };
+		DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSBusAPIClient.swift; sourceTree = "<group>"; };
+		DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NTUPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NUSPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SMUPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8212DF8D505005E2542 /* PublicBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicBusStop.swift; sourceTree = "<group>"; };
+		DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicBusArrival.swift; sourceTree = "<group>"; };
+		DE48B82F2DF8ED34005E2542 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTALineActivityWrapper.swift; sourceTree = "<group>"; };
+		DE5AFFBC2DF963300002257D /* PublicBusLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicBusLine.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DE1259CD2DECE20B004B6E80 /* Exceptions for "BusTrackerApp" folder in "BusTrackerWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ViewModels/NTU/NTUInternalBusStopArrivalViewModel.swift,
+				Views/NTU/NTUInternalBusStopArrivalView.swift,
+			);
+			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DE1259342DEC5099004B6E80 /* BusTrackerApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DE1259CD2DECE20B004B6E80 /* Exceptions for "BusTrackerApp" folder in "BusTrackerWatchApp Watch App" target */,
+			);
+			path = BusTrackerApp;
+			sourceTree = "<group>";
+		};
+		DE1259432DEC509B004B6E80 /* BusTrackerAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BusTrackerAppTests;
+			sourceTree = "<group>";
+		};
+		DE12594D2DEC509B004B6E80 /* BusTrackerAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BusTrackerAppUITests;
+			sourceTree = "<group>";
+		};
+		DE1259622DEC540E004B6E80 /* BusTrackerWatchApp Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "BusTrackerWatchApp Watch App";
+			sourceTree = "<group>";
+		};
+		DE1259702DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "BusTrackerWatchApp Watch AppTests";
+			sourceTree = "<group>";
+		};
+		DE12597A2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "BusTrackerWatchApp Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE12592F2DEC5099004B6E80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12593D2DEC509B004B6E80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1259472DEC509B004B6E80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12595E2DEC540D004B6E80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12596A2DEC5411004B6E80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1259742DEC5411004B6E80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE04A2202DF859E700C5626E /* LTA */ = {
+			isa = PBXGroup;
+			children = (
+				DE04A2222DF85B8000C5626E /* ArriveLahService.swift */,
+			);
+			path = LTA;
+			sourceTree = "<group>";
+		};
+		DE04A2212DF859F700C5626E /* LTA */ = {
+			isa = PBXGroup;
+			children = (
+				DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */,
+				DE5AFFBC2DF963300002257D /* PublicBusLine.swift */,
+				DE04A2252DF85D7100C5626E /* LTABusArrival.swift */,
+				DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */,
+				DE48B8212DF8D505005E2542 /* PublicBusStop.swift */,
+			);
+			path = LTA;
+			sourceTree = "<group>";
+		};
+		DE04A2282DF8CFCE00C5626E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */,
+				DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */,
+				DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */,
+				DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE1259292DEC5099004B6E80 = {
+			isa = PBXGroup;
+			children = (
+				DE1259A22DECC319004B6E80 /* Shared */,
+				DE1259342DEC5099004B6E80 /* BusTrackerApp */,
+				DE1259432DEC509B004B6E80 /* BusTrackerAppTests */,
+				DE12594D2DEC509B004B6E80 /* BusTrackerAppUITests */,
+				DE1259622DEC540E004B6E80 /* BusTrackerWatchApp Watch App */,
+				DE1259702DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests */,
+				DE12597A2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests */,
+				DE1259332DEC5099004B6E80 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE1259332DEC5099004B6E80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE1259322DEC5099004B6E80 /* BusTrackerApp.app */,
+				DE1259402DEC509B004B6E80 /* BusTrackerAppTests.xctest */,
+				DE12594A2DEC509B004B6E80 /* BusTrackerAppUITests.xctest */,
+				DE1259612DEC540D004B6E80 /* BusTrackerWatchApp Watch App.app */,
+				DE12596D2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests.xctest */,
+				DE1259772DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE1259A22DECC319004B6E80 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DE04A2282DF8CFCE00C5626E /* Resources */,
+				DE1259A82DECC66D004B6E80 /* Networking */,
+				DE1259A32DECC326004B6E80 /* Models */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DE1259A32DECC326004B6E80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE04A2212DF859F700C5626E /* LTA */,
+				DEE4B5342DF4E0D6007F917B /* NUS */,
+				DEE4B52E2DF4DC2F007F917B /* NTU */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE1259A82DECC66D004B6E80 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DE04A2202DF859E700C5626E /* LTA */,
+				DEE4B5362DF4E0F9007F917B /* Common */,
+				DEE4B5332DF4E0B2007F917B /* NUS */,
+				DEE4B52D2DF4DC1A007F917B /* NTU */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DEE4B52D2DF4DC1A007F917B /* NTU */ = {
+			isa = PBXGroup;
+			children = (
+				DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */,
+				DE1259AB2DECC68D004B6E80 /* NTUBusAPIClient.swift */,
+				DE1259AA2DECC686004B6E80 /* NTUEndpoint.swift */,
+			);
+			path = NTU;
+			sourceTree = "<group>";
+		};
+		DEE4B52E2DF4DC2F007F917B /* NTU */ = {
+			isa = PBXGroup;
+			children = (
+				DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */,
+				DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */,
+				DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */,
+			);
+			path = NTU;
+			sourceTree = "<group>";
+		};
+		DEE4B5332DF4E0B2007F917B /* NUS */ = {
+			isa = PBXGroup;
+			children = (
+				DE3826192DFB7CB1009630A5 /* NUSBusAPIClient.swift */,
+			);
+			path = NUS;
+			sourceTree = "<group>";
+		};
+		DEE4B5342DF4E0D6007F917B /* NUS */ = {
+			isa = PBXGroup;
+			children = (
+				DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */,
+				DE3826102DFB7777009630A5 /* NUSInternalBus.swift */,
+				DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */,
+				DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */,
+			);
+			path = NUS;
+			sourceTree = "<group>";
+		};
+		DEE4B5362DF4E0F9007F917B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DE48B82F2DF8ED34005E2542 /* Constants.swift */,
+				DE1259A92DECC67B004B6E80 /* NetworkError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE1259312DEC5099004B6E80 /* BusTrackerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1259542DEC509B004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerApp" */;
+			buildPhases = (
+				DE12592E2DEC5099004B6E80 /* Sources */,
+				DE12592F2DEC5099004B6E80 /* Frameworks */,
+				DE1259302DEC5099004B6E80 /* Resources */,
+				DE1259852DEC5411004B6E80 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE1259802DEC5411004B6E80 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DE1259342DEC5099004B6E80 /* BusTrackerApp */,
+			);
+			name = BusTrackerApp;
+			packageProductDependencies = (
+			);
+			productName = BusTrackerApp;
+			productReference = DE1259322DEC5099004B6E80 /* BusTrackerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE12593F2DEC509B004B6E80 /* BusTrackerAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1259572DEC509B004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerAppTests" */;
+			buildPhases = (
+				DE12593C2DEC509B004B6E80 /* Sources */,
+				DE12593D2DEC509B004B6E80 /* Frameworks */,
+				DE12593E2DEC509B004B6E80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE1259422DEC509B004B6E80 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DE1259432DEC509B004B6E80 /* BusTrackerAppTests */,
+			);
+			name = BusTrackerAppTests;
+			packageProductDependencies = (
+			);
+			productName = BusTrackerAppTests;
+			productReference = DE1259402DEC509B004B6E80 /* BusTrackerAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE1259492DEC509B004B6E80 /* BusTrackerAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE12595A2DEC509B004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerAppUITests" */;
+			buildPhases = (
+				DE1259462DEC509B004B6E80 /* Sources */,
+				DE1259472DEC509B004B6E80 /* Frameworks */,
+				DE1259482DEC509B004B6E80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE12594C2DEC509B004B6E80 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DE12594D2DEC509B004B6E80 /* BusTrackerAppUITests */,
+			);
+			name = BusTrackerAppUITests;
+			packageProductDependencies = (
+			);
+			productName = BusTrackerAppUITests;
+			productReference = DE12594A2DEC509B004B6E80 /* BusTrackerAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1259822DEC5411004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerWatchApp Watch App" */;
+			buildPhases = (
+				DE12595D2DEC540D004B6E80 /* Sources */,
+				DE12595E2DEC540D004B6E80 /* Frameworks */,
+				DE12595F2DEC540D004B6E80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DE1259622DEC540E004B6E80 /* BusTrackerWatchApp Watch App */,
+			);
+			name = "BusTrackerWatchApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "BusTrackerWatchApp Watch App";
+			productReference = DE1259612DEC540D004B6E80 /* BusTrackerWatchApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE12596C2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1259862DEC5411004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerWatchApp Watch AppTests" */;
+			buildPhases = (
+				DE1259692DEC5411004B6E80 /* Sources */,
+				DE12596A2DEC5411004B6E80 /* Frameworks */,
+				DE12596B2DEC5411004B6E80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE12596F2DEC5411004B6E80 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DE1259702DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests */,
+			);
+			name = "BusTrackerWatchApp Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "BusTrackerWatchApp Watch AppTests";
+			productReference = DE12596D2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE1259762DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1259892DEC5411004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerWatchApp Watch AppUITests" */;
+			buildPhases = (
+				DE1259732DEC5411004B6E80 /* Sources */,
+				DE1259742DEC5411004B6E80 /* Frameworks */,
+				DE1259752DEC5411004B6E80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE1259792DEC5411004B6E80 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DE12597A2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests */,
+			);
+			name = "BusTrackerWatchApp Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "BusTrackerWatchApp Watch AppUITests";
+			productReference = DE1259772DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE12592A2DEC5099004B6E80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					DE1259312DEC5099004B6E80 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					DE12593F2DEC509B004B6E80 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = DE1259312DEC5099004B6E80;
+					};
+					DE1259492DEC509B004B6E80 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = DE1259312DEC5099004B6E80;
+					};
+					DE1259602DEC540D004B6E80 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					DE12596C2DEC5411004B6E80 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = DE1259602DEC540D004B6E80;
+					};
+					DE1259762DEC5411004B6E80 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = DE1259602DEC540D004B6E80;
+					};
+				};
+			};
+			buildConfigurationList = DE12592D2DEC5099004B6E80 /* Build configuration list for PBXProject "BusTrackerApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE1259292DEC5099004B6E80;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DE1259332DEC5099004B6E80 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE1259312DEC5099004B6E80 /* BusTrackerApp */,
+				DE12593F2DEC509B004B6E80 /* BusTrackerAppTests */,
+				DE1259492DEC509B004B6E80 /* BusTrackerAppUITests */,
+				DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */,
+				DE12596C2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests */,
+				DE1259762DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE1259302DEC5099004B6E80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE48B8122DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */,
+				DE48B8162DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */,
+				DE3826182DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */,
+				DE48B8172DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12593E2DEC509B004B6E80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1259482DEC509B004B6E80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12595F2DEC540D004B6E80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE48B8132DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */,
+				DE48B8182DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */,
+				DE3826172DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */,
+				DE48B8192DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12596B2DEC5411004B6E80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1259752DEC5411004B6E80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE12592E2DEC5099004B6E80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE48B8312DF8ED3C005E2542 /* Constants.swift in Sources */,
+				DE3826122DFB7777009630A5 /* NUSInternalBus.swift in Sources */,
+				DE38260C2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */,
+				DE3826152DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */,
+				DE38260E2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */,
+				DE1259C42DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */,
+				DE48B8222DF8D505005E2542 /* PublicBusStop.swift in Sources */,
+				DE48B8252DF8D513005E2542 /* PublicBusArrival.swift in Sources */,
+				DE04A2262DF85D7100C5626E /* LTABusArrival.swift in Sources */,
+				DE1259C22DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */,
+				DE5AFFBD2DF963300002257D /* PublicBusLine.swift in Sources */,
+				DE1259C02DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */,
+				DE1259BC2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */,
+				DE04A2232DF85B8000C5626E /* ArriveLahService.swift in Sources */,
+				DE1259BE2DECD3AA004B6E80 /* NetworkError.swift in Sources */,
+				DE38261A2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */,
+				DE1259B82DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */,
+				DE1259BA2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
+				DE51FFB52DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12593C2DEC509B004B6E80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1259462DEC509B004B6E80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE12595D2DEC540D004B6E80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE48B8262DF8D513005E2542 /* PublicBusArrival.swift in Sources */,
+				DE1259C52DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */,
+				DE3826142DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */,
+				DE38261B2DFB7CB1009630A5 /* NUSBusAPIClient.swift in Sources */,
+				DE38260F2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */,
+				DE1259C32DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */,
+				DE1259BB2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
+				DE3826112DFB7777009630A5 /* NUSInternalBus.swift in Sources */,
+				DE38260B2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */,
+				DE48B8302DF8ED3C005E2542 /* Constants.swift in Sources */,
+				DE1259BF2DECD3AA004B6E80 /* NetworkError.swift in Sources */,
+				DE1259B92DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */,
+				DE1259BD2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */,
+				DE1259C12DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */,
+				DE04A2272DF85D7100C5626E /* LTABusArrival.swift in Sources */,
+				DE04A2242DF85B8000C5626E /* ArriveLahService.swift in Sources */,
+				DE48B8232DF8D505005E2542 /* PublicBusStop.swift in Sources */,
+				DE5AFFBE2DF963300002257D /* PublicBusLine.swift in Sources */,
+				DE51FFB62DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1259692DEC5411004B6E80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1259732DEC5411004B6E80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE1259422DEC509B004B6E80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1259312DEC5099004B6E80 /* BusTrackerApp */;
+			targetProxy = DE1259412DEC509B004B6E80 /* PBXContainerItemProxy */;
+		};
+		DE12594C2DEC509B004B6E80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1259312DEC5099004B6E80 /* BusTrackerApp */;
+			targetProxy = DE12594B2DEC509B004B6E80 /* PBXContainerItemProxy */;
+		};
+		DE12596F2DEC5411004B6E80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
+			targetProxy = DE12596E2DEC5411004B6E80 /* PBXContainerItemProxy */;
+		};
+		DE1259792DEC5411004B6E80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
+			targetProxy = DE1259782DEC5411004B6E80 /* PBXContainerItemProxy */;
+		};
+		DE1259802DEC5411004B6E80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
+			targetProxy = DE12597F2DEC5411004B6E80 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DE1259522DEC509B004B6E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE1259532DEC509B004B6E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		DE1259552DEC509B004B6E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BusTrackerApp/BusTrackerApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		DE1259562DEC509B004B6E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BusTrackerApp/BusTrackerApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		DE1259582DEC509B004B6E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusTrackerApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusTrackerApp";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		DE1259592DEC509B004B6E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusTrackerApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusTrackerApp";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		DE12595B2DEC509B004B6E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = BusTrackerApp;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		DE12595C2DEC509B004B6E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = BusTrackerApp;
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		DE1259832DEC5411004B6E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BusTrackerWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Swift-y.BusTrackerApp";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerApp.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+			};
+			name = Debug;
+		};
+		DE1259842DEC5411004B6E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BusTrackerWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Swift-y.BusTrackerApp";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerApp.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+			};
+			name = Release;
+		};
+		DE1259872DEC5411004B6E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusTrackerWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusTrackerWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		DE1259882DEC5411004B6E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerWatchApp-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BusTrackerWatchApp Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BusTrackerWatchApp Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
+		DE12598A2DEC5411004B6E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "BusTrackerWatchApp Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+			};
+			name = Debug;
+		};
+		DE12598B2DEC5411004B6E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WUU3W83HBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-y.BusTrackerWatchApp-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "BusTrackerWatchApp Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE12592D2DEC5099004B6E80 /* Build configuration list for PBXProject "BusTrackerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1259522DEC509B004B6E80 /* Debug */,
+				DE1259532DEC509B004B6E80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1259542DEC509B004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1259552DEC509B004B6E80 /* Debug */,
+				DE1259562DEC509B004B6E80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1259572DEC509B004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1259582DEC509B004B6E80 /* Debug */,
+				DE1259592DEC509B004B6E80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE12595A2DEC509B004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE12595B2DEC509B004B6E80 /* Debug */,
+				DE12595C2DEC509B004B6E80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1259822DEC5411004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerWatchApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1259832DEC5411004B6E80 /* Debug */,
+				DE1259842DEC5411004B6E80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1259862DEC5411004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerWatchApp Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1259872DEC5411004B6E80 /* Debug */,
+				DE1259882DEC5411004B6E80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1259892DEC5411004B6E80 /* Build configuration list for PBXNativeTarget "BusTrackerWatchApp Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE12598A2DEC5411004B6E80 /* Debug */,
+				DE12598B2DEC5411004B6E80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE12592A2DEC5099004B6E80 /* Project object */;
+}
