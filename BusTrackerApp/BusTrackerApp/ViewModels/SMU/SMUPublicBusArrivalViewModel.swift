@@ -2,41 +2,61 @@
 //  SMUPublicBusArrivalViewModel.swift
 //  BusTrackerApp
 //
-//  Created by Ava Vispilio on 11/6/25.
+//  Created by Ava on 17/6/25.
 //
-// Fetches bus arrival timings at selected SMU bus stop
+// Fetches bus arrival timings of selected SMU bus service
 
 import Foundation
-import Combine
 
 @MainActor
 class SMUPublicBusArrivalViewModel: ObservableObject {
-    @Published var arrivals: [PublicBusArrival] = []
-    @Published var isLoading = false
-    @Published var errorMessage: String? = nil
-
-    private let service = ArriveLahService()
-
-    func fetchArrivals(for stopCode: String) async {
-        isLoading = true
-        errorMessage = nil
-
-        do {
-            let response: PublicBusArrivalResponse = try await service.fetchArrivals(for: stopCode, as: PublicBusArrivalResponse.self)
-
-            if response.services.isEmpty {
-                errorMessage = "No operating buses at this stop."
-                arrivals = []
-            } else {
-                arrivals = response.services.map { PublicBusArrival(from: $0) }
-                let activeBusNumbers = arrivals.map { $0.serviceNo }
-                print("Active SMU bus services at stop \(stopCode): \(activeBusNumbers)")
-            }
-        } catch {
-            errorMessage = "Failed to load bus arrivals: \(error.localizedDescription)"
-            arrivals = []
+    @Published var minutesToArrivals: [Int] = []
+    @Published var notifyEnabled = false {
+        didSet {
+            handleNotificationToggle()
         }
-        
-        isLoading = false
+    }
+    @Published var notifyMinutesBefore = 2 {
+        didSet {
+            scheduleNotification()
+        }
+    }
+
+    private var stop: PublicBusStop?
+    private var arrival: PublicBusArrival?
+
+    func configure(with stop: PublicBusStop, arrival: PublicBusArrival) {
+        self.stop = stop
+        self.arrival = arrival
+        self.minutesToArrivals = arrival.minutesToArrivals
+    }
+
+    private func handleNotificationToggle() {
+        guard let arrival, let stop else { return }
+
+        let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
+        if !notifyEnabled {
+            NotificationManager.shared.cancelNotification(id: id)
+        } else {
+            scheduleNotification()
+        }
+    }
+
+    private func scheduleNotification() {
+        guard notifyEnabled,
+              let firstArrival = minutesToArrivals.first,
+              let stop,
+              let arrival else { return }
+
+        let notifyAfter = (firstArrival - notifyMinutesBefore) * 60
+        if notifyAfter > 0 {
+            let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
+            NotificationManager.shared.scheduleNotification(
+                id: id,
+                title: "Bus \(arrival.serviceNo) arriving",
+                body: "Your bus is arriving in \(notifyMinutesBefore) minutes at \(stop.Description).",
+                after: notifyAfter
+            )
+        }
     }
 }
