@@ -6,7 +6,6 @@
 //
 // Fetches public bus arrivals and handles notification logic for NTU's public buses (including when to notify user of bus arrival)
 
-
 import Foundation
 
 @MainActor
@@ -19,6 +18,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
                 scheduleNotification()
             } else {
                 cancelNotification()
+                showScrollWheel = false
             }
         }
     }
@@ -29,6 +29,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
             }
         }
     }
+    @Published var showScrollWheel: Bool = false
 
     let stop: PublicBusStop
     let arriveLahService = ArriveLahService()
@@ -44,38 +45,39 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
             let response = try await arriveLahService.fetchArrivals(for: stop.BusStopCode, as: PublicBusArrivalResponse.self)
             arrivals = response.services.map(PublicBusArrival.init)
         } catch {
-            print("Failed to fetch arrivals for stop \(stop.BusStopCode): \(error.localizedDescription)")     // to standarize error msg displayed
+            print("Failed to fetch arrivals for stop \(stop.BusStopCode): \(error.localizedDescription)")
             arrivals = []
         }
         isLoading = false
     }
 
     private func scheduleNotification() {
-        guard let soonest = arrivals.first?.minutesToArrivals.first else {
-            print("No arrival data to schedule notification.")
+        guard let soonest = arrivals
+            .flatMap({ $0.minutesToArrivals })
+            .filter({ $0 > 0 })
+            .min() else {
+            print("No valid arrival data to schedule notification.")
             notificationsEnabled = false
             return
         }
 
-        let timeUntilArrivalSeconds = soonest * 60
-        let leadTimeSeconds = notificationLeadTime * 60
-        let fireInSeconds = timeUntilArrivalSeconds - leadTimeSeconds
-        // to standarize
-        if fireInSeconds <= 0 {
-            print("Too late to notify: arrival is within or before lead time.")
+        if notificationLeadTime >= soonest || notificationLeadTime <= 0 {
+            print("Lead time \(notificationLeadTime) not valid for soonest arrival of \(soonest) min.")
             notificationsEnabled = false
             return
         }
+
+        let fireInSeconds = (soonest - notificationLeadTime) * 60
 
         NotificationManager.shared.scheduleNotification(
             id: notificationID,
             title: "Bus arriving soon!",
-            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) minutes.",    
+            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) minutes.",
             after: fireInSeconds
         )
     }
 
-    private func cancelNotification() {
+    internal func cancelNotification() {
         NotificationManager.shared.cancelNotification(id: notificationID)
     }
 
@@ -83,3 +85,4 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
         cancelNotification()
     }
 }
+

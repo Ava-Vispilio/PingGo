@@ -6,9 +6,9 @@
 //
 // Displays a list of NTU's public bus stops (to choose from) for a selected bus route
 
-// White background, grey list
 import SwiftUI
 
+// White background, full page scrollable
 struct NTUPublicBusLineDetailView: View {
     let lineName: String
     @StateObject private var viewModel = NTUPublicBusLineDetailViewModel()
@@ -17,24 +17,25 @@ struct NTUPublicBusLineDetailView: View {
         ZStack {
             Color.white.ignoresSafeArea() // White background
 
-            VStack(alignment: .leading, spacing: 16) {
-                if viewModel.isLoading {
-                    ProgressView("Loading stops...")
-                        .frame(maxWidth: .infinity, alignment: .center)
-                } else if let error = viewModel.errorMessage {
-                    Text("Error: \(error)")
-                        .foregroundColor(.red)
-                        .padding()
-                } else if viewModel.stops.isEmpty {
-                    Text("No stops found for this route.")
-                        .foregroundColor(.gray)
-                        .padding()
-                } else {
-                    Text("Stops:")
-                        .font(.headline)
-                        .padding(.horizontal)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    if viewModel.isLoading {
+                        ProgressView("Loading stops...")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding()
+                    } else if let error = viewModel.errorMessage {
+                        Text("Error: \(error)")
+                            .foregroundColor(.red)
+                            .padding()
+                    } else if viewModel.stops.isEmpty {
+                        Text("No stops found for this route.")
+                            .foregroundColor(.gray)
+                            .padding()
+                    } else {
+                        Text("Stops:")
+                            .font(.headline)
+                            .padding(.horizontal)
 
-                    ScrollView {
                         LazyVStack(alignment: .leading, spacing: 12) {
                             ForEach(viewModel.stops) { stop in
                                 NavigationLink(destination: NTUPublicBusStopArrivalView(stop: stop)) {
@@ -60,10 +61,10 @@ struct NTUPublicBusLineDetailView: View {
                         .padding(.horizontal)
                     }
                 }
+                .padding(.top)
             }
-            .padding(.top)
         }
-        .navigationTitle("\(lineName) Stops")
+        .navigationTitle("Bus \(lineName)")
         .onAppear {
             viewModel.loadStops(for: lineName)
         }

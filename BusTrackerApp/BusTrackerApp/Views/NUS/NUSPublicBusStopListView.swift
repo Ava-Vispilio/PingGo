@@ -50,7 +50,7 @@ struct NUSPublicBusStopListView: View {
                 }
             }
         }
-        .navigationTitle("\(line.lineName) Stops")
+        .navigationTitle("Bus \(line.lineName)")
         .onAppear {
             viewModel.loadStops(for: line)
         }

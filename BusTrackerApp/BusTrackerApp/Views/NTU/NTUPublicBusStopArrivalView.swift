@@ -35,7 +35,7 @@ struct NTUPublicBusStopArrivalView: View {
                             HStack {
                                 ForEach(arrival.minutesToArrivals.prefix(3), id: \.self) { minutes in
                                     Text("\(minutes) min")
-                                        .padding(.horizontal, 8)    // why is this initroduced?
+                                        .padding(.horizontal, 8)    // why is this introduced?
                                         .padding(.vertical, 4)
                                         .background(Color.blue.opacity(0.2))
                                         .cornerRadius(6)
