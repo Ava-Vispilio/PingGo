@@ -27,19 +27,18 @@ struct SMUPublicBusLineSelectionView: View {
                     .foregroundColor(.gray)
                     .padding()
             } else {
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Bus Stop: \(stop.Description)")
-                        .font(.headline)
-                        .padding(.horizontal)
-                    
-                    List(viewModel.services, id: \.serviceNo) { service in
-                        NavigationLink(destination: SMUPublicBusArrivalView(stop: stop, arrival: service)) {
-                            Text("\(service.serviceNo)")
+                List {
+                    Section(header:
+                        Text("Bus Stop: \(stop.Description)")
+                    ) {
+                        ForEach(viewModel.services, id: \.serviceNo) { service in
+                            NavigationLink(destination: SMUPublicBusArrivalView(stop: stop, arrival: service)) {
+                                Text("\(service.serviceNo)")
+                            }
                         }
                     }
-                    .listStyle(.insetGrouped)
-                    .padding(.top, -8)
                 }
+                .listStyle(.insetGrouped)
             }
         }
         .navigationTitle("Operating Bus Lines")

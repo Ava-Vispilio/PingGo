@@ -18,7 +18,9 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
     }
     @Published var notifyMinutesBefore = 2 {
         didSet {
-            scheduleNotification()
+            if notifyEnabled {
+                scheduleNotification()
+            }
         }
     }
 
@@ -48,15 +50,27 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
               let stop,
               let arrival else { return }
 
-        let notifyAfter = (firstArrival - notifyMinutesBefore) * 60
-        if notifyAfter > 0 {
-            let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
-            NotificationManager.shared.scheduleNotification(
-                id: id,
-                title: "Bus \(arrival.serviceNo) arriving",
-                body: "Your bus is arriving in \(notifyMinutesBefore) minutes at \(stop.Description).",
-                after: notifyAfter
-            )
+        let cappedLeadTime = min(notifyMinutesBefore, firstArrival)
+        guard cappedLeadTime > 0 else {
+            print("Invalid or zero lead time.")
+            notifyEnabled = false
+            return
         }
+
+        let notifyAfter = (firstArrival - cappedLeadTime) * 60
+        guard notifyAfter > 0 else {
+            print("Too late to notify. Bus arriving in \(firstArrival) min.")
+            notifyEnabled = false
+            return
+        }
+
+        let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
+        NotificationManager.shared.scheduleNotification(
+            id: id,
+            title: "Bus \(arrival.serviceNo) arriving",
+            body: "Your bus is arriving in \(cappedLeadTime) minutes at \(stop.Description).",
+            after: notifyAfter
+        )
     }
 }
+
