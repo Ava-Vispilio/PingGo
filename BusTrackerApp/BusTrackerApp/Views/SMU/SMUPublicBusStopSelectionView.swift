@@ -54,10 +54,6 @@ struct SMUPublicBusStopSelectionView: View {
             ProgressView("Loading stops…")
                 .frame(maxWidth: .infinity, alignment: .center)
         } else {
-            Text("SMU Public Buses:")
-                .font(.headline)
-                .padding(.horizontal)
-
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
                     ForEach(viewModel.busStops) { stop in

@@ -6,6 +6,70 @@
 //
 // Displays NUS's public bus arrival times (selected bus route and stop) and allows users to set notifications
 
+//import SwiftUI
+//
+//struct NUSPublicBusArrivalView: View {
+//    let stop: PublicBusStop
+//    let busService: String
+//
+//    @StateObject private var viewModel: NUSPublicBusArrivalViewModel
+//    
+//    init(stop: PublicBusStop, busService: String) {
+//        self.stop = stop
+//        self.busService = busService
+//        _viewModel = StateObject(wrappedValue: NUSPublicBusArrivalViewModel(stop: stop, busService: busService))
+//    }
+//
+//    var body: some View {
+//        VStack {
+//            if viewModel.isLoading {
+//                ProgressView("Fetching arrivals...")
+//            } else if let error = viewModel.errorMessage {  // should this be standardised with the NTU one
+//                Text("Error: \(error)").foregroundColor(.red)
+//            } else {
+//                List {
+//                    ForEach(viewModel.arrivals) { arrival in
+//                        VStack(alignment: .leading) {
+//                            Text("Bus \(arrival.serviceNo)")
+//                                .font(.headline)
+//                            HStack {
+//                                ForEach(arrival.minutesToArrivals.prefix(3), id: \.self) { min in
+//                                    Text("\(min) min")
+//                                        .padding(4)
+//                                        .background(Color.blue.opacity(0.2))
+//                                        .cornerRadius(5)
+//                                }
+//                            }
+//                        }
+//                        .padding(.vertical, 4)
+//                    }
+//
+//                    Section {
+//                        Toggle("Notify me before arrival", isOn: $viewModel.notifyEnabled)
+//                        if viewModel.notifyEnabled {
+//                            Picker("Minutes before", selection: $viewModel.minutesBefore) {
+//                                ForEach(1..<10) { minute in
+//                                    Text("\(minute) minute\(minute > 1 ? "s" : "")").tag(minute)
+//                                }
+//                            }
+//                            .pickerStyle(.wheel)
+//                            .frame(height: 120)
+//                        }
+//                    }
+//                }
+//                .listStyle(.insetGrouped)
+//            }
+//        }
+//        .navigationTitle("\(stop.Description)")
+//        .task {
+////            viewModel.configure(stopCode: stop.BusStopCode, busService: busService)
+//            await viewModel.fetchArrivals()
+//        }
+//        .onDisappear {
+//            viewModel.notifyEnabled = false
+//        }
+//    }
+//}
 
 import SwiftUI
 
@@ -14,7 +78,9 @@ struct NUSPublicBusArrivalView: View {
     let busService: String
 
     @StateObject private var viewModel: NUSPublicBusArrivalViewModel
-    
+    @State private var showPicker = false
+    @State private var maxLeadTime = 9  // default max value until arrivals are fetched
+
     init(stop: PublicBusStop, busService: String) {
         self.stop = stop
         self.busService = busService
@@ -25,7 +91,7 @@ struct NUSPublicBusArrivalView: View {
         VStack {
             if viewModel.isLoading {
                 ProgressView("Fetching arrivals...")
-            } else if let error = viewModel.errorMessage {  // should this be standardised with the NTU one
+            } else if let error = viewModel.errorMessage {
                 Text("Error: \(error)").foregroundColor(.red)
             } else {
                 List {
@@ -47,14 +113,38 @@ struct NUSPublicBusArrivalView: View {
 
                     Section {
                         Toggle("Notify me before arrival", isOn: $viewModel.notifyEnabled)
-                        if viewModel.notifyEnabled {
-                            Picker("Minutes before", selection: $viewModel.minutesBefore) {
-                                ForEach(1..<10) { minute in
-                                    Text("\(minute) minute\(minute > 1 ? "s" : "")").tag(minute)
+                            .onChange(of: viewModel.notifyEnabled) { newValue in
+                                if newValue {
+                                    showPicker = true
+                                } else {
+                                    viewModel.cancelNotification()
+                                    showPicker = false
                                 }
                             }
-                            .pickerStyle(.wheel)
-                            .frame(height: 120)
+
+                        if viewModel.notifyEnabled {
+                            Button(action: {
+                                withAnimation {
+                                    showPicker.toggle()
+                                }
+                            }) {
+                                HStack {
+                                    Text("Notify \(viewModel.minutesBefore) minute\(viewModel.minutesBefore > 1 ? "s" : "") before")
+                                    Spacer()
+                                    Image(systemName: showPicker ? "chevron.up" : "chevron.down")
+                                        .foregroundColor(.gray)
+                                }
+                            }
+
+                            if showPicker {
+                                Picker("Minutes before", selection: $viewModel.minutesBefore) {
+                                    ForEach(1...maxLeadTime, id: \.self) { minute in
+                                        Text("\(minute) minute\(minute > 1 ? "s" : "")").tag(minute)
+                                    }
+                                }
+                                .pickerStyle(.wheel)
+                                .frame(height: 120)
+                            }
                         }
                     }
                 }
@@ -63,11 +153,19 @@ struct NUSPublicBusArrivalView: View {
         }
         .navigationTitle("\(stop.Description)")
         .task {
-//            viewModel.configure(stopCode: stop.BusStopCode, busService: busService)
             await viewModel.fetchArrivals()
+
+            // Clamp lead time after arrivals are fetched
+            if let soonest = viewModel.arrivals.first?.minutesToArrivals.first, soonest > 0 {
+                maxLeadTime = soonest
+                if viewModel.minutesBefore > soonest {
+                    viewModel.minutesBefore = soonest
+                }
+            }
         }
         .onDisappear {
             viewModel.notifyEnabled = false
         }
     }
 }
+

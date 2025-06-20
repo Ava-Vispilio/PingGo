@@ -10,6 +10,7 @@ import SwiftUI
 
 struct NTUPublicBusStopArrivalView: View {
     @StateObject private var viewModel: NTUPublicBusStopArrivalViewModel
+    @State private var maxLeadTime: Int = 10
 
     init(stop: PublicBusStop) {
         _viewModel = StateObject(wrappedValue: NTUPublicBusStopArrivalViewModel(stop: stop))
@@ -35,7 +36,7 @@ struct NTUPublicBusStopArrivalView: View {
                             HStack {
                                 ForEach(arrival.minutesToArrivals.prefix(3), id: \.self) { minutes in
                                     Text("\(minutes) min")
-                                        .padding(.horizontal, 8)    // why is this introduced?
+                                        .padding(.horizontal, 8)
                                         .padding(.vertical, 4)
                                         .background(Color.blue.opacity(0.2))
                                         .cornerRadius(6)
@@ -47,14 +48,35 @@ struct NTUPublicBusStopArrivalView: View {
 
                     Section {
                         Toggle("Notify before arrival", isOn: $viewModel.notificationsEnabled)
-                        if viewModel.notificationsEnabled {
-                            Picker("Notify me", selection: $viewModel.notificationLeadTime) {
-                                ForEach(1..<11) { minute in
-                                    Text("\(minute) minute\(minute > 1 ? "s" : "")").tag(minute)
+                            .onChange(of: viewModel.notificationsEnabled) { newValue in
+                                if !newValue {
+                                    viewModel.showScrollWheel = false
                                 }
                             }
-                            .pickerStyle(.wheel)
-                            .frame(height: 120)
+
+                        if viewModel.notificationsEnabled {
+                            Button(action: {
+                                withAnimation {
+                                    viewModel.showScrollWheel.toggle()
+                                }
+                            }) {
+                                HStack {
+                                    Text("Notify \(viewModel.notificationLeadTime) min before")
+                                    Spacer()
+                                    Image(systemName: viewModel.showScrollWheel ? "chevron.up" : "chevron.down")
+                                        .foregroundColor(.gray)
+                                }
+                            }
+
+                            if viewModel.showScrollWheel {
+                                Picker("Notify me", selection: $viewModel.notificationLeadTime) {
+                                    ForEach(1...maxLeadTime, id: \.self) { minute in
+                                        Text("\(minute) minute\(minute > 1 ? "s" : "")").tag(minute)
+                                    }
+                                }
+                                .pickerStyle(.wheel)
+                                .frame(height: 120)
+                            }
                         }
                     }
                 }
@@ -64,9 +86,21 @@ struct NTUPublicBusStopArrivalView: View {
         .navigationTitle(viewModel.stop.Description)
         .task {
             await viewModel.fetchArrivals()
+
+            if let soonest = viewModel.arrivals
+                .flatMap({ $0.minutesToArrivals })
+                .filter({ $0 > 0 })
+                .min()
+            {
+                maxLeadTime = soonest
+                if viewModel.notificationLeadTime > soonest {
+                    viewModel.notificationLeadTime = soonest
+                }
+            }
         }
         .onDisappear {
             viewModel.notificationsEnabled = false
         }
     }
 }
+

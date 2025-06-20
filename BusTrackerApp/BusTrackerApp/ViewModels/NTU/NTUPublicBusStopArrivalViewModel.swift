@@ -85,4 +85,3 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
         cancelNotification()
     }
 }
-
