@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NTUPublicBusStopArrivalView: View {
-    @StateObject private var viewModel: NTUPublicBusStopArrivalViewModel
+    @StateObject var viewModel: NTUPublicBusStopArrivalViewModel
     @State private var maxLeadTime: Int = 10
 
     init(stop: PublicBusStop) {
@@ -98,9 +98,9 @@ struct NTUPublicBusStopArrivalView: View {
                 }
             }
         }
-        .onDisappear {
-            viewModel.notificationsEnabled = false
-        }
+//        .onDisappear {
+//            viewModel.notificationsEnabled = false
+//        }
     }
 }
 

@@ -14,6 +14,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var notificationsEnabled: Bool = false {
         didSet {
+            saveNotificationsEnabledState()
             if notificationsEnabled {
                 scheduleNotification()
             } else {
@@ -24,6 +25,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
     }
     @Published var notificationLeadTime: Int = 3 {
         didSet {
+            saveNotificationLeadTime()
             if notificationsEnabled {
                 scheduleNotification()
             }
@@ -34,9 +36,33 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
     let stop: PublicBusStop
     let arriveLahService = ArriveLahService()
     var notificationID: String { "NTU_PUBLIC_\(stop.BusStopCode)" }
+    
+    private var notifyEnabledKey: String {
+        "NTU_notifyEnabled_\(stop.BusStopCode)"
+    }
+
+    private var notifyMinutesKey: String {
+        "NTU_notifyMinutes_\(stop.BusStopCode)"
+    }
 
     init(stop: PublicBusStop) {
         self.stop = stop
+        restoreSavedSettings()
+    }
+    
+    private func saveNotificationsEnabledState() {
+        UserDefaults.standard.set(notificationsEnabled, forKey: notifyEnabledKey)
+    }
+
+    private func saveNotificationLeadTime() {
+        UserDefaults.standard.set(notificationLeadTime, forKey: notifyMinutesKey)
+    }
+
+    private func restoreSavedSettings() {
+        notificationsEnabled = UserDefaults.standard.bool(forKey: notifyEnabledKey)
+
+        let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
+        notificationLeadTime = savedMinutes > 0 ? savedMinutes : 3
     }
 
     func fetchArrivals() async {

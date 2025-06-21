@@ -105,6 +105,7 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
 
     @Published var notifyWhenSoon = false {
         didSet {
+            saveNotifyWhenSoonEnabledState()
             if !notifyWhenSoon {
                 cancelNotification()
             } else {
@@ -115,6 +116,7 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
     @Published var notificationLeadTime: Int = 1 {
         didSet {
             // Cap lead time to first arrival's minutes
+            saveNotificationLeadTime()
             if let first = arrivalTimes.first?.minutes, notificationLeadTime > first {
                 notificationLeadTime = first
             }
@@ -124,7 +126,36 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
     @Published var showScrollWheel = false
 
     var stopName: String = ""
+    
+    private(set) var busStopId: String
+    
+    init(busStopId: String) {
+        self.busStopId = busStopId
+    }
+    
+    private var notifyEnabledKey: String {
+        "NTU_notifyEnabled_\(busStopId)"
+    }
 
+    private var notifyMinutesKey: String {
+        "NTU_notifyMinutes_\(busStopId)"
+    }
+
+    private func saveNotifyWhenSoonEnabledState() {
+        UserDefaults.standard.set(notifyWhenSoon, forKey: notifyEnabledKey)
+    }
+
+    private func saveNotificationLeadTime() {
+        UserDefaults.standard.set(notificationLeadTime, forKey: notifyMinutesKey)
+    }
+
+    private func restoreSavedSettings() {
+        notifyWhenSoon = UserDefaults.standard.bool(forKey: notifyEnabledKey)
+
+        let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
+        notificationLeadTime = savedMinutes > 0 ? savedMinutes : 3
+    }
+    
     struct ArrivalTime: Hashable {
         let minutes: Int
     }
@@ -187,10 +218,10 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
         }
     }
 
-    func onDisappear() {
-        notifyWhenSoon = false
-        cancelNotification()
-    }
+//    func onDisappear() {
+//        notifyWhenSoon = false
+//        cancelNotification()
+//    }
 }
 
 // Edited this so it cld work with the edited view and models

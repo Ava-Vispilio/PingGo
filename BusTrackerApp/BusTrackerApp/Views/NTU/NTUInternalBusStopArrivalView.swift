@@ -98,7 +98,12 @@ import SwiftUI
 struct NTUInternalBusStopArrivalView: View {
     let busStopId: String
 
-    @StateObject private var viewModel = NTUInternalBusStopArrivalViewModel()
+    @StateObject var viewModel: NTUInternalBusStopArrivalViewModel
+    
+    init(busStopId: String) {
+        self.busStopId = busStopId
+        _viewModel = StateObject(wrappedValue: NTUInternalBusStopArrivalViewModel(busStopId: busStopId))
+    }
 
     var body: some View {
         VStack {
@@ -167,8 +172,8 @@ struct NTUInternalBusStopArrivalView: View {
         .task {
             await viewModel.fetchArrivalTimes(for: busStopId)
         }
-        .onDisappear {
-            viewModel.onDisappear()
-        }
+//        .onDisappear {
+//            viewModel.onDisappear()
+//        }
     }
 }
