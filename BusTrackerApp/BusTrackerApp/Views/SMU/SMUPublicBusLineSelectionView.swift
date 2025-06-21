@@ -32,7 +32,11 @@ struct SMUPublicBusLineSelectionView: View {
                         Text("Bus Stop: \(stop.Description)")
                     ) {
                         ForEach(viewModel.services, id: \.serviceNo) { service in
-                            NavigationLink(destination: SMUPublicBusArrivalView(stop: stop, arrival: service)) {
+                            NavigationLink(destination: SMUPublicBusArrivalView(
+                                stop: stop,
+                                arrival: service,
+                                viewModel: SMUPublicBusArrivalViewModel()
+                            )) {
                                 Text("\(service.serviceNo)")
                             }
                         }

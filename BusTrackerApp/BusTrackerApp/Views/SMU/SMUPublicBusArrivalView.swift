@@ -11,7 +11,7 @@ import SwiftUI
 struct SMUPublicBusArrivalView: View {
     let stop: PublicBusStop
     let arrival: PublicBusArrival
-    @StateObject private var viewModel = SMUPublicBusArrivalViewModel()
+    @StateObject var viewModel: SMUPublicBusArrivalViewModel // removed `private` to ensure same view model instance used across navigation
     @State private var showPicker = false
 
     var body: some View {
@@ -90,9 +90,9 @@ struct SMUPublicBusArrivalView: View {
                 }
             }
         }
-        .onDisappear {
-            viewModel.notifyEnabled = false
-        }
+//        .onDisappear {
+//            viewModel.notifyEnabled = false
+//        }
     }
 }
 
