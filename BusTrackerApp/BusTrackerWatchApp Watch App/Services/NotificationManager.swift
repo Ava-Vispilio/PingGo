@@ -4,15 +4,7 @@
 //
 //  Created by Ava Vispilio on 4/6/25.
 //
-// Handles notification scheduling 
-
-
-//
-//  NotificationManager.swift
-//  BusTrackerApp
-//
-//  Created by Ava Vispilio on 2/6/25.
-//
+//  Handles notification scheduling
 
 import Foundation
 import UserNotifications
@@ -37,7 +29,7 @@ class NotificationManager {
 
     func scheduleNotification(id: String, title: String, body: String, after timeInterval: Int) {
         guard timeInterval > 0 else {
-            print("Cannot schedule notification '\(id)': time interval must be > 0, got \(timeInterval)")
+            print("Aborted scheduling: timeInterval must be > 0 (got \(timeInterval))")
             return
         }
 
@@ -57,6 +49,7 @@ class NotificationManager {
     }
 
     func cancelNotification(id: String) {
+        print("Cancelled notification with id: \(id)")
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
     }
 }
