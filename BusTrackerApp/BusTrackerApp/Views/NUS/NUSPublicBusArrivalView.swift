@@ -74,18 +74,18 @@
 import SwiftUI
 
 struct NUSPublicBusArrivalView: View {
-    let stop: PublicBusStop
-    let busService: String
+//    let stop: PublicBusStop
+//    let busService: String
 
-    @StateObject private var viewModel: NUSPublicBusArrivalViewModel
+    @StateObject var viewModel: NUSPublicBusArrivalViewModel // edit here
     @State private var showPicker = false
     @State private var maxLeadTime = 9  // default max value until arrivals are fetched
 
-    init(stop: PublicBusStop, busService: String) {
-        self.stop = stop
-        self.busService = busService
-        _viewModel = StateObject(wrappedValue: NUSPublicBusArrivalViewModel(stop: stop, busService: busService))
-    }
+//    init(stop: PublicBusStop, busService: String) {
+//        self.stop = stop
+//        self.busService = busService
+//        _viewModel = StateObject(wrappedValue: NUSPublicBusArrivalViewModel(stop: stop, busService: busService))
+//    }
 
     var body: some View {
         VStack {
@@ -151,7 +151,7 @@ struct NUSPublicBusArrivalView: View {
                 .listStyle(.insetGrouped)
             }
         }
-        .navigationTitle("\(stop.Description)")
+        .navigationTitle("\(viewModel.stop.Description)")
         .task {
             await viewModel.fetchArrivals()
 
@@ -163,9 +163,9 @@ struct NUSPublicBusArrivalView: View {
                 }
             }
         }
-        .onDisappear {
-            viewModel.notifyEnabled = false
-        }
+//        .onDisappear {
+//            viewModel.notifyEnabled = false
+//        }
     }
 }
 

@@ -114,6 +114,7 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     @Published var notifyEnabled: Bool = false {
         didSet {
+            saveNotifyEnabledState()
             if notifyEnabled {
                 scheduleNotification()
             } else {
@@ -123,6 +124,7 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
     }
     @Published var minutesBefore: Int = 2 {
         didSet {
+            saveNotificationLeadTime()
             if notifyEnabled {
                 scheduleNotification()
             }
@@ -137,9 +139,33 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
         "NUS_PUBLIC_\(stop.BusStopCode)_\(busService)"
     }
 
+    private var notifyEnabledKey: String {
+        "NUS_notifyEnabled_\(stop.BusStopCode)_\(busService)"
+    }
+
+    private var notifyMinutesKey: String {
+        "NUS_notifyMinutes_\(stop.BusStopCode)_\(busService)"
+    }
+    
     init(stop: PublicBusStop, busService: String) {
         self.stop = stop
         self.busService = busService
+        restoreSavedSettings()
+    }
+    
+    private func saveNotifyEnabledState() {
+        UserDefaults.standard.set(notifyEnabled, forKey: notifyEnabledKey)
+    }
+
+    private func saveNotificationLeadTime() {
+        UserDefaults.standard.set(minutesBefore, forKey: notifyMinutesKey)
+    }
+
+    private func restoreSavedSettings() {
+        notifyEnabled = UserDefaults.standard.bool(forKey: notifyEnabledKey)
+
+        let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
+        minutesBefore = savedMinutes > 0 ? savedMinutes : 3
     }
 
     func fetchArrivals() async {
@@ -199,8 +225,8 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
         NotificationManager.shared.cancelNotification(id: notificationID)
     }
 
-    func onDisappear() {
-        cancelNotification()
-    }
+//    func onDisappear() {
+//        cancelNotification()
+//    }
 }
 
