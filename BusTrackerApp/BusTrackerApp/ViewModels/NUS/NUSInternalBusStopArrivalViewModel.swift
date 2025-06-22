@@ -20,6 +20,7 @@ class NUSInternalBusStopArrivalViewModel: ObservableObject {
     
     @Published var notifyEnabled: Bool = false {
         didSet {
+            saveNotifyEnabledState()
             if !notifyEnabled {
                 cancelNotification()
                 showScrollWheel = false
@@ -29,6 +30,7 @@ class NUSInternalBusStopArrivalViewModel: ObservableObject {
 
     @Published var minutesBefore: Int = 1 {
         didSet {
+            saveNotificationLeadTime()
             scheduleNotificationIfNeeded()
         }
     }
@@ -38,10 +40,38 @@ class NUSInternalBusStopArrivalViewModel: ObservableObject {
     private var firstArrival: Int? {
         arrivals.first(where: { $0 > 0 }) // skip 0 min buses
     }
+    
+    var notificationID: String {
+        "NUS_SHUTTLE_\(stop)_\(routeCode)"
+    }
+
+    private var notifyEnabledKey: String {
+        "NUS_notifyEnabled_\(stop)_\(routeCode)"
+    }
+
+    private var notifyMinutesKey: String {
+        "NUS_notifyMinutes_\(stop)_\(routeCode)"
+    }
 
     init(stop: NUSInternalBusStop, routeCode: String) {
         self.stop = stop
         self.routeCode = routeCode
+        restoreSavedSettings()
+    }
+    
+    private func saveNotifyEnabledState() {
+        UserDefaults.standard.set(notifyEnabled, forKey: notifyEnabledKey)
+    }
+
+    private func saveNotificationLeadTime() {
+        UserDefaults.standard.set(minutesBefore, forKey: notifyMinutesKey)
+    }
+
+    private func restoreSavedSettings() {
+        notifyEnabled = UserDefaults.standard.bool(forKey: notifyEnabledKey)
+
+        let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
+        minutesBefore = savedMinutes > 0 ? savedMinutes : 3
     }
 
     func fetchArrivals() async {

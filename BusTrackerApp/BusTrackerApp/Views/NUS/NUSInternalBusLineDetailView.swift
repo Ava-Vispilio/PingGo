@@ -11,6 +11,12 @@ struct NUSInternalBusLineDetailView: View {
     let line: NUSInternalBusRoute
 
     @StateObject private var viewModel = NUSInternalBusLineDetailViewModel()
+    
+    @StateObject private var stopViewModelsHolder = InternalViewModelCache()
+
+    class InternalViewModelCache: ObservableObject {
+        @Published var cache: [String: NUSInternalBusStopArrivalViewModel] = [:]
+    }
 
     var body: some View {
         Group {
@@ -63,7 +69,11 @@ struct NUSInternalBusLineDetailView: View {
 
                             LazyVStack(alignment: .leading, spacing: 12) {
                                 ForEach(viewModel.stops) { stop in
-                                    NavigationLink(destination: NUSInternalBusStopArrivalView(stop: stop, routeCode: line.code)) {
+                                    NavigationLink(destination: NUSInternalBusStopArrivalView(
+                                        stop: stop,
+                                        routeCode: line.code,
+                                        viewModel: getOrCreateInternalViewModel(for: stop))
+                                    ) {
                                         HStack {
                                             VStack(alignment: .leading, spacing: 4) {
                                                 Text(stop.name)
@@ -102,4 +112,15 @@ struct NUSInternalBusLineDetailView: View {
             }
         }
     }
+    private func getOrCreateInternalViewModel(for stop: NUSInternalBusStop) -> NUSInternalBusStopArrivalViewModel {
+        let key = "\(stop.name)_\(line.code)"
+        if let existing = stopViewModelsHolder.cache[key] {
+            return existing
+        } else {
+            let newVM = NUSInternalBusStopArrivalViewModel(stop: stop, routeCode: line.code)
+            stopViewModelsHolder.cache[key] = newVM
+            return newVM
+        }
+    }
+
 }

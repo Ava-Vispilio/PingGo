@@ -12,13 +12,13 @@ struct NUSInternalBusStopArrivalView: View {
     let stop: NUSInternalBusStop
     let routeCode: String
 
-    @StateObject private var viewModel: NUSInternalBusStopArrivalViewModel
+    @StateObject var viewModel: NUSInternalBusStopArrivalViewModel
 
-    init(stop: NUSInternalBusStop, routeCode: String) {
-        self.stop = stop
-        self.routeCode = routeCode
-        _viewModel = StateObject(wrappedValue: NUSInternalBusStopArrivalViewModel(stop: stop, routeCode: routeCode))
-    }
+//    init(stop: NUSInternalBusStop, routeCode: String) {
+//        self.stop = stop
+//        self.routeCode = routeCode
+//        _viewModel = StateObject(wrappedValue: NUSInternalBusStopArrivalViewModel(stop: stop, routeCode: routeCode))
+//    }
 
     var body: some View {
         VStack {
@@ -81,9 +81,9 @@ struct NUSInternalBusStopArrivalView: View {
         .task {
             await viewModel.fetchArrivals()
         }
-        .onDisappear {
-            viewModel.notifyEnabled = false
-        }
+//        .onDisappear {
+//            viewModel.notifyEnabled = false
+//        }
     }
 }
 
