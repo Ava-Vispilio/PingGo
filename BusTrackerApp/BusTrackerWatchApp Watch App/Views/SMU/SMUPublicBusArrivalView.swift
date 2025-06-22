@@ -44,6 +44,8 @@ struct SMUPublicBusArrivalView: View {
                     .onChange(of: viewModel.notifyEnabled) { enabled in
                         if enabled {
                             showingPickerSheet = true
+                        } else {
+                            viewModel.handleNotificationToggle()
                         }
                     }
             }
@@ -53,12 +55,13 @@ struct SMUPublicBusArrivalView: View {
             viewModel.configure(with: stop, arrival: arrival)
         }
         .sheet(isPresented: $showingPickerSheet) {
-            if let soonest = viewModel.minutesToArrivals.first, soonest >= 1 {
+            if let soonest = viewModel.minutesToArrivals.first, soonest >= 2 {
                 NotificationLeadTimePickerView(
-                    maxLeadTime: soonest,
+                    maxLeadTime: soonest - 1,
                     selectedMinutes: $viewModel.notifyMinutesBefore,
                     onSet: {
                         viewModel.notifyEnabled = true
+                        viewModel.handleNotificationToggle()
                     }
                 )
             } else {
@@ -68,4 +71,3 @@ struct SMUPublicBusArrivalView: View {
         }
     }
 }
-

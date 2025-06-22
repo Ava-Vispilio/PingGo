@@ -112,6 +112,7 @@ struct NUSInternalBusLineDetailView: View {
             }
         }
     }
+    
     private func getOrCreateInternalViewModel(for stop: NUSInternalBusStop) -> NUSInternalBusStopArrivalViewModel {
         let key = "\(stop.name)_\(line.code)"
         if let existing = stopViewModelsHolder.cache[key] {

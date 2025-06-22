@@ -13,7 +13,7 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
     @Published var notifyEnabled = false {
         didSet {
             saveNotifyEnabledState()
-            handleNotificationToggle()
+            // Removed handleNotificationToggle from here
         }
     }
     @Published var notifyMinutesBefore = 2 {
@@ -49,7 +49,7 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
         UserDefaults.standard.set(notifyEnabled, forKey: notifyKey)
     }
 
-    private func handleNotificationToggle() {
+    func handleNotificationToggle() {
         guard let arrival, let stop else { return }
 
         let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
@@ -68,14 +68,22 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
               let arrival else { return }
 
         let cappedLeadTime = min(notifyMinutesBefore, firstArrival)
+        let notifyAfter = (firstArrival - cappedLeadTime) * 60
+
+        print("""
+        Attempting to schedule notification:
+          notifyEnabled = \(notifyEnabled)
+          notifyMinutesBefore = \(notifyMinutesBefore)
+          cappedLeadTime = \(cappedLeadTime)
+          firstArrival = \(firstArrival)
+          notifyAfter = \(notifyAfter)
+        """)
 
         guard cappedLeadTime > 0 else {
             print("Invalid lead time: cappedLeadTime = \(cappedLeadTime)")
             notifyEnabled = false
             return
         }
-
-        let notifyAfter = (firstArrival - cappedLeadTime) * 60
 
         guard notifyAfter > 0 else {
             print("Too late to notify. Bus arriving in \(firstArrival) min (notifyAfter = \(notifyAfter))")
@@ -93,3 +101,4 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
         )
     }
 }
+

@@ -148,12 +148,27 @@
 			);
 			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
 		};
+		DEEDD1282E08BECA00C3640D /* Exceptions for "BusTrackerApp" folder in "BusTrackerApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DE1259312DEC5099004B6E80 /* BusTrackerApp */;
+		};
+		DEEDD12A2E08BEEA00C3640D /* Exceptions for "BusTrackerWatchApp Watch App" folder in "BusTrackerWatchApp Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"BusTrackerWatchApp-Watch-App-Info.plist",
+			);
+			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DE1259342DEC5099004B6E80 /* BusTrackerApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				DEEDD1282E08BECA00C3640D /* Exceptions for "BusTrackerApp" folder in "BusTrackerApp" target */,
 				DE1259CD2DECE20B004B6E80 /* Exceptions for "BusTrackerApp" folder in "BusTrackerWatchApp Watch App" target */,
 			);
 			path = BusTrackerApp;
@@ -171,6 +186,9 @@
 		};
 		DE1259622DEC540E004B6E80 /* BusTrackerWatchApp Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DEEDD12A2E08BEEA00C3640D /* Exceptions for "BusTrackerWatchApp Watch App" folder in "BusTrackerWatchApp Watch App" target */,
+			);
 			path = "BusTrackerWatchApp Watch App";
 			sourceTree = "<group>";
 		};
@@ -858,6 +876,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTrackerApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -897,6 +916,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTrackerApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1021,6 +1041,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTrackerWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BusTrackerWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Swift-y.BusTrackerApp";
@@ -1051,6 +1072,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTrackerWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BusTrackerWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Swift-y.BusTrackerApp";
