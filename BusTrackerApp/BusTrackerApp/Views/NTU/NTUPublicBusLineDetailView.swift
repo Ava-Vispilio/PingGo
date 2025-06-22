@@ -12,6 +12,12 @@ import SwiftUI
 struct NTUPublicBusLineDetailView: View {
     let lineName: String
     @StateObject private var viewModel = NTUPublicBusLineDetailViewModel()
+    
+    @StateObject private var stopViewModelsHolder = ViewModelCache()
+    
+    class ViewModelCache: ObservableObject {
+        @Published var cache: [String: NTUPublicBusStopArrivalViewModel] = [:]
+    }
 
     var body: some View {
         ZStack {
@@ -38,7 +44,7 @@ struct NTUPublicBusLineDetailView: View {
 
                         LazyVStack(alignment: .leading, spacing: 12) {
                             ForEach(viewModel.stops) { stop in
-                                NavigationLink(destination: NTUPublicBusStopArrivalView(stop: stop)) {
+                                NavigationLink(destination: NTUPublicBusStopArrivalView(viewModel: getOrCreateViewModel(for: stop))) {
                                     HStack {
                                         VStack(alignment: .leading, spacing: 4) {
                                             Text(stop.Description)
@@ -67,6 +73,15 @@ struct NTUPublicBusLineDetailView: View {
         .navigationTitle("Bus \(lineName)")
         .onAppear {
             viewModel.loadStops(for: lineName)
+        }
+    }
+    private func getOrCreateViewModel(for stop: PublicBusStop) -> NTUPublicBusStopArrivalViewModel {
+        if let existing = stopViewModelsHolder.cache[stop.BusStopCode] {
+            return existing
+        } else {
+            let newVM = NTUPublicBusStopArrivalViewModel(stop: stop)
+            stopViewModelsHolder.cache[stop.BusStopCode] = newVM
+            return newVM
         }
     }
 }

@@ -129,8 +129,9 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
     
     private(set) var busStopId: String
     
-    init(busStopId: String) {
+    init(busStopId: String, stopName: String) {
         self.busStopId = busStopId
+        self.stopName = stopName
     }
     
     private var notifyEnabledKey: String {
@@ -149,7 +150,7 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
         UserDefaults.standard.set(notificationLeadTime, forKey: notifyMinutesKey)
     }
 
-    private func restoreSavedSettings() {
+    func restoreSavedSettings() {
         notifyWhenSoon = UserDefaults.standard.bool(forKey: notifyEnabledKey)
 
         let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
@@ -173,7 +174,7 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
         arrivalTimes = [ArrivalTime(minutes: 5), ArrivalTime(minutes: 12), ArrivalTime(minutes: 20)]
 
         // Example stop name
-        stopName = "Example Stop"
+//        stopName = "Example Stop"
 
         // Adjust notification lead time if needed
         if let first = arrivalTimes.first?.minutes, notificationLeadTime > first {

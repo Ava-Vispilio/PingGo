@@ -28,10 +28,10 @@ struct NTULineSelectionView: View {
                 if !viewModel.publicActiveLines.isEmpty {
                     Section(header: Text("NTU Public Buses")) {
                         ForEach(viewModel.publicActiveLines, id: \.self) { lineName in
-                                    NavigationLink(destination: NTUPublicBusLineDetailView(lineName: lineName)) {
-                                        Text(lineName.capitalized)
-                                    }
-                                }
+                            NavigationLink(destination: NTUPublicBusLineDetailView(lineName: lineName)) {
+                                Text(lineName.capitalized)
+                            }
+                        }
                     }
                 }
                 

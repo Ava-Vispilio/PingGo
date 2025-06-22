@@ -100,9 +100,9 @@ struct NTUInternalBusStopArrivalView: View {
 
     @StateObject var viewModel: NTUInternalBusStopArrivalViewModel
     
-    init(busStopId: String) {
+    init(busStopId: String, stopName: String) {
         self.busStopId = busStopId
-        _viewModel = StateObject(wrappedValue: NTUInternalBusStopArrivalViewModel(busStopId: busStopId))
+        _viewModel = StateObject(wrappedValue: NTUInternalBusStopArrivalViewModel(busStopId: busStopId, stopName: stopName))
     }
 
     var body: some View {
@@ -170,6 +170,7 @@ struct NTUInternalBusStopArrivalView: View {
         }
         .navigationTitle("Bus Arrivals")
         .task {
+            viewModel.restoreSavedSettings()
             await viewModel.fetchArrivalTimes(for: busStopId)
         }
 //        .onDisappear {

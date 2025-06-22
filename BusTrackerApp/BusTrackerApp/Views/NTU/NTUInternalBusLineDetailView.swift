@@ -58,7 +58,7 @@ struct NTUInternalBusLineDetailView: View {
                         ScrollView {
                             LazyVStack(alignment: .leading, spacing: 12) {
                                 ForEach(viewModel.stops) { stop in
-                                    NavigationLink(destination: NTUInternalBusStopArrivalView(busStopId: stop.id)) {
+                                    NavigationLink(destination: NTUInternalBusStopArrivalView(busStopId: stop.id, stopName: stop.name)) {
                                         HStack {
                                             VStack(alignment: .leading, spacing: 4) {
                                                 Text(stop.name)
@@ -88,62 +88,6 @@ struct NTUInternalBusLineDetailView: View {
                 }
                 .padding()
             }
-//            else {
-            //                // Make the entire page scrollable, with VStack inside
-            //                ScrollView {
-            //                    VStack(alignment: .leading, spacing: 16) {
-            //                        // Info card at top
-            //                        if let bus = viewModel.bus {
-            //                            VStack(alignment: .leading, spacing: 8) {
-            //                                Text("Route: \(bus.routeName)")
-            //                                    .font(.headline)
-            //
-            //                                if bus.vehicles.isEmpty {
-            //                                    Text("No active vehicles on this line.")
-            //                                        .foregroundColor(.secondary)
-            //                                } else {
-            //                                    Text("Active Vehicles:")
-            //                                        .font(.headline)
-            //                                    ForEach(bus.vehicles) { vehicle in
-            //                                        Text("Vehicle ID: \(vehicle.id.uuidString.prefix(8))")
-            //                                            .padding(.bottom, 4)
-            //                                    }
-            //                                }
-            //                            }
-            //                            .padding()
-            //                            .background(Color.gray.opacity(0.2))
-            //                            .cornerRadius(10)
-            //                        }
-            //
-            //                        // Bus stops list below info card
-            //                        if !viewModel.stops.isEmpty {
-            //                            Text("Stops:")
-            //                                .font(.headline)
-            //                                .padding(.top)
-            //
-            //                            // Use LazyVStack for better performance inside ScrollView
-            //                            LazyVStack(alignment: .leading, spacing: 8) {
-            //                                ForEach(viewModel.stops) { stop in
-            //                                    NavigationLink(destination: NTUInternalBusStopArrivalView(busStopId: stop.id)) {
-            //                                        Text(stop.name)
-            //                                            .padding(.vertical, 8)
-            //                                            .padding(.horizontal)
-            //                                            .frame(maxWidth: .infinity, alignment: .leading)
-            //                                            .background(Color(UIColor.secondarySystemBackground))
-            //                                            .cornerRadius(8)
-            //                                    }
-            //                                    .buttonStyle(PlainButtonStyle()) // remove default button style
-            //                                }
-            //                            }
-            //                        } else {
-            //                            Text("No stops available.")
-            //                                .foregroundColor(.secondary)
-            //                                .padding()
-            //                        }
-            //                    }
-            //                    .padding()
-            //                }
-            //            }
         }
         .navigationTitle("\(line.rawValue.capitalized) Line")
 //        .task {

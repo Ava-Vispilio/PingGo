@@ -78,6 +78,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
     }
 
     private func scheduleNotification() {
+        print("Scheduling notification")
         guard let soonest = arrivals
             .flatMap({ $0.minutesToArrivals })
             .filter({ $0 > 0 })
@@ -107,7 +108,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
         NotificationManager.shared.cancelNotification(id: notificationID)
     }
 
-    func onDisappear() {
-        cancelNotification()
-    }
+//    func onDisappear() {
+//        cancelNotification()
+//    }
 }

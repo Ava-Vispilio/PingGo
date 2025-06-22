@@ -9,12 +9,8 @@
 import SwiftUI
 
 struct NTUPublicBusStopArrivalView: View {
-    @StateObject var viewModel: NTUPublicBusStopArrivalViewModel
+    @ObservedObject var viewModel: NTUPublicBusStopArrivalViewModel
     @State private var maxLeadTime: Int = 10
-
-    init(stop: PublicBusStop) {
-        _viewModel = StateObject(wrappedValue: NTUPublicBusStopArrivalViewModel(stop: stop))
-    }
 
     var body: some View {
         VStack {
