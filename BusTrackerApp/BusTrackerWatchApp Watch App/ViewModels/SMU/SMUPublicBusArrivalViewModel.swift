@@ -4,7 +4,6 @@
 //
 //  Created by Ava on 17/6/25.
 //
-// Fetches bus arrival timings of selected SMU bus service
 
 import Foundation
 
@@ -13,81 +12,79 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
     @Published var minutesToArrivals: [Int] = []
     @Published var notifyEnabled = false {
         didSet {
-            saveNotifyEnabledState() // notifs edit
+            saveNotifyEnabledState()
             handleNotificationToggle()
         }
     }
     @Published var notifyMinutesBefore = 2 {
         didSet {
-            UserDefaults.standard.set(notifyMinutesBefore, forKey: notifyMinutesKey) // notifs edit
-            if notifyEnabled {
-                scheduleNotification()
-            }
+            UserDefaults.standard.set(notifyMinutesBefore, forKey: notifyMinutesKey)
         }
     }
 
     private var stop: PublicBusStop?
     private var arrival: PublicBusArrival?
-    
-    // edits to make notifs work aft exiting app
+
     private var notifyKey: String {
         guard let arrival, let stop else { return "notifyEnabled-default" }
         return "notifyEnabled-\(arrival.serviceNo)-\(stop.BusStopCode)"
     }
-    
+
     private var notifyMinutesKey: String {
         guard let arrival, let stop else { return "notifyMinutes-default" }
         return "notifyMinutes-\(arrival.serviceNo)-\(stop.BusStopCode)"
     }
-    // edits end here
 
     func configure(with stop: PublicBusStop, arrival: PublicBusArrival) {
         self.stop = stop
         self.arrival = arrival
         self.minutesToArrivals = arrival.minutesToArrivals
-        
-        notifyEnabled = UserDefaults.standard.bool(forKey: notifyKey) // saves state of toggle
-        
-        let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey) // saves time set for notifs
+
+        notifyEnabled = UserDefaults.standard.bool(forKey: notifyKey)
+        let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
         notifyMinutesBefore = savedMinutes > 0 ? savedMinutes : 2
     }
-    
-    private func saveNotifyEnabledState() { // func to save notifs state
+
+    private func saveNotifyEnabledState() {
         UserDefaults.standard.set(notifyEnabled, forKey: notifyKey)
     }
-    
+
     private func handleNotificationToggle() {
         guard let arrival, let stop else { return }
 
         let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
         if !notifyEnabled {
+            print("Cancelled notification with id: \(id)")
             NotificationManager.shared.cancelNotification(id: id)
         } else {
             scheduleNotification()
         }
     }
 
-    private func scheduleNotification() {
+    func scheduleNotification() {
         guard notifyEnabled,
               let firstArrival = minutesToArrivals.first,
               let stop,
               let arrival else { return }
 
         let cappedLeadTime = min(notifyMinutesBefore, firstArrival)
+
         guard cappedLeadTime > 0 else {
-            print("Invalid or zero lead time.")
+            print("Invalid lead time: cappedLeadTime = \(cappedLeadTime)")
             notifyEnabled = false
             return
         }
 
         let notifyAfter = (firstArrival - cappedLeadTime) * 60
+
         guard notifyAfter > 0 else {
-            print("Too late to notify. Bus arriving in \(firstArrival) min.")
+            print("Too late to notify. Bus arriving in \(firstArrival) min (notifyAfter = \(notifyAfter))")
             notifyEnabled = false
             return
         }
 
         let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
+        print("Scheduling notification with id: \(id), to fire in \(notifyAfter) seconds")
         NotificationManager.shared.scheduleNotification(
             id: id,
             title: "Bus \(arrival.serviceNo) arriving",

@@ -11,9 +11,8 @@ import SwiftUI
 struct BusTrackerWatchApp_Watch_App: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                NTUWatchLineSelectionView()
-            }
+            PageContainerView()
         }
     }
 }
+
