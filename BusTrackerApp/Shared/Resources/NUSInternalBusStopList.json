@@ -95,14 +95,6 @@
       "ShortName": "CLB",
       "latitude": 1.296544,
       "longitude": 103.772569
-    },
-    {
-      "caption": "Kent Ridge Bus Terminal",
-      "name": "KRB",
-      "LongName": "Kent Ridge Bus Terminal",
-      "ShortName": "KR Bus Ter",
-      "latitude": 1.29443,
-      "longitude": 103.769997
     }
   ],
   "A2": [
@@ -209,14 +201,6 @@
       "ShortName": "Ventus",
       "latitude": 1.29534,
       "longitude": 103.770617
-    },
-    {
-      "caption": "Kent Ridge Bus Terminal",
-      "name": "KRB",
-      "LongName": "Kent Ridge Bus Terminal",
-      "ShortName": "KR Bus Ter",
-      "latitude": 1.29443,
-      "longitude": 103.769997
     }
   ],
   "BTC": [
@@ -355,14 +339,6 @@
       "ShortName": "College Gr",
       "latitude": 1.323345,
       "longitude": 103.816595
-    },
-    {
-      "caption": "Oei Tiong Ham Building",
-      "name": "OTH",
-      "LongName": "Oei Tiong Ham Building",
-      "ShortName": "OTH Bldg",
-      "latitude": 1.319333,
-      "longitude": 103.818262
     }
   ],
   "D1": [
@@ -469,14 +445,6 @@
       "ShortName": "BIZ 2",
       "latitude": 1.293223,
       "longitude": 103.775068
-    },
-    {
-      "caption": "COM 3",
-      "name": "COM3",
-      "LongName": "COM 3",
-      "ShortName": "COM 3",
-      "latitude": 1.294431,
-      "longitude": 103.775217
     }
   ],
   "D2": [
@@ -599,14 +567,6 @@
       "ShortName": "TCOMS",
       "latitude": 1.293654,
       "longitude": 103.776898
-    },
-    {
-      "caption": "COM 3",
-      "name": "COM3",
-      "LongName": "COM 3",
-      "ShortName": "COM 3",
-      "latitude": 1.294431,
-      "longitude": 103.775217
     }
   ],
   "E": [
@@ -649,14 +609,6 @@
       "ShortName": "Opp YIH",
       "latitude": 1.298904,
       "longitude": 103.774118
-    },
-    {
-      "caption": "University Town",
-      "name": "UTOWN",
-      "LongName": "University Town",
-      "ShortName": "UTown",
-      "latitude": 1.303876,
-      "longitude": 103.774621
     }
   ],
   "K": [
@@ -813,14 +765,6 @@
       "ShortName": "College Gr",
       "latitude": 1.323345,
       "longitude": 103.816595
-    },
-    {
-      "caption": "Oei Tiong Ham Building",
-      "name": "OTH",
-      "LongName": "Oei Tiong Ham Building",
-      "ShortName": "OTH Bldg",
-      "latitude": 1.319333,
-      "longitude": 103.818262
     }
   ]
 }

@@ -98,8 +98,8 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
 
         NotificationManager.shared.scheduleNotification(
             id: notificationID,
-            title: "Bus arriving soon!",
-            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) minutes.",
+            title: "Bus arriving soon",
+            body: "Bus will arrive at \(stop.Description) in \(notificationLeadTime) min.",
             after: fireInSeconds
         )
     }

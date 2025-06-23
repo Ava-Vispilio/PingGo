@@ -216,7 +216,8 @@ class NUSPublicBusArrivalViewModel: ObservableObject {
         NotificationManager.shared.scheduleNotification(
             id: notificationID,
             title: "Bus \(busService) arriving soon",
-            body: "Bus will arrive at stop \(stop.Description) in \(cappedLeadTime) minute\(cappedLeadTime > 1 ? "s" : "").",
+//            body: "Bus will arrive at \(stop.Description) in \(cappedLeadTime) minute\(cappedLeadTime > 1 ? "s" : "").", // standardising
+            body: "Bus will arrive at \(stop.Description) in \(cappedLeadTime) min.",
             after: fireInSeconds
         )
     }

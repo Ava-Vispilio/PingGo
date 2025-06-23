@@ -19,7 +19,7 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
     }
     @Published var notifyMinutesBefore = 2 {
         didSet {
-            UserDefaults.standard.set(notifyMinutesBefore, forKey: notifyMinutesKey) // notifs edit
+            UserDefaults.standard.set(notifyMinutesBefore, forKey: notifyMinutesKey)
             if notifyEnabled {
                 scheduleNotification()
             }
@@ -29,7 +29,6 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
     private var stop: PublicBusStop?
     private var arrival: PublicBusArrival?
     
-    // edits to make notifs work aft exiting app
     private var notifyKey: String {
         guard let arrival, let stop else { return "notifyEnabled-default" }
         return "notifyEnabled-\(arrival.serviceNo)-\(stop.BusStopCode)"
@@ -39,7 +38,6 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
         guard let arrival, let stop else { return "notifyMinutes-default" }
         return "notifyMinutes-\(arrival.serviceNo)-\(stop.BusStopCode)"
     }
-    // edits end here
 
     func configure(with stop: PublicBusStop, arrival: PublicBusArrival) {
         self.stop = stop
@@ -90,8 +88,8 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
         let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
         NotificationManager.shared.scheduleNotification(
             id: id,
-            title: "Bus \(arrival.serviceNo) arriving",
-            body: "Your bus is arriving in \(cappedLeadTime) minutes at \(stop.Description).",
+            title: "Bus \(arrival.serviceNo) arriving soon",
+            body: "Bus will arrive at \(stop.Description) in \(cappedLeadTime) min.",
             after: notifyAfter
         )
     }

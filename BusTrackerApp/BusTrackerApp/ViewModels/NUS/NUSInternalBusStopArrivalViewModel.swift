@@ -108,7 +108,7 @@ class NUSInternalBusStopArrivalViewModel: ObservableObject {
 
         let content = UNMutableNotificationContent()
         content.title = "Bus \(routeCode) arriving soon"
-        content.body = "Arriving at \(stop.caption) in \(minutesBefore) min"
+        content.body = "Bus will arrive at \(stop.caption) in \(minutesBefore) min."
         content.sound = .default
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval((arrivalIn - minutesBefore) * 60), repeats: false)

@@ -195,7 +195,7 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
 
         let content = UNMutableNotificationContent()
         content.title = "Bus arriving soon"
-        content.body = "Arriving at \(stopName) in \(notificationLeadTime) min"
+        content.body = "Bus will arrive at \(stopName) in \(notificationLeadTime) min."
         content.sound = .default
 
         let interval = TimeInterval((firstArrival - notificationLeadTime) * 60)
