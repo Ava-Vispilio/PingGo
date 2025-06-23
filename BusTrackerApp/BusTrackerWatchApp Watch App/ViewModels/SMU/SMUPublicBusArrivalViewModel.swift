@@ -13,7 +13,9 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
     @Published var notifyEnabled = false {
         didSet {
             saveNotifyEnabledState()
-            // Removed handleNotificationToggle from here
+            if !notifyEnabled {
+                notificationWasScheduled = false  // Reset so picker shows next time
+            }
         }
     }
     @Published var notifyMinutesBefore = 2 {
@@ -24,6 +26,7 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
 
     private var stop: PublicBusStop?
     private var arrival: PublicBusArrival?
+    @Published var notificationWasScheduled = false
 
     private var notifyKey: String {
         guard let arrival, let stop else { return "notifyEnabled-default" }
@@ -45,10 +48,6 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
         notifyMinutesBefore = savedMinutes > 0 ? savedMinutes : 2
     }
 
-    private func saveNotifyEnabledState() {
-        UserDefaults.standard.set(notifyEnabled, forKey: notifyKey)
-    }
-
     func handleNotificationToggle() {
         guard let arrival, let stop else { return }
 
@@ -68,15 +67,13 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
               let arrival else { return }
 
         let cappedLeadTime = min(notifyMinutesBefore, firstArrival)
-        let notifyAfter = (firstArrival - cappedLeadTime) * 60
 
         print("""
-        Attempting to schedule notification:
+        Attempting to schedule SMU notification:
           notifyEnabled = \(notifyEnabled)
           notifyMinutesBefore = \(notifyMinutesBefore)
           cappedLeadTime = \(cappedLeadTime)
           firstArrival = \(firstArrival)
-          notifyAfter = \(notifyAfter)
         """)
 
         guard cappedLeadTime > 0 else {
@@ -84,6 +81,10 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
             notifyEnabled = false
             return
         }
+
+        let notifyAfter = (firstArrival - cappedLeadTime) * 60
+
+        print("  notifyAfter = \(notifyAfter)")
 
         guard notifyAfter > 0 else {
             print("Too late to notify. Bus arriving in \(firstArrival) min (notifyAfter = \(notifyAfter))")
@@ -93,12 +94,24 @@ class SMUPublicBusArrivalViewModel: ObservableObject {
 
         let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
         print("Scheduling notification with id: \(id), to fire in \(notifyAfter) seconds")
+
         NotificationManager.shared.scheduleNotification(
             id: id,
             title: "Bus \(arrival.serviceNo) arriving",
             body: "Your bus is arriving in \(cappedLeadTime) minutes at \(stop.Description).",
             after: notifyAfter
         )
+
+        notificationWasScheduled = true
+    }
+
+    func cancelNotificationIfNeeded() {
+        guard let arrival, let stop else { return }
+        let id = "bus-\(arrival.serviceNo)-\(stop.BusStopCode)"
+        NotificationManager.shared.cancelNotification(id: id)
+    }
+
+    private func saveNotifyEnabledState() {
+        UserDefaults.standard.set(notifyEnabled, forKey: notifyKey)
     }
 }
-

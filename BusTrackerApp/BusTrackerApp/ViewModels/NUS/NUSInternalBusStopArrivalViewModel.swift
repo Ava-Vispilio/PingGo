@@ -121,4 +121,3 @@ class NUSInternalBusStopArrivalViewModel: ObservableObject {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["bus-\(stop.name)-\(routeCode)"])
     }
 }
-

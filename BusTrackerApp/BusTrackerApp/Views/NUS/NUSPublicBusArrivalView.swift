@@ -168,4 +168,3 @@ struct NUSPublicBusArrivalView: View {
 //        }
     }
 }
-

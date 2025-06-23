@@ -155,13 +155,6 @@
 			);
 			target = DE1259312DEC5099004B6E80 /* BusTrackerApp */;
 		};
-		DEEDD12A2E08BEEA00C3640D /* Exceptions for "BusTrackerWatchApp Watch App" folder in "BusTrackerWatchApp Watch App" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"BusTrackerWatchApp-Watch-App-Info.plist",
-			);
-			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -186,9 +179,6 @@
 		};
 		DE1259622DEC540E004B6E80 /* BusTrackerWatchApp Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				DEEDD12A2E08BEEA00C3640D /* Exceptions for "BusTrackerWatchApp Watch App" folder in "BusTrackerWatchApp Watch App" target */,
-			);
 			path = "BusTrackerWatchApp Watch App";
 			sourceTree = "<group>";
 		};

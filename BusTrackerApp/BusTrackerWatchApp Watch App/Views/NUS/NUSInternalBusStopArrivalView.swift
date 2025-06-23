@@ -1,17 +1,26 @@
+//
+//  NUSInternalBusStopArrivalView.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 23/6/25.
+//
+
+
 import SwiftUI
 
-struct SMUPublicBusArrivalView: View {
-    let stop: PublicBusStop
-    let arrival: PublicBusArrival
-    @StateObject var viewModel: SMUPublicBusArrivalViewModel
+struct NUSInternalBusStopArrivalView: View {
+    let stop: NUSInternalBusStop
+    let routeCode: String
+    @StateObject var viewModel: NUSInternalBusStopArrivalViewModel
     @State private var showingPickerSheet = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Bus \(arrival.serviceNo)")
+                Text("Bus \(routeCode)")
                     .font(.headline)
-                Text(stop.Description)
+
+                Text(stop.caption)
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
@@ -22,8 +31,8 @@ struct SMUPublicBusArrivalView: View {
                         .foregroundColor(.gray)
                 } else {
                     HStack {
-                        ForEach(viewModel.minutesToArrivals.prefix(3), id: \.self) { mins in
-                            Text("\(mins) min")
+                        ForEach(viewModel.minutesToArrivals.prefix(3), id: \.self) { min in
+                            Text("\(min) min")
                                 .padding(6)
                                 .background(Color.blue.opacity(0.2))
                                 .cornerRadius(6)
@@ -47,7 +56,9 @@ struct SMUPublicBusArrivalView: View {
             .padding()
         }
         .onAppear {
-            viewModel.configure(with: stop, arrival: arrival)
+            Task {
+                await viewModel.fetchArrivals()
+            }
         }
         .sheet(isPresented: $showingPickerSheet, onDismiss: {
             if !viewModel.notificationWasScheduled {

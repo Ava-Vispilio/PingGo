@@ -1,17 +1,30 @@
+//
+//  NUSPublicBusArrivalView.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 23/6/25.
+//
+
+
+//
+//  NUSPublicBusArrivalView.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 11/6/25.
+//
+
 import SwiftUI
 
-struct SMUPublicBusArrivalView: View {
-    let stop: PublicBusStop
-    let arrival: PublicBusArrival
-    @StateObject var viewModel: SMUPublicBusArrivalViewModel
+struct NUSPublicBusArrivalView: View {
+    @StateObject var viewModel: NUSPublicBusArrivalViewModel
     @State private var showingPickerSheet = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Bus \(arrival.serviceNo)")
+                Text("Bus \(viewModel.arrivals.first?.serviceNo ?? "")")
                     .font(.headline)
-                Text(stop.Description)
+                Text(viewModel.stop.Description)
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
@@ -46,8 +59,9 @@ struct SMUPublicBusArrivalView: View {
             }
             .padding()
         }
-        .onAppear {
-            viewModel.configure(with: stop, arrival: arrival)
+        .navigationTitle(viewModel.stop.Description)
+        .task {
+            await viewModel.fetchArrivals()
         }
         .sheet(isPresented: $showingPickerSheet, onDismiss: {
             if !viewModel.notificationWasScheduled {

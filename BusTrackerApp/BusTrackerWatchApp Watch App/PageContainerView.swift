@@ -13,7 +13,7 @@ struct PageContainerView: View {
 
     var body: some View {
         TabView(selection: $currentPage) {
-            NUSWatchPlaceholderView()
+            NUSLineSelectionView()
                 .tag(0)
 
             NTUWatchPlaceholderView()
