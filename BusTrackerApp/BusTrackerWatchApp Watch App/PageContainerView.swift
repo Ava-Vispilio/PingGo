@@ -16,7 +16,7 @@ struct PageContainerView: View {
             NUSLineSelectionView()
                 .tag(0)
 
-            NTUWatchPlaceholderView()
+            NTULineSelectionView()
                 .tag(1)
 
             SMUPublicBusStopSelectionView()

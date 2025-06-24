@@ -2,15 +2,19 @@
 //  NTUPublicBusStopArrivalView.swift
 //  BusTrackerApp
 //
-//  Created by Ava Vispilio on 11/6/25.
+//  Created by Ava Vispilio on 24/6/25.
 //
-// Displays a list of NTU's public bus arrival times (selected bus route and stop) and allows users to set notifications
 
 import SwiftUI
 
 struct NTUPublicBusStopArrivalView: View {
-    @ObservedObject var viewModel: NTUPublicBusStopArrivalViewModel
+    @StateObject private var viewModel: NTUPublicBusStopArrivalViewModel
     @State private var maxLeadTime: Int = 10
+    @State private var showingPickerSheet = false
+
+    init(stop: PublicBusStop) {
+        _viewModel = StateObject(wrappedValue: NTUPublicBusStopArrivalViewModel(stop: stop))
+    }
 
     var body: some View {
         VStack {
@@ -22,9 +26,10 @@ struct NTUPublicBusStopArrivalView: View {
                     Text("No arrivals available.")
                         .foregroundColor(.secondary)
                 }
-                .listStyle(.insetGrouped)
+                .listStyle(.plain)
             } else {
                 List {
+                    // Arrival info
                     ForEach(viewModel.arrivals) { arrival in
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Bus \(arrival.serviceNo)")
@@ -42,41 +47,33 @@ struct NTUPublicBusStopArrivalView: View {
                         .padding(.vertical, 4)
                     }
 
+                    // Notification toggle
                     Section {
                         Toggle("Notify before arrival", isOn: $viewModel.notificationsEnabled)
-                            .onChange(of: viewModel.notificationsEnabled) { newValue in
-                                if !newValue {
-                                    viewModel.showScrollWheel = false
+                            .onChange(of: viewModel.notificationsEnabled) { enabled in
+                                if enabled {
+                                    if !viewModel.notificationWasScheduled {
+                                        showingPickerSheet = true
+                                    }
+                                } else {
+                                    viewModel.handleNotificationToggle()
                                 }
                             }
 
-                        if viewModel.notificationsEnabled {
+                        if viewModel.notificationsEnabled && viewModel.notificationWasScheduled {
                             Button(action: {
-                                withAnimation {
-                                    viewModel.showScrollWheel.toggle()
-                                }
+                                showingPickerSheet = true
                             }) {
                                 HStack {
                                     Text("Notify \(viewModel.notificationLeadTime) min before")
                                     Spacer()
-                                    Image(systemName: viewModel.showScrollWheel ? "chevron.up" : "chevron.down")
+                                    Image(systemName: "chevron.right")
                                         .foregroundColor(.gray)
                                 }
-                            }
-
-                            if viewModel.showScrollWheel {
-                                Picker("Notify me", selection: $viewModel.notificationLeadTime) {
-                                    ForEach(1...maxLeadTime, id: \.self) { minute in
-                                        Text("\(minute) minute\(minute > 1 ? "s" : "")").tag(minute)
-                                    }
-                                }
-                                .pickerStyle(.wheel)
-                                .frame(height: 120)
                             }
                         }
                     }
                 }
-                .listStyle(.insetGrouped)
             }
         }
         .navigationTitle(viewModel.stop.Description)
@@ -94,8 +91,29 @@ struct NTUPublicBusStopArrivalView: View {
                 }
             }
         }
-//        .onDisappear {
-//            viewModel.notificationsEnabled = false
-//        }
+        .sheet(isPresented: $showingPickerSheet, onDismiss: {
+            if !viewModel.notificationWasScheduled {
+                viewModel.notificationsEnabled = false
+            }
+        }) {
+            if let soonest = viewModel.arrivals
+                .flatMap({ $0.minutesToArrivals })
+                .filter({ $0 > 1 })
+                .min()
+            {
+                NotificationLeadTimePickerView(
+                    maxLeadTime: soonest - 1,
+                    selectedMinutes: $viewModel.notificationLeadTime,
+                    onSet: {
+                        viewModel.notificationWasScheduled = true
+                        viewModel.notificationsEnabled = true
+                        viewModel.handleNotificationToggle()
+                    }
+                )
+            } else {
+                Text("No valid arrival to notify.")
+                    .padding()
+            }
+        }
     }
 }

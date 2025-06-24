@@ -5,14 +5,6 @@
 //  Created by Ava Vispilio on 23/6/25.
 //
 
-
-//
-//  NUSPublicBusArrivalView.swift
-//  BusTrackerApp
-//
-//  Created by Ava Vispilio on 11/6/25.
-//
-
 import SwiftUI
 
 struct NUSPublicBusArrivalView: View {
