@@ -1,3 +1,11 @@
+//
+//  NTUAPIResponseWrappers.swift
+//  BusTrackerApp
+//
+//  Created by Ava on 
+// 
+// Decodes Omnibus API responses (models here are updated)
+
 // Shared/Networking/APIResponseWrappers.swift
 // Provides wrapper structs matching the JSON structure of the API.
 
@@ -5,13 +13,13 @@ import Foundation
 
 // For endpoint /prod/[color]-bus
 struct NTUBusLineResponse: Decodable {
-    let bus: NTUBus
+    let bus: NTUInternalBus
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: DynamicCodingKeys.self)
         for key in container.allKeys {
             if key.stringValue.hasSuffix("Bus") {
-                bus = try container.decode(NTUBus.self, forKey: key)
+                bus = try container.decode(NTUInternalBus.self, forKey: key)
                 return
             }
         }
@@ -32,11 +40,11 @@ struct NTUBusLineResponse: Decodable {
 // For endpoint /prod/bus-stop-details
 struct NTUBusStopDetailsResponse: Codable {
     let message: String
-    let busStopDetails: [String: [NTUBusStop]]  // Keys like "blueBus", "redBus", etc.
+    let busStopDetails: [String: [NTUInternalBusStop]]  // Keys like "blueBus", "redBus", etc.
 }
 
 // For endpoint /prod/bus-arrival
 struct NTUBusArrivalResponse: Codable {
     let message: String
-    let busArrival: NTUBusArrival
+    let busArrival: NTUInternalBusArrival
 }

@@ -5,21 +5,15 @@
 //  Created by Ava Vispilio on 4/6/25.
 //
 
-
-//
-//  NotificationManager.swift
-//  BusTrackerApp
-//
-//  Created by Ava Vispilio on 2/6/25.
-//
-
 import Foundation
 import UserNotifications
 
-class NotificationManager {
+class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     static let shared = NotificationManager()
 
-    private init() {
+    private override init() {
+        super.init()
+        UNUserNotificationCenter.current().delegate = self
         requestAuthorization()
     }
 
@@ -36,7 +30,7 @@ class NotificationManager {
 
     func scheduleNotification(id: String, title: String, body: String, after timeInterval: Int) {
         guard timeInterval > 0 else {
-            print("Cannot schedule notification '\(id)': time interval must be > 0, got \(timeInterval)")
+            print("Aborted scheduling: timeInterval must be > 0 (got \(timeInterval))")
             return
         }
 
@@ -56,6 +50,15 @@ class NotificationManager {
     }
 
     func cancelNotification(id: String) {
+        print("Cancelled notification with id: \(id)")
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+    }
+
+    // MARK: - Debug print when notification is delivered
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("Notification triggered: \(notification.request.identifier)")
+        completionHandler([.banner, .sound])
     }
 }

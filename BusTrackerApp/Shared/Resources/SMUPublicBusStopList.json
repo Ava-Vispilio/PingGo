@@ -1,0 +1,37 @@
+[
+  {
+    "BusStopCode": "04179",
+    "RoadName": "Bras Basah Road",
+    "Description": "Aft Bras Basah Stn Exit A",
+    "Latitude": 1.29647916306741,
+    "Longitude": 103.85147164487202
+  },
+  {
+    "BusStopCode": "04121",
+    "RoadName": "Stamford Rd",
+    "Description": "SMU",
+    "Latitude": 1.29618544092334,
+    "Longitude": 103.84958029974611
+  },
+  {
+    "BusStopCode": "04111",
+    "RoadName": "Stamford Rd",
+    "Description": "Capitol Bldg",
+    "Latitude": 1.29395444170081,
+    "Longitude": 103.85139096636622
+  },
+  {
+    "BusStopCode": "04029",
+    "RoadName": "Bencoolen St",
+    "Description": "BEF BENCOOLEN STN EXIT A",
+    "Latitude": 1.29948166696821,
+    "Longitude": 103.85092666701239
+  },
+  {
+    "BusStopCode": "08057",
+    "RoadName": "Orchard Rd",
+    "Description": "Dhoby Ghaut Stn",
+    "Latitude": 1.29930997279734,
+    "Longitude": 103.84529021429745
+  }
+]

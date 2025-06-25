@@ -1,3 +1,11 @@
+//
+//  APIResponseWrappers.swift
+//  BusTrackerApp
+//
+//  Created by Ava on 
+// 
+// Decodes API responses for NTU buses (models used here not updated)
+
 // Shared/Networking/APIResponseWrappers.swift
 // Provides wrapper structs matching the JSON structure of the API.
 

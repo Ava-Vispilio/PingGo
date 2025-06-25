@@ -1,3 +1,11 @@
+//
+//  NTUBusAPIClient.swift
+//  BusTrackerApp
+//
+//  Created by Ava on 
+// 
+// Functions for each specific Omnibus API call
+
 // Shared/Networking/BusAPIClient.swift
 // Provides functions for all API calls.
 
@@ -78,7 +86,7 @@ struct NTUBusAPIClient {
 
 extension NTUBusAPIClient {
     // Fetch stops for a specific bus route color
-    func fetchStops(for line: BusRouteColor) async throws -> [NTUBusStop] {
+    func fetchStops(for line: BusRouteColor) async throws -> [NTUInternalBusStop] {
         let response = try await fetchBusStopDetails()
         
         // Keys are like "blueBus", "redBus", etc.

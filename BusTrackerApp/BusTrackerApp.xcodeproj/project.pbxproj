@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE04A2232DF85B8000C5626E /* ArriveLahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2222DF85B8000C5626E /* ArriveLahService.swift */; };
+		DE04A2242DF85B8000C5626E /* ArriveLahService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2222DF85B8000C5626E /* ArriveLahService.swift */; };
+		DE04A2262DF85D7100C5626E /* LTABusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2252DF85D7100C5626E /* LTABusArrival.swift */; };
+		DE04A2272DF85D7100C5626E /* LTABusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04A2252DF85D7100C5626E /* LTABusArrival.swift */; };
 		DE1259812DEC5411004B6E80 /* BusTrackerWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DE1259612DEC540D004B6E80 /* BusTrackerWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE1259B82DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */; };
 		DE1259B92DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */; };
@@ -16,12 +20,40 @@
 		DE1259BD2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259AA2DECC686004B6E80 /* NTUEndpoint.swift */; };
 		DE1259BE2DECD3AA004B6E80 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A92DECC67B004B6E80 /* NetworkError.swift */; };
 		DE1259BF2DECD3AA004B6E80 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A92DECC67B004B6E80 /* NetworkError.swift */; };
-		DE1259C02DECD3B0004B6E80 /* NTUBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A72DECC3EE004B6E80 /* NTUBusArrival.swift */; };
-		DE1259C12DECD3B0004B6E80 /* NTUBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A72DECC3EE004B6E80 /* NTUBusArrival.swift */; };
-		DE1259C22DECD3B5004B6E80 /* NTUBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A62DECC3C5004B6E80 /* NTUBusStop.swift */; };
-		DE1259C32DECD3B5004B6E80 /* NTUBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A62DECC3C5004B6E80 /* NTUBusStop.swift */; };
-		DE1259C42DECD3BB004B6E80 /* NTUBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUBus.swift */; };
-		DE1259C52DECD3BB004B6E80 /* NTUBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUBus.swift */; };
+		DE1259C02DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */; };
+		DE1259C12DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */; };
+		DE1259C22DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */; };
+		DE1259C32DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */; };
+		DE1259C42DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */; };
+		DE1259C52DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */; };
+		DE38260B2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */; };
+		DE38260C2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */; };
+		DE38260E2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */; };
+		DE38260F2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */; };
+		DE3826112DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */; };
+		DE3826122DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */; };
+		DE3826142DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */; };
+		DE3826152DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */; };
+		DE3826172DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */; };
+		DE3826182DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */; };
+		DE38261A2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */; };
+		DE38261B2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */; };
+		DE48B8122DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
+		DE48B8132DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */; };
+		DE48B8162DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */; };
+		DE48B8172DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */; };
+		DE48B8182DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */; };
+		DE48B8192DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */ = {isa = PBXBuildFile; fileRef = DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */; };
+		DE48B8222DF8D505005E2542 /* PublicBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8212DF8D505005E2542 /* PublicBusStop.swift */; };
+		DE48B8232DF8D505005E2542 /* PublicBusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8212DF8D505005E2542 /* PublicBusStop.swift */; };
+		DE48B8252DF8D513005E2542 /* PublicBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */; };
+		DE48B8262DF8D513005E2542 /* PublicBusArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */; };
+		DE48B8302DF8ED3C005E2542 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B82F2DF8ED34005E2542 /* Constants.swift */; };
+		DE48B8312DF8ED3C005E2542 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48B82F2DF8ED34005E2542 /* Constants.swift */; };
+		DE51FFB52DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */; };
+		DE51FFB62DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */; };
+		DE5AFFBD2DF963300002257D /* PublicBusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5AFFBC2DF963300002257D /* PublicBusLine.swift */; };
+		DE5AFFBE2DF963300002257D /* PublicBusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5AFFBC2DF963300002257D /* PublicBusLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,29 +109,44 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE04A2222DF85B8000C5626E /* ArriveLahService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArriveLahService.swift; sourceTree = "<group>"; };
+		DE04A2252DF85D7100C5626E /* LTABusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTABusArrival.swift; sourceTree = "<group>"; };
 		DE1259322DEC5099004B6E80 /* BusTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1259402DEC509B004B6E80 /* BusTrackerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTrackerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE12594A2DEC509B004B6E80 /* BusTrackerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTrackerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1259612DEC540D004B6E80 /* BusTrackerWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusTrackerWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE12596D2DEC5411004B6E80 /* BusTrackerWatchApp Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusTrackerWatchApp Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1259772DEC5411004B6E80 /* BusTrackerWatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BusTrackerWatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE1259A52DECC395004B6E80 /* NTUBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUBus.swift; sourceTree = "<group>"; };
-		DE1259A62DECC3C5004B6E80 /* NTUBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUBusStop.swift; sourceTree = "<group>"; };
-		DE1259A72DECC3EE004B6E80 /* NTUBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUBusArrival.swift; sourceTree = "<group>"; };
+		DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUInternalBus.swift; sourceTree = "<group>"; };
+		DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUInternalBusStop.swift; sourceTree = "<group>"; };
+		DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUInternalBusArrival.swift; sourceTree = "<group>"; };
 		DE1259A92DECC67B004B6E80 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DE1259AA2DECC686004B6E80 /* NTUEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUEndpoint.swift; sourceTree = "<group>"; };
 		DE1259AB2DECC68D004B6E80 /* NTUBusAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUBusAPIClient.swift; sourceTree = "<group>"; };
 		DE1259AC2DECCA8C004B6E80 /* NTUAPIResponseWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTUAPIResponseWrappers.swift; sourceTree = "<group>"; };
+		DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSLineActivityWrapper.swift; sourceTree = "<group>"; };
+		DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusArrival.swift; sourceTree = "<group>"; };
+		DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusRoute.swift; sourceTree = "<group>"; };
+		DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSInternalBusStop.swift; sourceTree = "<group>"; };
+		DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NUSInternalBusStopList.json; sourceTree = "<group>"; };
+		DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUSNextBusService.swift; sourceTree = "<group>"; };
+		DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NTUPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NUSPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SMUPublicBusStopList.json; sourceTree = "<group>"; };
+		DE48B8212DF8D505005E2542 /* PublicBusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicBusStop.swift; sourceTree = "<group>"; };
+		DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicBusArrival.swift; sourceTree = "<group>"; };
+		DE48B82F2DF8ED34005E2542 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTALineActivityWrapper.swift; sourceTree = "<group>"; };
+		DE5AFFBC2DF963300002257D /* PublicBusLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicBusLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		DE1259CD2DECE20B004B6E80 /* Exceptions for "BusTrackerApp" folder in "BusTrackerWatchApp Watch App" target */ = {
+		DEEDD1282E08BECA00C3640D /* Exceptions for "BusTrackerApp" folder in "BusTrackerApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				ViewModels/NTUBusStopArrivalViewModel.swift,
-				Views/NTUBusStopArrivalView.swift,
+				Info.plist,
 			);
-			target = DE1259602DEC540D004B6E80 /* BusTrackerWatchApp Watch App */;
+			target = DE1259312DEC5099004B6E80 /* BusTrackerApp */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -107,7 +154,7 @@
 		DE1259342DEC5099004B6E80 /* BusTrackerApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				DE1259CD2DECE20B004B6E80 /* Exceptions for "BusTrackerApp" folder in "BusTrackerWatchApp Watch App" target */,
+				DEEDD1282E08BECA00C3640D /* Exceptions for "BusTrackerApp" folder in "BusTrackerApp" target */,
 			);
 			path = BusTrackerApp;
 			sourceTree = "<group>";
@@ -185,6 +232,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE04A2202DF859E700C5626E /* LTA */ = {
+			isa = PBXGroup;
+			children = (
+				DE04A2222DF85B8000C5626E /* ArriveLahService.swift */,
+			);
+			path = LTA;
+			sourceTree = "<group>";
+		};
+		DE04A2212DF859F700C5626E /* LTA */ = {
+			isa = PBXGroup;
+			children = (
+				DE51FFB42DFA0C7C00652F65 /* LTALineActivityWrapper.swift */,
+				DE5AFFBC2DF963300002257D /* PublicBusLine.swift */,
+				DE04A2252DF85D7100C5626E /* LTABusArrival.swift */,
+				DE48B8242DF8D513005E2542 /* PublicBusArrival.swift */,
+				DE48B8212DF8D505005E2542 /* PublicBusStop.swift */,
+			);
+			path = LTA;
+			sourceTree = "<group>";
+		};
+		DE04A2282DF8CFCE00C5626E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE3826162DFB7A1C009630A5 /* NUSInternalBusStopList.json */,
+				DE48B8142DF8D0EB005E2542 /* NUSPublicBusStopList.json */,
+				DE48B8152DF8D0EB005E2542 /* SMUPublicBusStopList.json */,
+				DE48B8112DF8D0A3005E2542 /* NTUPublicBusStopList.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DE1259292DEC5099004B6E80 = {
 			isa = PBXGroup;
 			children = (
@@ -215,8 +293,8 @@
 		DE1259A22DECC319004B6E80 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DE04A2282DF8CFCE00C5626E /* Resources */,
 				DE1259A82DECC66D004B6E80 /* Networking */,
-				DE1259A42DECC333004B6E80 /* Services */,
 				DE1259A32DECC326004B6E80 /* Models */,
 			);
 			path = Shared;
@@ -225,26 +303,19 @@
 		DE1259A32DECC326004B6E80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DEE4B5352DF4E0DB007F917B /* SMU */,
+				DE04A2212DF859F700C5626E /* LTA */,
 				DEE4B5342DF4E0D6007F917B /* NUS */,
 				DEE4B52E2DF4DC2F007F917B /* NTU */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DE1259A42DECC333004B6E80 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		DE1259A82DECC66D004B6E80 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DE04A2202DF859E700C5626E /* LTA */,
 				DEE4B5362DF4E0F9007F917B /* Common */,
 				DEE4B5332DF4E0B2007F917B /* NUS */,
-				DEE4B5322DF4E0AC007F917B /* SMU */,
 				DEE4B52D2DF4DC1A007F917B /* NTU */,
 			);
 			path = Networking;
@@ -263,23 +334,17 @@
 		DEE4B52E2DF4DC2F007F917B /* NTU */ = {
 			isa = PBXGroup;
 			children = (
-				DE1259A72DECC3EE004B6E80 /* NTUBusArrival.swift */,
-				DE1259A62DECC3C5004B6E80 /* NTUBusStop.swift */,
-				DE1259A52DECC395004B6E80 /* NTUBus.swift */,
+				DE1259A72DECC3EE004B6E80 /* NTUInternalBusArrival.swift */,
+				DE1259A62DECC3C5004B6E80 /* NTUInternalBusStop.swift */,
+				DE1259A52DECC395004B6E80 /* NTUInternalBus.swift */,
 			);
 			path = NTU;
-			sourceTree = "<group>";
-		};
-		DEE4B5322DF4E0AC007F917B /* SMU */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SMU;
 			sourceTree = "<group>";
 		};
 		DEE4B5332DF4E0B2007F917B /* NUS */ = {
 			isa = PBXGroup;
 			children = (
+				DE3826192DFB7CB1009630A5 /* NUSNextBusService.swift */,
 			);
 			path = NUS;
 			sourceTree = "<group>";
@@ -287,20 +352,18 @@
 		DEE4B5342DF4E0D6007F917B /* NUS */ = {
 			isa = PBXGroup;
 			children = (
+				DE3826132DFB77AB009630A5 /* NUSInternalBusStop.swift */,
+				DE3826102DFB7777009630A5 /* NUSInternalBusRoute.swift */,
+				DE38260D2DFB7716009630A5 /* NUSInternalBusArrival.swift */,
+				DE38260A2DFB76B7009630A5 /* NUSLineActivityWrapper.swift */,
 			);
 			path = NUS;
-			sourceTree = "<group>";
-		};
-		DEE4B5352DF4E0DB007F917B /* SMU */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SMU;
 			sourceTree = "<group>";
 		};
 		DEE4B5362DF4E0F9007F917B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DE48B82F2DF8ED34005E2542 /* Constants.swift */,
 				DE1259A92DECC67B004B6E80 /* NetworkError.swift */,
 			);
 			path = Common;
@@ -510,6 +573,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE48B8122DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */,
+				DE48B8162DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */,
+				DE3826182DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */,
+				DE48B8172DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +598,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE48B8132DF8D0A3005E2542 /* NTUPublicBusStopList.json in Resources */,
+				DE48B8182DF8D0EB005E2542 /* NUSPublicBusStopList.json in Resources */,
+				DE3826172DFB7A2B009630A5 /* NUSInternalBusStopList.json in Resources */,
+				DE48B8192DF8D0EB005E2542 /* SMUPublicBusStopList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,13 +626,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE1259C42DECD3BB004B6E80 /* NTUBus.swift in Sources */,
-				DE1259C22DECD3B5004B6E80 /* NTUBusStop.swift in Sources */,
-				DE1259C02DECD3B0004B6E80 /* NTUBusArrival.swift in Sources */,
+				DE48B8312DF8ED3C005E2542 /* Constants.swift in Sources */,
+				DE3826122DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */,
+				DE38260C2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */,
+				DE3826152DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */,
+				DE38260E2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */,
+				DE1259C42DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */,
+				DE48B8222DF8D505005E2542 /* PublicBusStop.swift in Sources */,
+				DE48B8252DF8D513005E2542 /* PublicBusArrival.swift in Sources */,
+				DE04A2262DF85D7100C5626E /* LTABusArrival.swift in Sources */,
+				DE1259C22DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */,
+				DE5AFFBD2DF963300002257D /* PublicBusLine.swift in Sources */,
+				DE1259C02DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */,
 				DE1259BC2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */,
+				DE04A2232DF85B8000C5626E /* ArriveLahService.swift in Sources */,
 				DE1259BE2DECD3AA004B6E80 /* NetworkError.swift in Sources */,
+				DE38261A2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */,
 				DE1259B82DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */,
 				DE1259BA2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
+				DE51FFB52DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,13 +666,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE1259C52DECD3BB004B6E80 /* NTUBus.swift in Sources */,
-				DE1259C32DECD3B5004B6E80 /* NTUBusStop.swift in Sources */,
+				DE48B8262DF8D513005E2542 /* PublicBusArrival.swift in Sources */,
+				DE1259C52DECD3BB004B6E80 /* NTUInternalBus.swift in Sources */,
+				DE3826142DFB77AB009630A5 /* NUSInternalBusStop.swift in Sources */,
+				DE38261B2DFB7CB1009630A5 /* NUSNextBusService.swift in Sources */,
+				DE38260F2DFB7716009630A5 /* NUSInternalBusArrival.swift in Sources */,
+				DE1259C32DECD3B5004B6E80 /* NTUInternalBusStop.swift in Sources */,
 				DE1259BB2DECD39D004B6E80 /* NTUBusAPIClient.swift in Sources */,
+				DE3826112DFB7777009630A5 /* NUSInternalBusRoute.swift in Sources */,
+				DE38260B2DFB76B7009630A5 /* NUSLineActivityWrapper.swift in Sources */,
+				DE48B8302DF8ED3C005E2542 /* Constants.swift in Sources */,
 				DE1259BF2DECD3AA004B6E80 /* NetworkError.swift in Sources */,
 				DE1259B92DECD393004B6E80 /* NTUAPIResponseWrappers.swift in Sources */,
 				DE1259BD2DECD3A3004B6E80 /* NTUEndpoint.swift in Sources */,
-				DE1259C12DECD3B0004B6E80 /* NTUBusArrival.swift in Sources */,
+				DE1259C12DECD3B0004B6E80 /* NTUInternalBusArrival.swift in Sources */,
+				DE04A2272DF85D7100C5626E /* LTABusArrival.swift in Sources */,
+				DE04A2242DF85B8000C5626E /* ArriveLahService.swift in Sources */,
+				DE48B8232DF8D505005E2542 /* PublicBusStop.swift in Sources */,
+				DE5AFFBE2DF963300002257D /* PublicBusLine.swift in Sources */,
+				DE51FFB62DFA0C7C00652F65 /* LTALineActivityWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +858,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTrackerApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -802,6 +898,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusTrackerApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -926,6 +1023,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTrackerWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BusTrackerWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Swift-y.BusTrackerApp";
@@ -956,6 +1054,7 @@
 				DEVELOPMENT_TEAM = WUU3W83HBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BusTrackerWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BusTrackerWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "Swift-y.BusTrackerApp";

@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 2/6/25.
 //
+// Model for different network errors
 
 import Foundation
 

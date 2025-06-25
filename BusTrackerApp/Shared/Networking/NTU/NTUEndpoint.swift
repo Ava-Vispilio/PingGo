@@ -1,3 +1,11 @@
+//
+//  NTUEndpoint.swift
+//  BusTrackerApp
+//
+//  Created by Ava on 
+// 
+// Handles Omnibus API calls
+
 import Foundation
 
 enum NTUEndpoint {
@@ -6,7 +14,7 @@ enum NTUEndpoint {
     case busArrival(busStopId: String)  // /prod/bus-arrival?busStopId=[ID]
 
     private var baseURL: String {
-        return "http://192.168.1.72:3000/prod"  // Replace with your server's IP
+        return "\(APIConstants.NTUAPIBaseURL)/prod"  // Replace with your server's IP
     }
 
     var url: URL {
