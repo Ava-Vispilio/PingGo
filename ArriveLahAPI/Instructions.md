@@ -1,34 +1,4 @@
-# ArriveLah
 
-A local copy of [ArriveLah](https://github.com/cheeaun/arrivelah), included in this repository for local testing purposes
-
-## How to get started
-
-1. install Node.js
-2. Obtain API Key from from [LTA's DataMall](http://www.mytransport.sg/content/mytransport/home/dataMall.html)
-3. [Request for API Access](https://datamall.lta.gov.sg/content/datamall/en/request-for-api.html)
-4. Rename `env.txt` to `.env` and fill in the following sections:
-   ```
-   accountKeys=[Your API Key]
-   ```
-5. Install necessary packages (only needs to be run once)
-   ```zsh
-   $ sudo npm install
-   ```
-6. Connect to [Vercel CLI](https://vercel.com/docs/cli)
-7. Start the server (for subsequent launches)
-   ```zsh
-   $ npm start
-   ```
-
-## API GET Commands / Responses
-
-There is only 1 command:
-```zsh
-// Replace [BusStopID] with Bus Stop ID / Code
-$ curl http://localhost:3000/?id=[BusStopID]
-```
-Sample Response:
 ```json
 {
   "services": [
@@ -283,15 +253,3 @@ Sample Response:
     }
   ]
 }
-
-```
-A few pointers:
-* Responses are cached for **15 seconds**
-* Details on what the acronyms mean will not be covered, refer to the [README](https://github.com/cheeaun/arrivelah/blob/master/README.md) of the base repository for more details
-* This API's localhost instance is reachable through the host device's IP, hence it is not neccesary to configure it to start from 0.0.0.0
-
-## How to integrate this into the app
-
-## Credits
-
-Credits to [Lim Chee Aun](http://cheeaun.mit-license.org/). Data is copyrighted by [LTA](http://www.mytransport.sg/).
