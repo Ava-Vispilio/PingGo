@@ -13,11 +13,11 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
     @Published var arrivalTimes: [NTUInternalBusArrivalTime] = []
     @Published var notifyEnabled = false {
         didSet {
-            print("[DEBUG] notifyEnabled set to \(notifyEnabled)")
+            print("NTU Internal notification state set")
             saveNotifyEnabledState()
             if !notifyEnabled {
                 notificationWasScheduled = false
-                print("[DEBUG] Notification was unscheduled due to toggle off")
+                print("NTU Internal notification was unscheduled due to toggle off")
             }
         }
     }
@@ -63,10 +63,10 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
         let id = notificationId(for: stopId)
 
         if !notifyEnabled {
-            print("[DEBUG] Cancelling internal bus notification with ID: \(id)")
+            print("Cancelling NTU internal bus notification with ID: \(id)")
             notificationManager.cancelNotification(id: id)
         } else {
-            print("[DEBUG] Scheduling internal bus notification for ID: \(id)")
+            print("Scheduling NTU internal bus notification for ID: \(id)")
             scheduleNotification()
         }
     }
@@ -75,7 +75,7 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
         guard notifyEnabled,
               let soonest = arrivalTimes.first,
               let stopId = stopId else {
-            print("[DEBUG] Skipping schedule: Missing conditions")
+            print("Skipping NTU internal notification scheduling: Missing conditions")
             return
         }
 
@@ -83,7 +83,7 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
         let notifyAfter = (soonest.minutes - cappedLeadTime) * 60
 
         guard cappedLeadTime > 0, notifyAfter > 0 else {
-            print("[DEBUG] Invalid notifyAfter: \(notifyAfter)s or cappedLeadTime: \(cappedLeadTime)m — disabling toggle")
+            print("Invalid NTU internal notifyAfter: \(notifyAfter)s or cappedLeadTime: \(cappedLeadTime)m — disabling toggle")
             notifyEnabled = false
             return
         }
@@ -96,14 +96,14 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
             after: notifyAfter
         )
 
-        print("[DEBUG] Internal bus notification scheduled in \(notifyAfter) seconds")
+        print("NTU Internal bus notification scheduled in \(notifyAfter) seconds")
         notificationWasScheduled = true
     }
 
     func cancelNotificationIfNeeded() {
         guard let stopId = stopId else { return }
         let id = notificationId(for: stopId)
-        print("[DEBUG] cancelNotificationIfNeeded() called for ID: \(id)")
+        print("NTU internal cancelNotificationIfNeeded() called for ID: \(id)")
         notificationManager.cancelNotification(id: id)
     }
 
@@ -111,12 +111,12 @@ class NTUInternalBusStopArrivalViewModel: ObservableObject {
         notifyEnabled = UserDefaults.standard.bool(forKey: notifyKey)
         let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
         notifyMinutesBefore = savedMinutes > 0 ? savedMinutes : 1
-        print("[DEBUG] Restored toggle = \(notifyEnabled), minutesBefore = \(notifyMinutesBefore)")
+        print("NTU Internal Restored toggle = \(notifyEnabled), minutesBefore = \(notifyMinutesBefore)")
     }
 
     private func saveNotifyEnabledState() {
         UserDefaults.standard.set(notifyEnabled, forKey: notifyKey)
-        print("[DEBUG] Saved toggle state: \(notifyEnabled) for key \(notifyKey)")
+        print("Saved toggle state: \(notifyEnabled) for key \(notifyKey)")
     }
 
     private var notifyKey: String {

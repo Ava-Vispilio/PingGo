@@ -20,19 +20,19 @@ struct NTUInternalBusLineDetailView: View {
                 Text("Error: \(error)")
                     .foregroundColor(.red)
             } else {
-                // Active Vehicles Section
-                if let bus = viewModel.bus {
-                    Section(header: Text("Active Vehicles")) {
-                        if bus.vehicles.isEmpty {
-                            Text("No active vehicles.")
-                                .foregroundColor(.secondary)
-                        } else {
-                            ForEach(bus.vehicles) { vehicle in
-                                Text("ID: \(vehicle.id.uuidString.prefix(6))")
-                            }
-                        }
-                    }
-                }
+//                // Active Vehicles Section
+//                if let bus = viewModel.bus {
+//                    Section(header: Text("Active Vehicles")) {
+//                        if bus.vehicles.isEmpty {
+//                            Text("No active vehicles.")
+//                                .foregroundColor(.secondary)
+//                        } else {
+//                            ForEach(bus.vehicles) { vehicle in
+//                                Text("ID: \(vehicle.id.uuidString.prefix(6))")
+//                            }
+//                        }
+//                    }
+//                }
 
                 // Stops Section
                 if !viewModel.stops.isEmpty {

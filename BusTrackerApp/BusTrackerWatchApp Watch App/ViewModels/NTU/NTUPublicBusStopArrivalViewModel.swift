@@ -13,19 +13,19 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var notificationsEnabled: Bool = false {
         didSet {
-            print("[DEBUG] notificationsEnabled set to \(notificationsEnabled)")
+            print("NTU Internal notification state set")
             saveNotificationsEnabledState()
             if !notificationsEnabled {
                 cancelNotification()
                 notificationWasScheduled = false
-                print("[DEBUG] Notification cleared due to toggle off")
+                print("NTU external notification cleared due to toggle off")
             }
         }
     }
     @Published var notificationLeadTime: Int = 3 {
         didSet {
             UserDefaults.standard.set(notificationLeadTime, forKey: notifyMinutesKey)
-            print("[DEBUG] Updated lead time to \(notificationLeadTime) min")
+            print("Updated NTU external lead time to \(notificationLeadTime) min")
         }
     }
     @Published var notificationWasScheduled = false
@@ -53,14 +53,14 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
 
     private func saveNotificationsEnabledState() {
         UserDefaults.standard.set(notificationsEnabled, forKey: notifyEnabledKey)
-        print("[DEBUG] Saved notify toggle \(notificationsEnabled) to \(notifyEnabledKey)")
+        print("Saved notify toggle \(notificationsEnabled) to \(notifyEnabledKey)")
     }
 
     private func restoreSavedSettings() {
         notificationsEnabled = UserDefaults.standard.bool(forKey: notifyEnabledKey)
         let savedMinutes = UserDefaults.standard.integer(forKey: notifyMinutesKey)
         notificationLeadTime = savedMinutes > 0 ? savedMinutes : 3
-        print("[DEBUG] Restored toggle = \(notificationsEnabled), minutesBefore = \(notificationLeadTime)")
+        print("Restored toggle = \(notificationsEnabled), minutesBefore = \(notificationLeadTime)")
     }
 
     func fetchArrivals() async {
@@ -68,7 +68,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
         do {
             let response = try await arriveLahService.fetchArrivals(for: stop.BusStopCode, as: PublicBusArrivalResponse.self)
             arrivals = response.services.map(PublicBusArrival.init)
-            print("[DEBUG] Loaded \(arrivals.count) services for stop \(stop.BusStopCode)")
+            print("Loaded \(arrivals.count) services for stop \(stop.BusStopCode)")
         } catch {
             print("Failed to fetch arrivals for stop \(stop.BusStopCode): \(error.localizedDescription)")
             arrivals = []
@@ -88,7 +88,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
 
     func scheduleNotification() {
         guard notificationsEnabled else {
-            print("[DEBUG] Schedule skipped — toggle is off")
+            print("NTU external Schedule skipped — toggle is off")
             return
         }
 
@@ -96,7 +96,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
             .flatMap({ $0.minutesToArrivals })
             .filter({ $0 > 0 })
             .min() else {
-                print("[DEBUG] No valid upcoming arrival found.")
+                print("No valid upcoming arrival found.")
                 notificationsEnabled = false
                 return
         }
@@ -105,7 +105,7 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
         let notifyAfter = (soonest - cappedLeadTime) * 60
 
         guard cappedLeadTime > 0, notifyAfter > 0 else {
-            print("[DEBUG] Skipping scheduling: cappedLeadTime=\(cappedLeadTime), notifyAfter=\(notifyAfter)")
+            print("Skipping NTU external scheduling: cappedLeadTime=\(cappedLeadTime), notifyAfter=\(notifyAfter)")
             notificationsEnabled = false
             return
         }
@@ -118,12 +118,12 @@ class NTUPublicBusStopArrivalViewModel: ObservableObject {
         )
 
         notificationWasScheduled = true
-        print("[DEBUG] Public bus notification scheduled in \(notifyAfter) seconds (lead time \(cappedLeadTime))")
+        print("NTU external bus notification scheduled in \(notifyAfter) seconds (lead time \(cappedLeadTime))")
     }
 
     func cancelNotification() {
         NotificationManager.shared.cancelNotification(id: notificationID)
-        print("[DEBUG] Canceled notification ID: \(notificationID)")
+        print("Canceled NTU external notification ID: \(notificationID)")
     }
 }
 
