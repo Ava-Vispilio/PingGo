@@ -334,3 +334,5 @@ The PingGo project would not be possible without the contributions of the follow
  ArriveLah | Lim Chee Aun | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheeaun/arrivelah) | 
  | NTU Shuttle Bus | Donald Wu | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yeukfei02/ntu-shuttle-bus-api) | 
  | NUS NextBus | Hu Jialun | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SuibianP/nus-nextbus-new-api) | 
+
+ A special shoutout to our [mentor](https://www.linkedin.com/in/zectan/) as well, for his invaluable guidance and support throughout this project!
