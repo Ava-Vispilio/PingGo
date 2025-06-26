@@ -1,5 +1,6 @@
 # PingGo
-<short intro + description>
+PingGo is a cross-platform bus arrival tracking app for iOS and watchOS.
+Designed to keep users informed about internal shuttle services across Singapore’s universities, PingGo delivers real-time arrival times and monitors only active bus lines. With a clean, intuitive interface, it also offers customizable notifications to ensure users never miss their ride.
 
 ## Watch the Demo
 See PingGo in action! Click [here](<insert link>) to watch a demonstration of our apps' capabilities!
