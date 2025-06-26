@@ -12,7 +12,7 @@ Designed to keep users informed about internal shuttle services across Singapore
 7. [Credits](#credits)
 
 ## Watch the Demo
-See PingGo in action! Click [here](<https://youtu.be/LUrik9FijOE>) to watch a demonstration of our apps' capabilities!
+See PingGo in action! Click [here](https://youtu.be/LUrik9FijOE) to watch a demonstration of our apps' capabilities!
 
 ## Key Features
 - Bus Arrival Information across Singapore's universities with internal shuttles
