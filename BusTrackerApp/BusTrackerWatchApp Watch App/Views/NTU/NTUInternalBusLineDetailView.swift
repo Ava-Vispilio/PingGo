@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 24/6/25.
 //
-
+// Displays a list of stops for a selected NTU internal shuttle line, and loads arrival and route data via its ViewModel while handling loading and error states
 
 import SwiftUI
 

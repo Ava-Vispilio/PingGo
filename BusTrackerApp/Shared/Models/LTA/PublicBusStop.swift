@@ -6,7 +6,6 @@
 //
 // Model for public (LTA) bus stops
 
-
 struct PublicBusStop: Codable, Identifiable {
     var id: String { BusStopCode }
     let BusStopCode: String

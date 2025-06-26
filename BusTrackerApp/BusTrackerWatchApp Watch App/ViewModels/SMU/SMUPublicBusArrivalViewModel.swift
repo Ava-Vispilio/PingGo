@@ -4,6 +4,7 @@
 //
 //  Created by Ava on 17/6/25.
 //
+// Manages and schedules local notifications for a selected public bus arrival at an SMU stop, allowing users to be notified a configurable number of minutes before the bus arrives
 
 import Foundation
 

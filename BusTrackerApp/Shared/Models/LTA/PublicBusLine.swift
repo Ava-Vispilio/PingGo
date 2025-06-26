@@ -6,7 +6,6 @@
 //
 // Model for public (LTA) bus lines
 
-
 struct PublicBusLine: Identifiable, Codable {
     var id: String { lineName }
     let lineName: String

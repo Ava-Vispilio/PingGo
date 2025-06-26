@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 24/6/25.
 //
-
+// Shows a list of currently active NTU bus lines, divided into two sections: internal shuttle buses and public buses
 
 import SwiftUI
 

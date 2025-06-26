@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 22/6/25.
 //
-
+// Fetches and stores a list of active public bus services arriving at a given SMU stop
 
 import Foundation
 

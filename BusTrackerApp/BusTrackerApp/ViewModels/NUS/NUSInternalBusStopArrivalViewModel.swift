@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 14/6/25.
 //
-
+// Fetches the next arrival times for a specific NUS internal bus stop and route, and manages user-configurable local notifications before the bus arrives
 
 import Foundation
 import UserNotifications

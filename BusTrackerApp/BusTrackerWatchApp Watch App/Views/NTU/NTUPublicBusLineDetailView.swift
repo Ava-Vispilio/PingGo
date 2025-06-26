@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 24/6/25.
 //
-
+// Displays the list of bus stops for a selected NTU public bus line
 
 import SwiftUI
 

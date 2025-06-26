@@ -1,3 +1,11 @@
+//
+//  NUSInternalBusLineDetailViewModel.swift
+//  BusTrackerApp
+//
+//  Created by Ava Vispilio on 23/6/25.
+//
+// Handles loading bus arrival times for a given NUS internal stop and route, and manages user-configurable local notifications to alert users before arrival
+
 import Foundation
 
 @MainActor

@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 22/6/25.
 //
-
+// Displays a list of SMU bus stops allowing users to select a stop and view available bus lines at that stop
 
 import SwiftUI
 

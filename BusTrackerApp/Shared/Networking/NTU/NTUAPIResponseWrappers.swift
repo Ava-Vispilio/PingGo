@@ -2,12 +2,9 @@
 //  NTUAPIResponseWrappers.swift
 //  BusTrackerApp
 //
-//  Created by Ava on 
-// 
-// Decodes Omnibus API responses (models here are updated)
-
-// Shared/Networking/APIResponseWrappers.swift
-// Provides wrapper structs matching the JSON structure of the API.
+//  Created by Ava on 2/6/25
+//
+// Provides wrapper structs matching the JSON structure of the API
 
 import Foundation
 

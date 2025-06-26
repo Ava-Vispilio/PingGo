@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 24/6/25.
 //
+// Fetches public bus arrivals and handles notification logic for NTU's public buses (including when to notify user of bus arrival)
 
 import Foundation
 

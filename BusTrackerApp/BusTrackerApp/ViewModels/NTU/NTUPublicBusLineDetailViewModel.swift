@@ -6,7 +6,6 @@
 //
 // Loads a list of NTU's public bus stops for a selected bus line
 
-
 import Foundation
 
 @MainActor

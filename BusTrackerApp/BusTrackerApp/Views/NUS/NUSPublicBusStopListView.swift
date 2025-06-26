@@ -3,9 +3,10 @@
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 11/6/25.
+//
 // Displays a list of NUS's public bus stops for a selected bus route
 
-// white bg, grey list
+// White bg, grey list
 //import SwiftUI
 //
 //struct NUSPublicBusStopListView: View {

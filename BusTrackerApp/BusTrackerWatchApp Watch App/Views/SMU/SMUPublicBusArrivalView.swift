@@ -1,3 +1,11 @@
+//
+//  SMUPublicBusArrivalViewModel.swift
+//  BusTrackerApp
+//
+//  Created by Ava on 22/6/25.
+//
+// Displays bus arrival times for an SMU public bus stop with a toggle and picker for notification lead time settings
+
 import SwiftUI
 
 struct SMUPublicBusArrivalView: View {

@@ -86,7 +86,6 @@ struct NTUPublicBusLineDetailView: View {
     }
 }
 
-
 // Grey background, white list
 //import SwiftUI
 //

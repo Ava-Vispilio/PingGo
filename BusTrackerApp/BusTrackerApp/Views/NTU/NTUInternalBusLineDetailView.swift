@@ -3,7 +3,6 @@
 //  BusTrackerApp
 //
 //  Created by Ava Vispilio on 2/6/25.
-//  Updated for NTU-specific logic and UI cleanup
 //
 // Displays a list of NTU's internal bus stops and active buses for a selected route
 

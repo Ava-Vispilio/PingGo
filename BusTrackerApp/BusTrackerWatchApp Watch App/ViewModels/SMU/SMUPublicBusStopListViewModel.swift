@@ -6,7 +6,6 @@
 //
 // Loads a list of SMU's public bus stop
 
-
 import Foundation
 import Combine
 

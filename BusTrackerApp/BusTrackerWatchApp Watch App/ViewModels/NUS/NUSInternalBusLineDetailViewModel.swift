@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 23/6/25.
 //
+// Loads data for a selected NUS internal bus route (fetching its currently active buses and the list of stops associated with the route) from a local JSON file
 
 import Foundation
 

@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 23/6/25.
 //
-
+// Displays a list of bus stops for a selected NUS public bus line and manages cached arrival view models for navigation
 
 import SwiftUI
 

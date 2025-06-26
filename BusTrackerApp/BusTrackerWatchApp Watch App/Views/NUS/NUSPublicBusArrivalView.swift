@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 23/6/25.
 //
+// Displays upcoming arrival times for a selected NUS public bus stop and allows users to enable timed notifications before bus arrival
 
 import SwiftUI
 

@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 14/6/25.
 //
-
+// Fetches and stores the active buses and stop list for a given NUS internal shuttle bus route
 
 import Foundation
 

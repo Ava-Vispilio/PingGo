@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 22/6/25.
 //
-
+// Lists all upcoming SMU bus services for a selected stop and allows navigation to individual bus arrival details
 
 import SwiftUI
 

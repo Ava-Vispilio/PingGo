@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 14/6/25.
 //
-
+// Displays the next 3 arrival times for a specific NUS internal bus at a selected stop, and allows users to enable a notification with a customizable lead time using a scroll-wheel picker.
 
 import SwiftUI
 
@@ -86,4 +86,3 @@ struct NUSInternalBusStopArrivalView: View {
 //        }
     }
 }
-

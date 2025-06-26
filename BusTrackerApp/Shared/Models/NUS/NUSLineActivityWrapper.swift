@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 13/6/25.
 //
-// model to parse active bus lines response from API
+// Model to parse active bus lines response from API
 
 import Foundation
 

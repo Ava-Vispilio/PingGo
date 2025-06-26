@@ -2,12 +2,9 @@
 //  NTUBusAPIClient.swift
 //  BusTrackerApp
 //
-//  Created by Ava on 
+//  Created by Ava on 2/6/25
 // 
 // Functions for each specific Omnibus API call
-
-// Shared/Networking/BusAPIClient.swift
-// Provides functions for all API calls.
 
 import Foundation
 

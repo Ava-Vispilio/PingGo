@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 14/6/25.
 //
+// Displays details for a specific NUS internal bus line, including active vehicle info and a list of bus stops, and lets users navigate to each stop’s arrival view with optional notifications.
 
 import SwiftUI
 

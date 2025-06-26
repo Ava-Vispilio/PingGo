@@ -6,9 +6,6 @@
 //
 // Checks for active LTA bus services
 
-
-// Models/Shared/PublicBus/SimpleBusServiceResponse.swift
-
 import Foundation
 
 // Minimal response from ArriveLah used for just checking if any bus service is active

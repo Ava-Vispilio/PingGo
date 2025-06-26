@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 23/6/25.
 //
+// Displays the details of a selected NUS internal bus route, showing a list of its stops
 
 import SwiftUI
 

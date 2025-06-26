@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 13/6/25.
 //
-// model to parse NUSBusStops.json with
+// Model to parse NUSBusStops.json with
 
 import Foundation
 

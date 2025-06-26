@@ -4,6 +4,7 @@
 //
 //  Created by Ava Vispilio on 24/6/25.
 //
+// Displays arrival times for a specific NTU internal bus stop and allows users to enable and configure notifications for upcoming bus arrivals
 
 import SwiftUI
 

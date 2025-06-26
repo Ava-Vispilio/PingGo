@@ -4,7 +4,7 @@
 //
 //  Created by Ava Vispilio on 23/6/25.
 //
-
+// Displays arrival times for a selected NUS internal bus stop and allows the user to toggle notifications
 
 import SwiftUI
 
