@@ -1,7 +1,62 @@
 # PingGo
+PingGo is a cross-platform bus arrival tracking app for iOS and watchOS.
+Designed to keep users informed about internal shuttle services across Singapore’s universities, PingGo delivers real-time arrival times and monitors only active bus lines. With a clean, intuitive interface, it also offers customizable notifications to ensure users never miss their ride.
 
-## Current Directory Structure
+## Table of Contents
+1. [Watch the Demo](#watch-the-demo)
+2. [Key Features](#key-features)
+3. [System Architecture](#system-architecture)
+4. [Getting Started](#getting-started)
+5. [Project Structure](#project-structure)
+6. [Future Developments](#future-developments)
+7. [Credits](#credits)
 
+## Watch the Demo
+See PingGo in action! Click [here](<https://youtu.be/LUrik9FijOE>) to watch a demonstration of our apps' capabilities!
+
+## Key Features
+- Bus Arrival Information across Singapore's universities with internal shuttles
+    - Displays bus arrival times on iOS app
+    - Bus Line & Stop Selection
+        - Users can view & select from a list of active bus lines
+        - Navigation flows allow users to drill down from lines → stops → arrival information
+    - Displays other useful information (e.g. bus capacity) where available
+- Active Bus Monitoring
+    - Displays only active bus lines
+- Notifications & Reminders on bus arrival
+    - Enable/Disable arrival notifications for when a bus is arriving at a stop with customisable lead times
+    - Notifications are managed and can be toggled or rescheduled as needed
+- Watch App Support
+    - All of the above features also applied to watch app
+- ViewModels manage API calls to fetch:
+    - Active bus lines
+    - Bus arrival times at specific stops
+    - List of stops per bus line
+    - Other information (e.g. bus capacity)
+
+## System Architecture
+![SA Diagram](https://i.imgur.com/5wng4Co.jpeg)
+
+## Getting Started
+### Prerequisites
+- Serverless Account
+- Vercel Account
+- LTA DataMall API Key
+- NUS NextBus Login Details
+- Node.js version that is < 20 (this project uses v18)
+- Xcode
+
+### Setting Up APIs
+Look within each API's respective folders (ArriveLahAPI, NTUBusAPI and NUSBusAPI) for `Instructions.md` 
+
+### Running PingGo
+- Download [Xcode](https://developer.apple.com/xcode/) and install simulators for your target device (this project was built on Ver 16.4)
+- Set up your [Apple Developer Account](https://developer.apple.com/) if you have not done so already
+- Populate `Constants.swift` (located in `Shared > Networking > Common`) with your API details 
+- Open the `BusTrackApp` folder in Xcode
+- Select your target device and build (then run) the app
+
+## Project Structure
 ```
 .
 ├── ArriveLahAPI
@@ -260,7 +315,25 @@
 │               │   └── Breakpoints_v2.xcbkptlist
 │               └── xcschemes
 │                   └── xcschememanagement.plist
-└── README.md
-
-91 directories, 167 files
+├── README.md 
+└── Contents.md
 ```
+
+## Future Developments
+- Pull to refresh bus arrival times
+- Favourite bus stops
+- Dark mode
+
+## Credits
+The PingGo project would not be possible without the contributions of the following individuals:
+
+| Creators | GitHub | LinkedIn |
+|------|--------|----------|
+| Yong Rui Jie | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ava-Vispilio) | [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yong-rui-jie/) |
+| Xue Qi | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/xq-wong) | [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/) |
+
+| API | Author | Repo |
+|------|--------|----------|
+ ArriveLah | Lim Chee Aun | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheeaun/arrivelah) | 
+ | NTU Shuttle Bus | Donald Wu | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yeukfei02/ntu-shuttle-bus-api) | 
+ | NUS NextBus | Hu Jialun | [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SuibianP/nus-nextbus-new-api) | 
